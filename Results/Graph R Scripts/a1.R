@@ -9,7 +9,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-data = read.table("a1.txt", header=T)
+data = read.table("../a1.txt", header=T)
 data$Node = factor(data$Node)
 data$FaceId <- factor(data$FaceId)
 data$Kilobits <- data$Kilobytes * 8

@@ -1,0 +1,78 @@
+# meshed-ases.txt
+
+router
+#name   city    y   x
+
+# infrastructure
+as1-1   NA  200 150
+as1-2   NA  200 250
+as1-cs  NA  150    100
+as1-math    NA  150    200
+as2-1       NA  250   100
+as2-math    NA  300  50
+as2-cs      NA  350 150
+as3-1       NA  200 300
+as3-math    NA  200 400
+as3-computer    NA  150    350
+as4-1           NA  250   200
+as4-hy          NA  350 200
+as4-sm          NA  300  250
+
+# targets
+as1-cs-server NA  150    0
+as1-cs-backend NA  100    50
+as3-math-server  NA  100    350
+
+# attackers
+as1-cs-a0       NA  100    150
+as1-math-a0     NA  100    250
+as2-math-a0     NA  350 0
+as2-cs-a0       NA  400 150
+as3-ee-a0       NA  250   450
+as4-hy-a0       NA  400 250
+as4-sm-a0       NA  350 300
+
+
+link
+#from   to  capacity    metric  delay   queue
+
+# eBGP
+as1-1   as1-2   1Mbps  1   10ms    10
+as1-1   as2-1   1Mbps  1   10ms    10
+as1-1   as4-1   1Mbps  1   10ms    10
+as1-2   as3-1   1Mbps  1   10ms    10
+as2-1   as4-1   1Mbps  1   10ms    10
+as3-1   as4-1   1Mbps  1   10ms    10
+
+# iBGP
+as1-1    as1-cs         1Mbps   1   10ms    10
+as1-1    as1-math     1Mbps   1   10ms    10
+as1-2    as1-math     1Mbps   1   10ms    10
+as1-cs   as1-math   1Mbps  1   10ms    10
+
+as2-1    as2-math     1Mbps  1   10ms    10
+as2-1    as2-cs          1Mbps  1   10ms    10
+as2-math  as2-cs   1Mbps  1   10ms    10
+
+as3-1    as3-math     1Mbps  1   10ms    10
+as3-1    as3-cs          1Mbps  1   10ms    10
+as3-cs    as3-ee     1Mbps  1   10ms    10
+
+as4-1    as4-hw         1Mbps  1   10ms    10
+as4-1    as4-sm         1Mbps  1   10ms    10
+
+# Edge
+
+as1-cs   as1-cs-server    1Mbps  1   10ms    10
+as1-cs   as1-cs-backend    1Mbps  1   10ms    10
+as1-cs   as1-cs-a0    1Mbps  1   10ms    10
+as1-math   as1-math-a0  1Mbps  1   10ms    10
+
+as2-cs   as2-cs-a0  10Mbps  1   10ms    10
+as2-math as2-math-a0    1Mbps  1   10ms    10
+
+as3-math    as3-math-server   1Mbps  1   10ms    10
+as3-cs  as3-cs-a0    1Mbps  1   10ms    10
+
+as4-hw as4-hw-a0    1Mbps  1   10ms    10
+as4-sm as4-sm-a0    1Mbps  1   10ms    10

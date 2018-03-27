@@ -34,7 +34,7 @@ ConsApp::GetTypeId()
     .AddConstructor<ConsApp>()
     .AddAttribute("Frequency", "Frequency of interest packets", StringValue("1.0"),
                   MakeDoubleAccessor(&ConsApp::m_frequency), MakeDoubleChecker<double>())
-    .AddAttribute("Randomize", 
+    .AddAttribute("Randomize",
                   "Type of send time randomization: none (default), uniform, exponential",
                   StringValue("none"),
                   MakeStringAccessor(&ConsApp::SetRandomize, &ConsApp::GetRandomize),
@@ -64,7 +64,7 @@ ConsApp::ConsApp()
 
 ConsApp::~ConsApp()
 {
-} 
+}
 
 
 void
@@ -108,8 +108,6 @@ ConsApp::GetRandomize() const
   return m_randomType;
 }
 
-
-
 // Processing upon start of the application
 void
 ConsApp::StartApplication()
@@ -136,8 +134,6 @@ ConsApp::StopApplication()
 void
 ConsApp::SendInterest()
 {
-
-
   /////////////////////////////////////
   // Sending one Interest packet out //
   /////////////////////////////////////
@@ -154,7 +150,7 @@ ConsApp::SendInterest()
   } else{
     interest_copy += "/" + 'a' + rand()%26;
   }
-  
+
 
   // Create and configure ndn::Interest
   auto interest = std::make_shared<ndn::Interest>(interest_copy);

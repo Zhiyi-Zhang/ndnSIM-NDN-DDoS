@@ -48,6 +48,7 @@ protected:
   std::string m_interestName;
   std::string m_autoappend;
   int m_lastSeq;
+  int m_maxSeq;
 
 private:
   void
