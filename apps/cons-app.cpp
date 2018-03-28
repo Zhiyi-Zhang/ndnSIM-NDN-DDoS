@@ -34,20 +34,27 @@ ConsApp::GetTypeId()
     .AddConstructor<ConsApp>()
     .AddAttribute("Frequency", "Frequency of interest packets", StringValue("1.0"),
                   MakeDoubleAccessor(&ConsApp::m_frequency), MakeDoubleChecker<double>())
+
     .AddAttribute("Randomize",
                   "Type of send time randomization: none (default), uniform, exponential",
                   StringValue("none"),
                   MakeStringAccessor(&ConsApp::SetRandomize, &ConsApp::GetRandomize),
                   MakeStringChecker())
+
     .AddAttribute("Name",
                   "Name of interest",
                   StringValue("/"),
                   MakeStringAccessor(&ConsApp::m_interestName), MakeStringChecker())
-    .AddAttribute("AutoAppend",
+
+    .AddAttribute("ValidInterest",
                   "Auto append sequence number: true (default), false",
-                  StringValue("true"),
-                  MakeStringAccessor(&ConsApp::m_autoappend), MakeStringChecker())
-    ;
+                  BooleanValue(true),
+                  MakeBooleanAccessor(&ConsApp::m_validInterest), MakeBooleanChecker())
+
+    .AddAttribute("InitSeq",
+                  "The first seq to send",
+                  IntegerValue(-1),
+                  MakeIntegerAccessor(&ConsApp::m_lastSeq), MakeIntegerChecker<int32_t>());
 
   return tid;
 }
@@ -56,9 +63,7 @@ ConsApp::ConsApp()
   : m_frequency(1.0)
   , m_firstTime(true)
   , m_interestName("/")
-  , m_autoappend("true")
 {
-  m_lastSeq = -1;
   m_maxSeq = 200; // hard-coding for now
 }
 
@@ -114,12 +119,7 @@ ConsApp::StartApplication()
 {
   // initialize ndn::App
   ndn::App::StartApplication();
-
-  ndn::FibHelper::AddRoute(GetNode(), "/edu/ucla/cs/alicelovecpp", m_face, 0);
-
-  std::cout << "Interest Name is " << m_interestName << std::endl;
-
-
+  // std::cout << "Interest Name is " << m_interestName << std::endl;
   ScheduleNextPacket();
 }
 
@@ -140,17 +140,17 @@ ConsApp::SendInterest()
   std::string interest_copy = m_interestName;
 
   // if auto append is true
-  if (!m_autoappend.compare("true")){
+  if (m_validInterest){
     interest_copy += "/" + std::to_string(m_lastSeq + 1);
     m_lastSeq += 1;
 
     if (m_lastSeq == m_maxSeq){
       m_lastSeq = -1;
     }
-  } else{
+  }
+  else{
     interest_copy += "/" + 'a' + rand()%26;
   }
-
 
   // Create and configure ndn::Interest
   auto interest = std::make_shared<ndn::Interest>(interest_copy);
@@ -158,7 +158,7 @@ ConsApp::SendInterest()
   interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
   interest->setInterestLifetime(ndn::time::seconds(1));
 
-  std::cout << "Sending Interest packet for " << interest->getName().toUri() << std::endl;
+  // std::cout << "Sending Interest packet for " << interest->getName().toUri() << std::endl;
 
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);
@@ -172,7 +172,7 @@ ConsApp::SendInterest()
 void
 ConsApp::OnData(std::shared_ptr<const ndn::Data> data)
 {
-  std::cout << "DATA received for name " << data->getName() << std::endl;
+  // std::cout << "DATA received for name " << data->getName() << std::endl;
 }
 
 } // namespace ndn

@@ -70,9 +70,10 @@ ProdApp::OnInterest(shared_ptr<const Interest> interest)
   ndn::App::OnInterest(interest);
 
   if (!isdigit(interest->getName().toUri().at(interest->getName().toUri().length() - 1))){
-    std::cout << "Fake interest received: " << interest->getName() << std::endl;
-  } else {
-    std::cout << "Received Interest packet for " << interest->getName() << std::endl;
+    // std::cout << "Fake interest received: " << interest->getName() << std::endl;
+  }
+  else {
+    // std::cout << "Received Interest packet for " << interest->getName() << std::endl;
 
     // Note that Interests send out by the app will not be sent back to the app !
 
@@ -80,8 +81,7 @@ ProdApp::OnInterest(shared_ptr<const Interest> interest)
     data->setFreshnessPeriod(ndn::time::milliseconds(1000));
     data->setContent(std::make_shared< ::ndn::Buffer>(1024));
     ndn::StackHelper::getKeyChain().sign(*data);
-
-    std::cout << "Sending Data packet for " << data->getName() << std::endl;
+    // std::cout << "Sending Data packet for " << data->getName() << std::endl;
 
     // Call trace (for logging purposes)
     m_transmittedDatas(data, this, m_face);

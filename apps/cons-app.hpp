@@ -46,7 +46,7 @@ protected:
   std::string m_randomType;
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
   std::string m_interestName;
-  std::string m_autoappend;
+  bool m_validInterest;
   int m_lastSeq;
   int m_maxSeq;
 

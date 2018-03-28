@@ -1,5 +1,5 @@
 // a-1.cpp
-// ./waf --run=a-1 2>&1
+// ./waf --run=a-1
 // A-1: Attacking locally reachable is hard
 
 #include "ns3/core-module.h"
@@ -20,6 +20,7 @@ main(int argc, char* argv[]) {
   // Install NDN stack on all nodes
   ndn::StackHelper ndnHelper;
   // ndnHelper.setCsSize(200);
+  // ndnHelper.SetOldContentStore("ns3::ndn::cs::Nocache");
   ndnHelper.InstallAll();
 
   // Installing global routing interface on all nodes
@@ -29,7 +30,7 @@ main(int argc, char* argv[]) {
   // Getting consumers
 
   // localized attackers
-  Ptr<Node> as1_cs_a0 = Names::Find<Node>("ucla-cs");
+  Ptr<Node> as1_cs_a0 = Names::Find<Node>("as1-cs-a0");
 
   // global attackers
   Ptr<Node> as1_math_a0 = Names::Find<Node>("as1-math-a0");
@@ -40,12 +41,12 @@ main(int argc, char* argv[]) {
   Ptr<Node> as4_sm_a0 = Names::Find<Node>("as4-sm-a0");
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver-backend"));
+  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/backend"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
   consumerHelper.Install(as1_cs_a0);
 
-  consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/something"));
+  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/something"));
   consumerHelper.Install(as1_math_a0);
   consumerHelper.Install(as2_cs_a0);
   consumerHelper.Install(as2_math_a0);
@@ -71,12 +72,11 @@ main(int argc, char* argv[]) {
 
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  ndn::FibHelper::AddRoute("ucla-cs", "/edu/ucla/cs/alicelovecpp", "rtr-ucla-cs", 1);
-  ndn::FibHelper::AddRoute("rtr-ucla-cs", "/edu/ucla/cs/alicelovecpp", "ucla-cs-alicelovecpp", 1);
+  ndn::FibHelper::AddRoute("as1-cs", "/edu/u1/cs/backend", "as1-cs-backend", 1);
 
   Simulator::Stop(Seconds(20.0));
 
-  ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/a1.txt", Seconds(0.5));
+  ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/a-1.txt", Seconds(0.5));
 
   Simulator::Run();
   Simulator::Destroy();
