@@ -8,7 +8,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-data = read.table("../cache-1.txt", header=T)
+data = read.table("../cache-1-3.txt", header=T)
 data$Node = factor(data$Node)
 data$FaceId <- factor(data$FaceId)
 data$Kilobits <- data$Kilobytes * 8
@@ -26,7 +26,7 @@ data.attacker = subset(data, Node %in% c("as1-cs-a0",
                                          "as1-math-a1",
                                          "as1-math-a2",
                                          "as1-math-a3",
-                                         "as2-math-a4",
+                                         "as1-math-a4",
                                          "as2-cs-a0",
                                          "as2-cs-a1",
                                          "as2-cs-a2",
@@ -72,6 +72,6 @@ g.nodes <- ggplot(result) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
   ylab("Rate [Incoming Interest/s]")
 
-png("cache-1.png", width=500, height=250)
+png("cache-1-3.png", width=500, height=250)
 print(g.nodes)
 retval <- dev.off()

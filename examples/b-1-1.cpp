@@ -70,9 +70,10 @@ main(int argc, char* argv[]) {
   consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
+  consumerHelper.SetAttribute("MaxSeq", IntegerValue(10000));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
   for (int i = 0; i < 35; i++) {
-    int init = static_cast<int>(x->GetValue()*199);
+    int init = static_cast<int>(x->GetValue()*9999);
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     consumerHelper.Install(attackers[i]);
   }

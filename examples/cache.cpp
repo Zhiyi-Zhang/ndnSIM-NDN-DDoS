@@ -1,5 +1,6 @@
 // cache.cpp
-// ./waf --run=cache
+// Please make sure each time to set a different x
+// NS_GLOBAL_VALUE="RngRun=x" ./waf --run=cache
 // Cache: Cache withhold much traffic
 
 #include "ns3/core-module.h"
@@ -68,6 +69,7 @@ main(int argc, char* argv[]) {
   consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
+  consumerHelper.SetAttribute("MaxSeq", IntegerValue(200));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
   for (int i = 0; i < 35; i++) {
     int init = static_cast<int>(x->GetValue()*199);

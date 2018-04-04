@@ -54,7 +54,12 @@ ConsApp::GetTypeId()
     .AddAttribute("InitSeq",
                   "The first seq to send",
                   IntegerValue(-1),
-                  MakeIntegerAccessor(&ConsApp::m_lastSeq), MakeIntegerChecker<int32_t>());
+                  MakeIntegerAccessor(&ConsApp::m_lastSeq), MakeIntegerChecker<int32_t>())
+
+    .AddAttribute("MaxSeq",
+                  "The max seq to send",
+                  IntegerValue(200),
+                  MakeIntegerAccessor(&ConsApp::m_maxSeq), MakeIntegerChecker<int32_t>());;
 
   return tid;
 }
@@ -64,7 +69,6 @@ ConsApp::ConsApp()
   , m_firstTime(true)
   , m_interestName("/")
 {
-  m_maxSeq = 200; // hard-coding for now
 }
 
 ConsApp::~ConsApp()
