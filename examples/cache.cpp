@@ -1,6 +1,6 @@
-// b-1.cpp
-// ./waf --run=b-1
-// B-1: Cache withhold much traffic
+// cache.cpp
+// ./waf --run=bache
+// Cache: Cache withhold much traffic
 
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
@@ -14,72 +14,81 @@ main(int argc, char* argv[]) {
   cmd.Parse(argc, argv);
 
   AnnotatedTopologyReader topologyReader("", 1);
-  topologyReader.SetFileName("src/ndnSIM/examples/topologies/topo-meshed-as.txt");
+  topologyReader.SetFileName("src/ndnSIM/examples/topologies/meshed-ases.txt");
   topologyReader.Read();
 
   // Install NDN stack on all nodes
   ndn::StackHelper ndnHelper;
   ndnHelper.setCsSize(200);
-  //ndnHelper.SetOldContentStore("ns3::ndn::cs::Nocache");
+  //ndnHelper.SetOldContentStore("ns3::ndn::cs::Freshness::Lru");
   ndnHelper.InstallAll();
 
   // Installing global routing interface on all nodes
   ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
   ndnGlobalRoutingHelper.InstallAll();
 
-  // Getting consumers
-
-  // localized attackers
-  Ptr<Node> ucla_cs_attacker = Names::Find<Node>("ucla-cs");
-
-  // global attackers
-  Ptr<Node> ucla_math_attacker = Names::Find<Node>("ucla-math");
-  Ptr<Node> az_cs_attacker = Names::Find<Node>("az-cs");
-  Ptr<Node> az_math_attacker = Names::Find<Node>("az-math");
-  Ptr<Node> wc_westwood_attacker = Names::Find<Node>("wc-westwood");
-  Ptr<Node> wc_santa_monica_attacker = Names::Find<Node>("wc-santa-monica");
-  Ptr<Node> mmphs_ee_attacker = Names::Find<Node>("mmphs-ee");
-
+  // Install attackers
+  Ptr<Node> attackers[35] = {Names::Find<Node>("as1-cs-a0"),
+                             Names::Find<Node>("as1-cs-a1"),
+                             Names::Find<Node>("as1-cs-a2"),
+                             Names::Find<Node>("as1-cs-a3"),
+                             Names::Find<Node>("as1-cs-a4"),
+                             Names::Find<Node>("as1-math-a0"),
+                             Names::Find<Node>("as1-math-a1"),
+                             Names::Find<Node>("as1-math-a2"),
+                             Names::Find<Node>("as1-math-a3"),
+                             Names::Find<Node>("as1-math-a4"),
+                             Names::Find<Node>("as2-cs-a0"),
+                             Names::Find<Node>("as2-cs-a1"),
+                             Names::Find<Node>("as2-cs-a2"),
+                             Names::Find<Node>("as2-cs-a3"),
+                             Names::Find<Node>("as2-cs-a4"),
+                             Names::Find<Node>("as2-math-a0"),
+                             Names::Find<Node>("as2-math-a1"),
+                             Names::Find<Node>("as2-math-a2"),
+                             Names::Find<Node>("as2-math-a3"),
+                             Names::Find<Node>("as2-math-a4"),
+                             Names::Find<Node>("as3-cs-a0"),
+                             Names::Find<Node>("as3-cs-a1"),
+                             Names::Find<Node>("as3-cs-a2"),
+                             Names::Find<Node>("as3-cs-a3"),
+                             Names::Find<Node>("as3-cs-a4"),
+                             Names::Find<Node>("as4-hw-a0"),
+                             Names::Find<Node>("as4-hw-a1"),
+                             Names::Find<Node>("as4-hw-a2"),
+                             Names::Find<Node>("as4-hw-a3"),
+                             Names::Find<Node>("as4-hw-a4"),
+                             Names::Find<Node>("as4-sm-a0"),
+                             Names::Find<Node>("as4-sm-a1"),
+                             Names::Find<Node>("as4-sm-a2"),
+                             Names::Find<Node>("as4-sm-a3"),
+                             Names::Find<Node>("as4-sm-a4")};
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html"));
-  consumerHelper.SetAttribute("Frequency", StringValue("50"));
-  consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
-  consumerHelper.Install(ucla_cs_attacker);
-  consumerHelper.Install(ucla_math_attacker);
-  consumerHelper.Install(az_cs_attacker);
-  consumerHelper.Install(az_math_attacker);
-  consumerHelper.Install(wc_westwood_attacker);
-  consumerHelper.Install(wc_santa_monica_attacker);
-  consumerHelper.Install(mmphs_ee_attacker);
+  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
+  consumerHelper.SetAttribute("Frequency", StringValue("20"));
+  // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
+  Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
+  for (int i = 0; i < 35; i++) {
+    int init = static_cast<int>(x->GetValue()*199);
+    consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+    consumerHelper.Install(attackers[i]);
+  }
 
   // Getting producers
-  Ptr<Node> ucla_cs_webserver0_index = Names::Find<Node>("ucla-cs-webserver0-index");
-  Ptr<Node> ucla_cs_alicelovecpp = Names::Find<Node>("ucla-cs-alicelovecpp"); // target
+  Ptr<Node> as1_cs_server = Names::Find<Node>("as1-cs-server");
 
   ndn::AppHelper producerHelper("ProdApp");
+  ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs/server", as1_cs_server);
+  producerHelper.SetPrefix("/edu/u1/cs/server");
+  producerHelper.Install(as1_cs_server);
 
-  ndnGlobalRoutingHelper.AddOrigins("/edu/ucla/cs/webserver0/index.html", ucla_cs_webserver0_index);
-  producerHelper.SetPrefix("/edu/ucla/cs/webserver0/index.html");
-  producerHelper.Install(ucla_cs_webserver0_index);
-
-  producerHelper.SetPrefix("/edu/ucla/cs/alicelovecpp");
-  producerHelper.Install(ucla_cs_alicelovecpp);
-
-  Ptr<Node> rtr_ucla_cs = Names::Find<Node>("rtr-ucla-cs");
-  ndnGlobalRoutingHelper.AddOrigins("/edu/ucla/cs", rtr_ucla_cs);
-
+  Ptr<Node> as1_cs = Names::Find<Node>("as1-cs");
+  ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs", as1_cs);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-
-  ndn::FibHelper::AddRoute("ucla-cs", "/edu/ucla/cs/alicelovecpp", "rtr-ucla-cs", 1);
-  ndn::FibHelper::AddRoute("rtr-ucla-cs", "/edu/ucla/cs/alicelovecpp", "ucla-cs-alicelovecpp", 1);
-
-
-
   Simulator::Stop(Seconds(20.0));
-
-  ndn::L3RateTracer::InstallAll("b1.txt", Seconds(0.5));
+  ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/cache-1.txt", Seconds(0.5));
 
   Simulator::Run();
   Simulator::Destroy();

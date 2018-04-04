@@ -156,6 +156,7 @@ ConsApp::SendInterest()
   auto interest = std::make_shared<ndn::Interest>(interest_copy);
   Ptr<UniformRandomVariable> rand = CreateObject<UniformRandomVariable>();
   interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
+  interest->setMustBeFresh(true);
   interest->setInterestLifetime(ndn::time::seconds(1));
 
   // std::cout << "Sending Interest packet for " << interest->getName().toUri() << std::endl;
