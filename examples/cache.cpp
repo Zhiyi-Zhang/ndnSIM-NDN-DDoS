@@ -1,5 +1,5 @@
 // cache.cpp
-// ./waf --run=bache
+// ./waf --run=cache
 // Cache: Cache withhold much traffic
 
 #include "ns3/core-module.h"
