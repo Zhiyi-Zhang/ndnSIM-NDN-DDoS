@@ -40,7 +40,7 @@ protected:
   GetRandomize() const;
 
 protected:
-  double m_frequency;
+  int m_frequency;
   bool m_firstTime;
   Ptr<RandomVariableStream> m_random;
   std::string m_randomType;

@@ -32,8 +32,8 @@ ConsApp::GetTypeId()
   static TypeId tid = TypeId("ConsApp")
     .SetParent<ndn::App>()
     .AddConstructor<ConsApp>()
-    .AddAttribute("Frequency", "Frequency of interest packets", StringValue("1.0"),
-                  MakeDoubleAccessor(&ConsApp::m_frequency), MakeDoubleChecker<double>())
+    .AddAttribute("Frequency", "Frequency of interest packets", StringValue("1"),
+                  MakeIntegerAccessor(&ConsApp::m_frequency), MakeIntegerChecker<int32_t>())
 
     .AddAttribute("Randomize",
                   "Type of send time randomization: none (default), uniform, exponential",
@@ -58,7 +58,7 @@ ConsApp::GetTypeId()
 
     .AddAttribute("MaxSeq",
                   "The max seq to send",
-                  IntegerValue(200),
+                  StringValue("200"),
                   MakeIntegerAccessor(&ConsApp::m_maxSeq), MakeIntegerChecker<int32_t>());;
 
   return tid;
@@ -124,6 +124,10 @@ ConsApp::StartApplication()
   // initialize ndn::App
   ndn::App::StartApplication();
   // std::cout << "Interest Name is " << m_interestName << std::endl;
+
+  NS_LOG_INFO("Current Frequency: " << m_frequency);
+  NS_LOG_INFO("Current Max Range: " << m_maxSeq);
+
   ScheduleNextPacket();
 }
 
