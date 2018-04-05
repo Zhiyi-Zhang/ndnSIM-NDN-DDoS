@@ -68,7 +68,7 @@ main(int argc, char* argv[]) {
 
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
-  consumerHelper.SetAttribute("Frequency", StringValue("20"));
+  consumerHelper.SetAttribute("Frequency", StringValue("200"));
   // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
   consumerHelper.SetAttribute("MaxSeq", IntegerValue(10000));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();

@@ -8,7 +8,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-data = read.table("../b-1-1.txt", header=T)
+data = read.table("../b-1-1-10000-200.txt", header=T)
 data$Node = factor(data$Node)
 data$FaceId <- factor(data$FaceId)
 data$Kilobits <- data$Kilobytes * 8
@@ -72,6 +72,6 @@ g.nodes <- ggplot(result) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
   ylab("Rate [Incoming Interest/s]")
 
-png("b-1-1.png", width=500, height=250)
+png("b-1-1-10000-200.png", width=500, height=250)
 print(g.nodes)
 retval <- dev.off()
