@@ -1,6 +1,6 @@
 // b-1-1.cpp
-// Please make sure each time to set a different x
-// NS_GLOBAL_VALUE="RngRun=2" ./waf --run "valid-interest-aggregation --maxRange=200 --frequency=20 --topo=meshed-bad --output=raw.txt"
+// Please make sure each time to set a different RngRun
+// ./waf --run "valid-interest-aggregation --RngRun=2 --maxRange=200 --frequency=20 --topo=meshed-bad --output=200-20-bad"
 // B-1: Interest Aggregation with valid Interests
 
 #include "ns3/core-module.h"

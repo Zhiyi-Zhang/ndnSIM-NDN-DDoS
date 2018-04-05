@@ -1,6 +1,6 @@
 // cache.cpp
-// Please make sure each time to set a different x
-// NS_GLOBAL_VALUE="RngRun=x" ./waf --run=valid-interest-cache
+// Please make sure each time to set a different RngRun
+// ./waf --run "valid-interest-cache --RngRun=2 --cacheSize=200 --maxRange=200 --frequency=20 --topo=meshed-bad --output=200-200-20-bad"
 // Cache: Cache withhold much traffic
 
 #include "ns3/core-module.h"
