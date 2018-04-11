@@ -71,7 +71,7 @@ DDoSProdApp::CheckViolations()
   int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold){
-    for (std::map<std::string, int>::iterator it = fakePrefixMap.begin(); 
+    for (std::map<Name, int>::iterator it = fakePrefixMap.begin(); 
       it != fakePrefixMap.end(); ++it){
       auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
       lp::NackHeader nackHeader;
@@ -83,7 +83,7 @@ DDoSProdApp::CheckViolations()
     }
 
   } else if (validInterestPerSec > m_validInterestThreshold){
-    for (std::map<std::string, int>::iterator it = validPrefixMap.begin();
+    for (std::map<Name, int>::iterator it = validPrefixMap.begin();
       it != validPrefixMap.end(); ++it){
       auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
       lp::NackHeader nackHeader;
@@ -97,7 +97,11 @@ DDoSProdApp::CheckViolations()
 
   // reset the counter
   m_fakeInterestCount = 0;
-  m_validInterestCount = 0; 
+  m_validInterestCount = 0;
+
+  // reset maps
+  fakePrefixMap.clear();
+  validPrefixMap.clear();
 
   ScheduleNextChecks();
 }
@@ -124,19 +128,19 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 {
   ndn::App::OnInterest(interest);
 
+  Name interestName = interest->getName();
+
   // fake interest  
-  if (!isdigit(interest->getName().toUri().at(interest->getName().toUri().length() - 1))){
+  if (!isdigit(interest->getName().toUri().at(interestName.toUri().length() - 1))){
     
-    std::tuple<std::string, int> prefixInfo = GetPrefix(interest);
-    fakePrefixMap[std::get<0>(prefixInfo)] = std::get<1>(prefixInfo);
+    fakePrefixMap[interestName.getPrefix(-1)] = interestName.size();
     m_fakeInterestCount += 1;
   }
 
   // valid interest
   else {
     
-    std::tuple<std::string, int> prefixInfo = GetPrefix(interest);
-    validPrefixMap[std::get<0>(prefixInfo)] = std::get<1>(prefixInfo);
+    validPrefixMap[interestName.getPrefix(-1)] = interestName.size();
     m_validInterestCount += 1;
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
@@ -147,26 +151,6 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
     m_appLink->onReceiveData(*data);
   }
-}
-
-std::tuple<std::string, int>
-DDoSProdApp::GetPrefix(shared_ptr<const Interest>interest)
-{
-  std::string interestName = interest->getName().toUri();
-
-  std::string prefix;
-  int prefixLength = 0;
-  size_t pos = 0;
-  std::string token;
-  while ((pos = interestName.find("/")) != std::string::npos) {
-    token = interestName.substr(0, pos);
-    prefix.append(token);
-    prefix.append("/");
-    prefixLength += 1;
-    interestName.erase(0, pos + 1);
-  }
-
-  return std::make_tuple(prefix.substr(0, prefix.size() - 1), prefixLength);
 }
 
 } // namespace ndn

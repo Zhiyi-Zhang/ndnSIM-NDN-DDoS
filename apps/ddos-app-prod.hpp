@@ -34,9 +34,6 @@ protected:
   virtual void
   CheckViolations(); // check for threshold violations
 
-  virtual std::tuple<std::string, int>
-  GetPrefix(shared_ptr<const Interest> interest); // get prefix from interest name
-
 protected:
 
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
@@ -48,7 +45,7 @@ private:
   uint32_t m_virtualPayloadSize;
 
   // average tolerable fake interests before sending NACK
-  int m_fakeInterestThreshold = 100;
+  int m_fakeInterestThreshold = 10;
 
   // total fake interests received in given time window
   int m_fakeInterestCount = 0;
@@ -64,10 +61,10 @@ private:
 
   // create map of all fake interest prefixes 
   // and use them to NACK interest under that prefix
-  std::map<std::string, int> fakePrefixMap;
+  std::map<Name, int> fakePrefixMap;
 
   // map of all valid interest prefix
-  std::map<std::string, int> validPrefixMap;
+  std::map<Name, int> validPrefixMap;
 
 
 };
