@@ -1,6 +1,6 @@
 // ddos-app.cpp
 
-#include "ddos-app.hpp"
+#include "ddos-app-prod.hpp"
 
 #include "ns3/ptr.h"
 #include "ns3/log.h"
