@@ -34,6 +34,9 @@ protected:
   virtual void
   CheckViolations(); // check for threshold violations
 
+  virtual std::tuple<std::string, int>
+  GetPrefix(shared_ptr<const Interest> interest); // get prefix from interest name
+
 protected:
 
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
@@ -58,6 +61,13 @@ private:
 
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 5;
+
+  // create map of all fake interest prefixes 
+  // and use them to NACK interest under that prefix
+  std::map<std::string, int> fakePrefixMap;
+
+  // map of all valid interest prefix
+  std::map<std::string, int> validPrefixMap;
 
 
 };

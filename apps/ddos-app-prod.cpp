@@ -66,37 +66,38 @@ DDoSProdApp::ScheduleNextChecks()
 void
 DDoSProdApp::CheckViolations()
 {
-  //std::cout << "Checking for violations" << std::endl;
-  
   // fake interest/sec icnreases threshold
   int fakeInterestPerSec = m_fakeInterestCount/m_checkWindow;
   int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold){
-    auto nack = std::make_shared<ndn::lp::Nack>();
-    lp::NackHeader nackHeader;
-    nackHeader.setReason(lp::NackReason::FAKE_INTEREST_OVERLOAD);
+    for (std::map<std::string, int>::iterator it = fakePrefixMap.begin(); 
+      it != fakePrefixMap.end(); ++it){
+      auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
+      lp::NackHeader nackHeader;
+      nackHeader.setReason(lp::NackReason::FAKE_INTEREST_OVERLOAD);
+      nackHeader.setPrefixLen(it->second);
 
-    //std::cout << "fake interest/s " << fakeInterestPerSec << " increased threshold " 
-    //  << m_fakeInterestThreshold << " send NACK" << std::endl;
-
-    // send to nack to app link service
-    m_appLink->onReceiveNack(*nack);
-
-    // reset the counter
-    m_fakeInterestCount = 0;
+      // send to nack to app link service
+      m_appLink->onReceiveNack(*nack);
+    }
 
   } else if (validInterestPerSec > m_validInterestThreshold){
-    auto nack = std::make_shared<ndn::lp::Nack>();
-    lp::NackHeader nackHeader;
-    nackHeader.setReason(lp::NackReason::VALID_INTEREST_OVERLOAD);
+    for (std::map<std::string, int>::iterator it = validPrefixMap.begin();
+      it != validPrefixMap.end(); ++it){
+      auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
+      lp::NackHeader nackHeader;
+      nackHeader.setReason(lp::NackReason::VALID_INTEREST_OVERLOAD);
+      nackHeader.setPrefixLen(it->second);
 
-    // send to nack to app link service
-    m_appLink->onReceiveNack(*nack);
-
-    // reset the counter
-    m_validInterestCount = 0;
+      // send to nack to app link service
+      m_appLink->onReceiveNack(*nack);
+    }
   }
+
+  // reset the counter
+  m_fakeInterestCount = 0;
+  m_validInterestCount = 0; 
 
   ScheduleNextChecks();
 }
@@ -123,14 +124,19 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 {
   ndn::App::OnInterest(interest);
 
+  // fake interest  
   if (!isdigit(interest->getName().toUri().at(interest->getName().toUri().length() - 1))){
+    
+    std::tuple<std::string, int> prefixInfo = GetPrefix(interest);
+    fakePrefixMap[std::get<0>(prefixInfo)] = std::get<1>(prefixInfo);
     m_fakeInterestCount += 1;
   }
+
+  // valid interest
   else {
-    // std::cout << "Received Interest packet for " << interest->getName() << std::endl;
-
-    // Note that Interests send out by the app will not be sent back to the app !
-
+    
+    std::tuple<std::string, int> prefixInfo = GetPrefix(interest);
+    validPrefixMap[std::get<0>(prefixInfo)] = std::get<1>(prefixInfo);
     m_validInterestCount += 1;
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
@@ -139,11 +145,28 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     ndn::StackHelper::getKeyChain().sign(*data);
     // std::cout << "Sending Data packet for " << data->getName() << std::endl;
 
-    // Call trace (for logging purposes)
-    m_transmittedDatas(data, this, m_face);
-
     m_appLink->onReceiveData(*data);
   }
+}
+
+std::tuple<std::string, int>
+DDoSProdApp::GetPrefix(shared_ptr<const Interest>interest)
+{
+  std::string interestName = interest->getName().toUri();
+
+  std::string prefix;
+  int prefixLength = 0;
+  size_t pos = 0;
+  std::string token;
+  while ((pos = interestName.find("/")) != std::string::npos) {
+    token = interestName.substr(0, pos);
+    prefix.append(token);
+    prefix.append("/");
+    prefixLength += 1;
+    interestName.erase(0, pos + 1);
+  }
+
+  return std::make_tuple(prefix.substr(0, prefix.size() - 1), prefixLength);
 }
 
 } // namespace ndn
