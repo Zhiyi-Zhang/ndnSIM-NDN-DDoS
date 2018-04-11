@@ -70,8 +70,7 @@ DDoSProdApp::CheckViolations()
   
   // fake interest/sec icnreases threshold
   int fakeInterestPerSec = m_fakeInterestCount/m_checkWindow;
-
-  std::cout << fakeInterestPerSec << std::endl; 
+  int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold){
     auto nack = std::make_shared<ndn::lp::Nack>();
@@ -86,6 +85,17 @@ DDoSProdApp::CheckViolations()
 
     // reset the counter
     m_fakeInterestCount = 0;
+
+  } else if (validInterestPerSec > m_validInterestThreshold){
+    auto nack = std::make_shared<ndn::lp::Nack>();
+    lp::NackHeader nackHeader;
+    nackHeader.setReason(lp::NackReason::VALID_INTEREST_OVERLOAD);
+
+    // send to nack to app link service
+    m_appLink->onReceiveNack(*nack);
+
+    // reset the counter
+    m_validInterestCount = 0;
   }
 
   ScheduleNextChecks();
@@ -120,6 +130,8 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     // std::cout << "Received Interest packet for " << interest->getName() << std::endl;
 
     // Note that Interests send out by the app will not be sent back to the app !
+
+    m_validInterestCount += 1;
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
     data->setFreshnessPeriod(ndn::time::milliseconds(5000));

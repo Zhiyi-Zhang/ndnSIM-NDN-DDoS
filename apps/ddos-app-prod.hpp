@@ -47,11 +47,19 @@ private:
   // average tolerable fake interests before sending NACK
   int m_fakeInterestThreshold = 100;
 
-  // average fake interest/s in given check time window
+  // total fake interests received in given time window
   int m_fakeInterestCount = 0;
+
+  // average tolerable valid interests before sending NACK
+  int m_validInterestThreshold = 200;
+
+  // total valid interests received in given time window
+  int m_validInterestCount = 0;
 
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 5;
+
+
 };
 
 } // namespace ndn
