@@ -71,24 +71,26 @@ DDoSProdApp::CheckViolations()
   int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold){
-    for (std::map<Name, int>::iterator it = fakePrefixMap.begin(); 
-      it != fakePrefixMap.end(); ++it){
-      auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
+    for (std::set<Name>::iterator it = fakePrefixSet.begin(); 
+      it != fakePrefixSet.end(); ++it){
+      auto nack = std::make_shared<ndn::lp::Nack>(Interest(*it));
       lp::NackHeader nackHeader;
       nackHeader.setReason(lp::NackReason::FAKE_INTEREST_OVERLOAD);
-      nackHeader.setPrefixLen(it->second);
+      nackHeader.setPrefixLen(it->size());
+      nack->setHeader(nackHeader);
 
       // send to nack to app link service
       m_appLink->onReceiveNack(*nack);
     }
 
   } else if (validInterestPerSec > m_validInterestThreshold){
-    for (std::map<Name, int>::iterator it = validPrefixMap.begin();
-      it != validPrefixMap.end(); ++it){
-      auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
+    for (std::set<Name>::iterator it = validPrefixSet.begin();
+      it != validPrefixSet.end(); ++it){
+      auto nack = std::make_shared<ndn::lp::Nack>(Interest(*it));
       lp::NackHeader nackHeader;
       nackHeader.setReason(lp::NackReason::VALID_INTEREST_OVERLOAD);
-      nackHeader.setPrefixLen(it->second);
+      nackHeader.setPrefixLen(it->size());
+      nack->setHeader(nackHeader);
 
       // send to nack to app link service
       m_appLink->onReceiveNack(*nack);
@@ -100,8 +102,8 @@ DDoSProdApp::CheckViolations()
   m_validInterestCount = 0;
 
   // reset maps
-  fakePrefixMap.clear();
-  validPrefixMap.clear();
+  fakePrefixSet.clear();
+  validPrefixSet.clear();
 
   ScheduleNextChecks();
 }
@@ -133,14 +135,14 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
   // fake interest  
   if (!isdigit(interest->getName().toUri().at(interestName.toUri().length() - 1))){
     
-    fakePrefixMap[interestName.getPrefix(-1)] = interestName.size();
+    fakePrefixSet.insert(interestName.getPrefix(-1));
     m_fakeInterestCount += 1;
   }
 
   // valid interest
   else {
-    
-    validPrefixMap[interestName.getPrefix(-1)] = interestName.size();
+
+    fakePrefixSet.insert(interestName.getPrefix(-1));    
     m_validInterestCount += 1;
 
     auto data = std::make_shared<ndn::Data>(interest->getName());

@@ -59,12 +59,11 @@ private:
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 5;
 
-  // create map of all fake interest prefixes 
-  // and use them to NACK interest under that prefix
-  std::map<Name, int> fakePrefixMap;
+  // store fake interest prefixes
+  std::set<Name> fakePrefixSet;
 
-  // map of all valid interest prefix
-  std::map<Name, int> validPrefixMap;
+  // store valid interest prefixes
+  std::set<Name> validPrefixSet;
 
 
 };
