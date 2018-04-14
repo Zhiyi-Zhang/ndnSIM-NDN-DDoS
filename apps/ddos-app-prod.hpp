@@ -59,8 +59,8 @@ private:
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 5;
 
-  // store fake interest prefixes
-  std::set<Name> fakePrefixSet;
+  // store fake interest prefixes and corresponding interest names
+  std::map<Name, std::list<Name>> fakePrefixMap;
 
   // store valid interest prefixes
   std::set<Name> validPrefixSet;
