@@ -71,13 +71,12 @@ DDoSProdApp::CheckViolations()
   int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold){
-    for (std::map<Name, std::list<Name>>::iterator it = fakePrefixMap.begin(); 
-      it != fakePrefixMap.end(); ++it){
+    for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
       auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
       lp::NackHeader nackHeader;
-      nackHeader.setReason(lp::NackReason::FAKE_INTEREST_OVERLOAD);
-      nackHeader.setExpFakePerc(m_fakeInterestThreshold);
-      nackHeader.setFakeInterestNames(it->second);
+      nackHeader.setReason(lp::NackReason::DDOS_FAKE_INTEREST);
+      nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
+      nackHeader.m_fakeInterestNames = it->second;
       nack->setHeader(nackHeader);
 
       // send to nack to app link service
@@ -89,7 +88,8 @@ DDoSProdApp::CheckViolations()
       it != validPrefixSet.end(); ++it){
       auto nack = std::make_shared<ndn::lp::Nack>(Interest(*it));
       lp::NackHeader nackHeader;
-      nackHeader.setReason(lp::NackReason::VALID_INTEREST_OVERLOAD);
+      nackHeader.setReason(lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD);
+      nackHeader.m_prefixLen = it->size();
       nack->setHeader(nackHeader);
 
       // send to nack to app link service
@@ -132,17 +132,15 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
   Name interestName = interest->getName();
 
-  // fake interest  
+  // fake interest
   if (!isdigit(interest->getName().toUri().at(interestName.toUri().length() - 1))){
-    
     fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
   }
 
   // valid interest
   else {
-
-    validPrefixSet.insert(interestName.getPrefix(-1));    
+    validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
