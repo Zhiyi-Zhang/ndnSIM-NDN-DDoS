@@ -62,10 +62,11 @@ private:
 
   // store fake interest prefixes and corresponding interest names
   std::map<Name, std::list<Name>> fakePrefixMap;
+  shared_ptr<const Interest> m_nackFakeInterest;
 
   // store valid interest prefixes
   std::set<Name> validPrefixSet;
-
+  shared_ptr<const Interest> m_nackValidInterest;
 
 };
 

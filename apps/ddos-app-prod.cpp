@@ -77,16 +77,16 @@ DDoSProdApp::CheckViolations()
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
     for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
-      auto nack = make_shared<ndn::lp::Nack>(Interest(it->first));
+      ndn::lp::Nack nack(*m_nackFakeInterest);
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
+      nackHeader.m_prefixLen = it->first.size();
       nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
       nackHeader.m_fakeInterestNames = it->second;
-      nack->setHeader(nackHeader);
+      nack.setHeader(nackHeader);
 
       // send to nack to app link service
-      NS_LOG_INFO("Before sending nack to LINK");
-      m_appLink->onReceiveNack(*nack);
+      m_appLink->onReceiveNack(nack);
       NS_LOG_INFO("send out FAKE INTERST NACK!!!");
     }
 
@@ -109,6 +109,7 @@ DDoSProdApp::CheckViolations()
   // reset the counter
   m_fakeInterestCount = 0;
   m_validInterestCount = 0;
+  m_nackFakeInterest = nullptr;
 
   // reset maps
   fakePrefixMap.clear();
@@ -146,6 +147,18 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     NS_LOG_INFO("Receive Fake Interest " << interest->getName());
     fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
+    if (m_nackFakeInterest == nullptr) {
+      m_nackFakeInterest = interest;
+    }
+
+    // ndn::lp::Nack nack(*interest);
+    // lp::NackHeader nackHeader;
+    // nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
+    // nackHeader.m_prefixLen = 1;
+    // nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
+    // nack.setHeader(nackHeader);
+
+    // m_appLink->onReceiveNack(nack);
   }
   // valid interest
   else {
