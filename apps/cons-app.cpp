@@ -145,11 +145,10 @@ ConsApp::SendInterest()
   /////////////////////////////////////
   // Sending one Interest packet out //
   /////////////////////////////////////
-  std::string interest_copy = m_interestName;
+  Name interest_copy(m_interestName);
 
-  // if auto append is true
   if (m_validInterest){
-    interest_copy += "/" + std::to_string(m_lastSeq + 1);
+    interest_copy.append(std::to_string(m_lastSeq + 1));
     m_lastSeq += 1;
 
     if (m_lastSeq == m_maxSeq){
@@ -157,7 +156,7 @@ ConsApp::SendInterest()
     }
   }
   else{
-    interest_copy += "/" + 'a' + rand()%26;
+    interest_copy.append("a" + std::to_string(rand()%26) + std::to_string(rand()%26));
   }
 
   // Create and configure ndn::Interest
@@ -167,12 +166,11 @@ ConsApp::SendInterest()
   interest->setMustBeFresh(true);
   interest->setInterestLifetime(ndn::time::seconds(1));
 
-  // std::cout << "Sending Interest packet for " << interest->getName().toUri() << std::endl;
-
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);
 
   m_appLink->onReceiveInterest(*interest);
+  NS_LOG_INFO("Sending Interest packet for: " << interest->getName());
 
   ScheduleNextPacket();
 }
@@ -181,7 +179,7 @@ ConsApp::SendInterest()
 void
 ConsApp::OnData(std::shared_ptr<const ndn::Data> data)
 {
-  // std::cout << "DATA received for name " << data->getName() << std::endl;
+  NS_LOG_INFO("DATA received for name: " << data->getName());
 }
 
 } // namespace ndn

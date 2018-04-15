@@ -9,6 +9,7 @@
 
 namespace ns3 {
 namespace ndn {
+
 class DDoSProdApp : public App {
 public:
   static TypeId
@@ -45,7 +46,7 @@ private:
   uint32_t m_virtualPayloadSize;
 
   // average tolerable fake interests before sending NACK
-  int m_fakeInterestThreshold = 10;
+  int m_fakeInterestThreshold = 5;
 
   // total fake interests received in given time window
   int m_fakeInterestCount = 0;
@@ -57,7 +58,7 @@ private:
   int m_validInterestCount = 0;
 
   // perform threshold violation checks after every checkWindow sec
-  int m_checkWindow = 5;
+  int m_checkWindow = 1;
 
   // store fake interest prefixes and corresponding interest names
   std::map<Name, std::list<Name>> fakePrefixMap;

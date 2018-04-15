@@ -66,24 +66,32 @@ DDoSProdApp::ScheduleNextChecks()
 void
 DDoSProdApp::CheckViolations()
 {
-  // fake interest/sec icnreases threshold
+  NS_LOG_INFO("Periodic CheckViolations: fake:" << m_fakeInterestCount
+              << " valid:" << m_validInterestCount);
+
+  // fake interest/time unit increases threshold
   int fakeInterestPerSec = m_fakeInterestCount/m_checkWindow;
   int validInterestPerSec = m_validInterestCount/m_checkWindow;
 
-  if (fakeInterestPerSec > m_fakeInterestThreshold){
+  if (fakeInterestPerSec > m_fakeInterestThreshold) {
+    NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
+
     for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
-      auto nack = std::make_shared<ndn::lp::Nack>(Interest(it->first));
+      auto nack = make_shared<ndn::lp::Nack>(Interest(it->first));
       lp::NackHeader nackHeader;
-      nackHeader.setReason(lp::NackReason::DDOS_FAKE_INTEREST);
+      nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
       nackHeader.m_fakeInterestNames = it->second;
       nack->setHeader(nackHeader);
 
       // send to nack to app link service
+      NS_LOG_INFO("Before sending nack to LINK");
       m_appLink->onReceiveNack(*nack);
+      NS_LOG_INFO("send out FAKE INTERST NACK!!!");
     }
 
-  } else if (validInterestPerSec > m_validInterestThreshold){
+  }
+  else if (validInterestPerSec > m_validInterestThreshold) {
     for (std::set<Name>::iterator it = validPrefixSet.begin();
       it != validPrefixSet.end(); ++it){
       auto nack = std::make_shared<ndn::lp::Nack>(Interest(*it));
@@ -94,6 +102,7 @@ DDoSProdApp::CheckViolations()
 
       // send to nack to app link service
       m_appLink->onReceiveNack(*nack);
+      NS_LOG_INFO("send out VALID OVERLOAD NACK!!!");
     }
   }
 
@@ -129,17 +138,19 @@ void
 DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 {
   ndn::App::OnInterest(interest);
-
   Name interestName = interest->getName();
 
   // fake interest
-  if (!isdigit(interest->getName().toUri().at(interestName.toUri().length() - 1))){
+  std::string lastComponent = interest->getName().get(-1).toUri();
+  if (lastComponent[0] == 'a') {
+    NS_LOG_INFO("Receive Fake Interest " << interest->getName());
     fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
   }
-
   // valid interest
   else {
+    NS_LOG_INFO("Receive Valid Interest " << interest->getName());
+
     validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
 
@@ -147,9 +158,9 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     data->setFreshnessPeriod(ndn::time::milliseconds(5000));
     data->setContent(std::make_shared< ::ndn::Buffer>(1024));
     ndn::StackHelper::getKeyChain().sign(*data);
-    // std::cout << "Sending Data packet for " << data->getName() << std::endl;
 
     m_appLink->onReceiveData(*data);
+    NS_LOG_INFO("Sending Data packet with name " << data->getName());
   }
 }
 
