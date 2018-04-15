@@ -6,7 +6,7 @@
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
 #include "ns3/ndnSIM-module.h"
-#include "ns3/ndnSIM/nfd/daemon/fw/ddos-strategy.hpp"
+#include "ns3/ndnSIM/NFD/daemon/fw/ddos-strategy.hpp"
 
 namespace ns3 {
 

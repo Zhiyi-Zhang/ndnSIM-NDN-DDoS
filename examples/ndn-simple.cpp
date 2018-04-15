@@ -4,7 +4,7 @@
 #include "ns3/network-module.h"
 #include "ns3/point-to-point-module.h"
 #include "ns3/ndnSIM-module.h"
-#include "ns3/ndnSIM/nfd/daemon/fw/ddos-strategy.hpp"
+#include "ns3/ndnSIM/NFD/daemon/fw/ddos-strategy.hpp"
 // #include "ns3/ndnSIM/apps/ddos-app-prod.hpp"
 
 namespace ns3 {
@@ -55,7 +55,7 @@ main(int argc, char* argv[])
   producerHelper.SetAttribute("PayloadSize", StringValue("1024"));
   producerHelper.Install(nodes.Get(2)); // last node
 
-  Simulator::Stop(Seconds(20.0));
+  Simulator::Stop(Seconds(5.0));
 
   Simulator::Run();
   Simulator::Destroy();
