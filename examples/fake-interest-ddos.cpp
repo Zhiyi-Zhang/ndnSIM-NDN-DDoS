@@ -39,7 +39,7 @@ main(int argc, char* argv[]) {
   // Installing global routing interface on all nodes
   ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
   ndnGlobalRoutingHelper.InstallAll();
-  ndn::StrategyChoiceHelper::InstallAll<nfd::fw::DDoSStrategy>(ndn::Name("/edu/u1/cs/server"));
+  // ndn::StrategyChoiceHelper::InstallAll<nfd::fw::DDoSStrategy>(ndn::Name("/edu/u1/cs/server"));
 
   // Install attackers
   Ptr<Node> attackers[35] = {Names::Find<Node>("as1-cs-a0"),
@@ -82,7 +82,6 @@ main(int argc, char* argv[]) {
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
   consumerHelper.SetAttribute("Frequency", StringValue(frequency));
-  // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
@@ -107,9 +106,6 @@ main(int argc, char* argv[]) {
   Simulator::Stop(Seconds(20.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
-
-  std::cout << "before run" << std::endl;
-
   Simulator::Run();
   Simulator::Destroy();
 
