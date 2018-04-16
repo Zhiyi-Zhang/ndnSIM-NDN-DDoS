@@ -16,6 +16,9 @@
 #include "ns3/ndnSIM/helper/ndn-stack-helper.hpp"
 #include "ns3/ndnSIM/helper/ndn-fib-helper.hpp"
 
+#include <ndn-cxx/lp/tags.hpp>
+
+
 #include "ns3/random-variable-stream.h"
 
 NS_LOG_COMPONENT_DEFINE("ConsApp");
@@ -165,6 +168,10 @@ ConsApp::SendInterest()
   interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
   interest->setMustBeFresh(true);
   interest->setInterestLifetime(ndn::time::seconds(1));
+
+  int hopCount = 0;
+  interest->setTag(make_shared<lp::HopCountTag>(hopCount));
+
 
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);

@@ -60,6 +60,9 @@ private:
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 1;
 
+  // nack timer
+  int m_timer = 5;
+
   // store fake interest prefixes and corresponding interest names
   std::map<Name, std::list<Name>> fakePrefixMap;
   shared_ptr<const Interest> m_nackFakeInterest;

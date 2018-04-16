@@ -82,6 +82,7 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_prefixLen = it->first.size();
       nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
+      nackHeader.m_timer = m_timer;
       nackHeader.m_fakeInterestNames = it->second;
       nack.setHeader(nackHeader);
 
