@@ -167,11 +167,9 @@ ConsApp::SendInterest()
   Ptr<UniformRandomVariable> rand = CreateObject<UniformRandomVariable>();
   interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
   interest->setMustBeFresh(true);
-  interest->setInterestLifetime(ndn::time::seconds(1));
 
   int hopCount = 0;
   interest->setTag(make_shared<lp::HopCountTag>(hopCount));
-
 
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);
