@@ -5,9 +5,11 @@
 
 #include "ns3/ndnSIM/model/ndn-common.hpp"
 #include "ns3/ndnSIM/apps/ndn-consumer.hpp"
+#include "murmurhash3.hpp"
 
 namespace ns3 {
 namespace ndn{
+
 class ConsApp : public ndn::App {
 public:
   // register NS-3 type "ConsApp"
