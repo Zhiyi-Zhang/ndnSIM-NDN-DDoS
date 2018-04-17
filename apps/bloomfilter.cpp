@@ -5,9 +5,8 @@
 namespace ns3 {
 namespace ndn {
 
-BloomFilter::BloomFilter(uint64_t size, uint8_t numHashes)
-      : m_bits(size)
-      , m_numHashes(numHashes)
+BloomFilter::BloomFilter(uint8_t numHashes)
+      : m_numHashes(numHashes)
 {
 }
 
