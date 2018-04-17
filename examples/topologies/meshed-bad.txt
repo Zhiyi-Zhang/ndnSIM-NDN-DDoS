@@ -24,11 +24,6 @@ as1-cs-backend NA  100    50
 as3-math-server  NA  100    350
 
 # attackers
-as1-cs-a0       NA  100    150
-as1-cs-a1       NA  100    151
-as1-cs-a2       NA  100    152
-as1-cs-a3       NA  100    153
-as1-cs-a4       NA  100    154
 as1-math-a0     NA  100    250
 as1-math-a1     NA  100    251
 as1-math-a2     NA  100    252
@@ -96,11 +91,6 @@ as3-math    as3-math-server   1Mbps  1   5ms    10
 
 
 # Edge attackers
-as1-cs   as1-cs-a0    1Mbps  1   10ms    10
-as1-cs   as1-cs-a1    1Mbps  1   10ms    10
-as1-cs   as1-cs-a2    1Mbps  1   10ms    10
-as1-cs   as1-cs-a3    1Mbps  1   10ms    10
-as1-cs   as1-cs-a4    1Mbps  1   10ms    10
 as1-math   as1-math-a0  1Mbps  1   10ms    10
 as1-math   as1-math-a1  1Mbps  1   10ms    10
 as1-math   as1-math-a2  1Mbps  1   10ms    10

@@ -8,7 +8,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-target = "test-with-strategy"
+target = "test2"
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)

@@ -1,6 +1,7 @@
 // ddos-app.cpp
 
 #include "ddos-app-prod.hpp"
+#include "bloomfilter.hpp"
 
 #include "ns3/ptr.h"
 #include "ns3/log.h"
@@ -77,6 +78,12 @@ DDoSProdApp::CheckViolations()
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
     for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
+      // Bloomfilter bf;
+      // for (const auto& name : it->second) {
+      //   const auto& block = name.wireEncode();
+      //   bf.add(block.value(), block)
+      // }
+
       ndn::lp::Nack nack(*m_nackFakeInterest);
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;

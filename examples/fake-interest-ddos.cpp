@@ -52,6 +52,8 @@ fillRoutersContainer(NodeContainer& container)
 int
 main(int argc, char* argv[]) {
 
+  Config::SetDefault("ns3::PointToPointNetDevice::Mtu", StringValue("9000"));
+
   // parameters
   std::string maxRange = "10000";
   std::string frequency = "200";
@@ -109,7 +111,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs", as1_cs);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(3.0));
+  Simulator::Stop(Seconds(20.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();
