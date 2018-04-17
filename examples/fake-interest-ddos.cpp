@@ -5,10 +5,49 @@
 
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
+#include "ns3/point-to-point-module.h"
 #include "ns3/ndnSIM-module.h"
 #include "ns3/ndnSIM/NFD/daemon/fw/ddos-strategy.hpp"
 
 namespace ns3 {
+
+static void
+fillAttackerContainer(NodeContainer& container)
+{
+  std::vector<std::string> asName = {"as1", "as2", "as3", "as4"};
+  std::vector<std::string> middleName = {"cs", "math", "sm", "hw"};
+
+  std::string target = "";
+  for (auto as : asName) {
+    for (auto middle : middleName) {
+      for (int i = 0; i < 5; i++) {
+        target = as + "-" + middle + "-" + "a" + std::to_string(i);
+        auto cons = Names::Find<Node>(target);
+        if (cons != nullptr) {
+          container.Add(cons);
+        }
+      }
+    }
+  }
+}
+
+static void
+fillRoutersContainer(NodeContainer& container)
+{
+  std::vector<std::string> asName = {"as1", "as2", "as3", "as4"};
+  std::vector<std::string> middleName = {"1", "2", "sm", "hw", "cs", "math"};
+
+  std::string target = "";
+  for (auto as : asName) {
+    for (auto middle : middleName) {
+      target = as + "-" + middle;
+      auto cons = Names::Find<Node>(target);
+      if (cons != nullptr) {
+        container.Add(cons);
+      }
+    }
+  }
+}
 
 int
 main(int argc, char* argv[]) {
@@ -32,52 +71,16 @@ main(int argc, char* argv[]) {
 
   // Install NDN stack on all nodes
   ndn::StackHelper ndnHelper;
-  // ndnHelper.setCsSize(200);
-  ndnHelper.SetOldContentStore("ns3::ndn::cs::Nocache");
+  ndnHelper.SetDefaultRoutes(false);
   ndnHelper.InstallAll();
 
-  // Installing global routing interface on all nodes
-  ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
-  ndnGlobalRoutingHelper.InstallAll();
-  // ndn::StrategyChoiceHelper::InstallAll<nfd::fw::DDoSStrategy>(ndn::Name("/edu/u1/cs/server"));
+  ndn::StrategyChoiceHelper::InstallAll("/", "/localhost/nfd/strategy/ddos");
 
-  // Install attackers
-  Ptr<Node> attackers[35] = {Names::Find<Node>("as1-cs-a0"),
-                             Names::Find<Node>("as1-cs-a1"),
-                             Names::Find<Node>("as1-cs-a2"),
-                             Names::Find<Node>("as1-cs-a3"),
-                             Names::Find<Node>("as1-cs-a4"),
-                             Names::Find<Node>("as1-math-a0"),
-                             Names::Find<Node>("as1-math-a1"),
-                             Names::Find<Node>("as1-math-a2"),
-                             Names::Find<Node>("as1-math-a3"),
-                             Names::Find<Node>("as1-math-a4"),
-                             Names::Find<Node>("as2-cs-a0"),
-                             Names::Find<Node>("as2-cs-a1"),
-                             Names::Find<Node>("as2-cs-a2"),
-                             Names::Find<Node>("as2-cs-a3"),
-                             Names::Find<Node>("as2-cs-a4"),
-                             Names::Find<Node>("as2-math-a0"),
-                             Names::Find<Node>("as2-math-a1"),
-                             Names::Find<Node>("as2-math-a2"),
-                             Names::Find<Node>("as2-math-a3"),
-                             Names::Find<Node>("as2-math-a4"),
-                             Names::Find<Node>("as3-cs-a0"),
-                             Names::Find<Node>("as3-cs-a1"),
-                             Names::Find<Node>("as3-cs-a2"),
-                             Names::Find<Node>("as3-cs-a3"),
-                             Names::Find<Node>("as3-cs-a4"),
-                             Names::Find<Node>("as4-hw-a0"),
-                             Names::Find<Node>("as4-hw-a1"),
-                             Names::Find<Node>("as4-hw-a2"),
-                             Names::Find<Node>("as4-hw-a3"),
-                             Names::Find<Node>("as4-hw-a4"),
-                             Names::Find<Node>("as4-sm-a0"),
-                             Names::Find<Node>("as4-sm-a1"),
-                             Names::Find<Node>("as4-sm-a2"),
-                             Names::Find<Node>("as4-sm-a3"),
-                             Names::Find<Node>("as4-sm-a4")};
-
+  NodeContainer allNodes = topologyReader.GetNodes();
+  NodeContainer attackers;
+  NodeContainer routers;
+  fillRoutersContainer(routers);
+  fillAttackerContainer(attackers);
 
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
@@ -85,7 +88,8 @@ main(int argc, char* argv[]) {
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
-  for (int i = 0; i < 35; i++) {
+
+  for (int i = 0; i < attackers.size(); i++) {
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     consumerHelper.Install(attackers[i]);
@@ -93,17 +97,19 @@ main(int argc, char* argv[]) {
 
   // Getting producers
   Ptr<Node> as1_cs_server = Names::Find<Node>("as1-cs-server");
-
   ndn::AppHelper producerHelper("DDoSProdApp");
-  ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs/server", as1_cs_server);
   producerHelper.SetPrefix("/edu/u1/cs/server");
   producerHelper.Install(as1_cs_server);
 
+  // Installing global routing interface on all nodes
+  ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
+  ndnGlobalRoutingHelper.InstallAll();
+  ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs/server", as1_cs_server);
   Ptr<Node> as1_cs = Names::Find<Node>("as1-cs");
   ndnGlobalRoutingHelper.AddOrigins("/edu/u1/cs", as1_cs);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(20.0));
+  Simulator::Stop(Seconds(3.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();
