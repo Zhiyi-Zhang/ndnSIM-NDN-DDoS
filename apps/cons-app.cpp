@@ -159,7 +159,7 @@ ConsApp::SendInterest()
     }
   }
   else{
-    interest_copy.append("a" + std::to_string(rand()%26) + std::to_string(rand()%26));
+    interest_copy.append("a" + std::to_string(rand()%200));
   }
 
   // Create and configure ndn::Interest
@@ -168,8 +168,7 @@ ConsApp::SendInterest()
   interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
   interest->setMustBeFresh(true);
 
-  int hopCount = 0;
-  interest->setTag(make_shared<lp::HopCountTag>(hopCount));
+  interest->setTag(make_shared<lp::HopCountTag>(0));
 
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);

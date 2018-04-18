@@ -71,9 +71,10 @@ DDoSProdApp::CheckViolations()
               << " valid:" << m_validInterestCount);
 
   // fake interest/time unit increases threshold
-  int fakeInterestPerSec = m_fakeInterestCount/m_checkWindow;
-  int validInterestPerSec = m_validInterestCount/m_checkWindow;
+  int fakeInterestPerSec = m_fakeInterestCount;
+  int validInterestPerSec = m_validInterestCount;
 
+  std::cout << fakeInterestPerSec << std::endl;
   if (fakeInterestPerSec > m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
@@ -158,15 +159,6 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     if (m_nackFakeInterest == nullptr) {
       m_nackFakeInterest = interest;
     }
-
-    // ndn::lp::Nack nack(*interest);
-    // lp::NackHeader nackHeader;
-    // nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
-    // nackHeader.m_prefixLen = 1;
-    // nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
-    // nack.setHeader(nackHeader);
-
-    // m_appLink->onReceiveNack(nack);
   }
   // valid interest
   else {
