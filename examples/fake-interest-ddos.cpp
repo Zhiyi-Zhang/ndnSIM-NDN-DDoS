@@ -49,21 +49,24 @@ main(int argc, char* argv[]) {
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 
 
-  // NodeContainer consumers;
-  // fillConsumerContainer(consumers);
-  // for (int i = 0; i < consumers.size(); i++) {
-  //   int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
-  //   consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-  //   consumerHelper.Install(consumers[i]);
-  // }
+  NodeContainer consumers;
+  fillConsumerContainer(consumers);
+  for (int i = 0; i < consumers.size(); i++) {
+    int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+    consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+    consumerHelper.Install(consumers[i]);
+  }
 
   consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
   NodeContainer attackers;
   fillAttackerContainer(attackers);
   for (int i = 0; i < attackers.size(); i++) {
+    ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-    consumerHelper.Install(attackers[i]);
+    evilApp.Add(consumerHelper.Install(attackers[i]));
+
+    evilApp.Start(Seconds (10.0));
   }
 
   // Getting producers
@@ -80,7 +83,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1/cs", as1_cs);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(20.0));
+  Simulator::Stop(Seconds(30.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();
