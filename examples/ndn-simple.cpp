@@ -13,9 +13,7 @@ int
 main(int argc, char* argv[])
 {
   // setting default parameters for PointToPoint links and channels
-  Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("1Mbps"));
-  Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("10ms"));
-  // Config::SetDefault("ns3::QueueBase::MaxPackets", UintegerValue(20));
+  Config::SetDefault("ns3::PointToPointNetDevice::Mtu", StringValue("9000"));
 
   // Read optional command-line parameters (e.g., enable visualizer with ./waf --run=<> --visualize
   CommandLine cmd;
@@ -25,10 +23,9 @@ main(int argc, char* argv[])
   NodeContainer nodes;
   nodes.Create(3);
 
-  // Connecting nodes using two links
-  PointToPointHelper p2p;
-  p2p.Install(nodes.Get(0), nodes.Get(1));
-  p2p.Install(nodes.Get(1), nodes.Get(2));
+  AnnotatedTopologyReader topologyReader("", 1);
+  topologyReader.SetFileName("src/ndnSIM/examples/topologies/ndn-simple.txt");
+  topologyReader.Read();
 
   // Install NDN stack on all nodes
   ndn::StackHelper ndnHelper;
@@ -38,24 +35,24 @@ main(int argc, char* argv[])
   // Choosing forwarding strategy
   ndn::StrategyChoiceHelper::InstallAll("/prefix", "/localhost/nfd/strategy/ddos");
 
-  // Installing applications
-
   // Consumer
   ndn::AppHelper consumerHelper("ConsApp");
   // Consumer will request /prefix/0, /prefix/1, ...
   consumerHelper.SetAttribute("Name", StringValue("/prefix"));
-  consumerHelper.SetAttribute("Frequency", StringValue("300"));
+  consumerHelper.SetAttribute("Frequency", StringValue("15"));
   consumerHelper.SetAttribute("MaxSeq", StringValue("1000"));
   // consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
-  consumerHelper.Install(nodes.Get(0));
+  consumerHelper.Install(Names::Find<Node>("node1"));
 
   // Producer
   ndn::AppHelper producerHelper("DDoSProdApp");
   producerHelper.SetPrefix("/prefix");
   producerHelper.SetAttribute("PayloadSize", StringValue("1024"));
-  producerHelper.Install(nodes.Get(2));
+  producerHelper.SetAttribute("ValidThreshold", StringValue("10"));
+  producerHelper.SetAttribute("FakeThreshold", StringValue("10"));
+  producerHelper.Install(Names::Find<Node>("node3"));
 
-  Simulator::Stop(Seconds(10.0));
+  Simulator::Stop(Seconds(5.0));
 
   Simulator::Run();
   Simulator::Destroy();

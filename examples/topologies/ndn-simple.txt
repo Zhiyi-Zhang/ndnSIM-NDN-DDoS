@@ -1,0 +1,10 @@
+router
+
+node1 NA  200 150
+node2   NA  200 250
+node3  NA  150    100
+
+link
+
+node1   node2   200Mbps  1   0ms    1000
+node2   node3   200Mbps  1   0ms    1000

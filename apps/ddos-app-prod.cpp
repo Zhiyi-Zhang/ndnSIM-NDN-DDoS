@@ -35,15 +35,20 @@ DDoSProdApp::GetTypeId(void)
 {
   static TypeId tid =
     TypeId("DDoSProdApp")
-      .SetGroupName("Ndn")
-      .SetParent<App>()
-      .AddConstructor<DDoSProdApp>()
-      .AddAttribute("Prefix", "Prefix, for which producer has the data", StringValue("/"),
-                    MakeNameAccessor(&DDoSProdApp::m_prefix), MakeNameChecker())
-      .AddAttribute("PayloadSize", "Virtual payload size for Content packets", UintegerValue(1024),
-                    MakeUintegerAccessor(&DDoSProdApp::m_virtualPayloadSize),
-                    MakeUintegerChecker<uint32_t>())
-
+    .SetGroupName("Ndn")
+    .SetParent<App>()
+    .AddConstructor<DDoSProdApp>()
+    .AddAttribute("Prefix", "Prefix, for which producer has the data", StringValue("/"),
+                  MakeNameAccessor(&DDoSProdApp::m_prefix), MakeNameChecker())
+    .AddAttribute("PayloadSize", "Virtual payload size for Content packets", UintegerValue(1024),
+                  MakeUintegerAccessor(&DDoSProdApp::m_virtualPayloadSize),
+                  MakeUintegerChecker<uint32_t>())
+    .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(50),
+                  MakeUintegerAccessor(&DDoSProdApp::m_fakeInterestThreshold),
+                  MakeUintegerChecker<uint32_t>())
+    .AddAttribute("ValidThreshold", "Threshold for valid interests", UintegerValue(200),
+                  MakeUintegerAccessor(&DDoSProdApp::m_validInterestCapacity),
+                  MakeUintegerChecker<uint32_t>())
     ;
   return tid;
 }
@@ -84,13 +89,15 @@ DDoSProdApp::ProcessValidInterest()
 {
   int totalNumber = m_validInterestCapacity/10;
   for (int i = 0; i < totalNumber; i++) {
-    auto data = std::make_shared<ndn::Data>(m_validInterestQueue.front());
-    data->setFreshnessPeriod(ndn::time::milliseconds(5000));
-    data->setContent(std::make_shared< ::ndn::Buffer>(1024));
-    ndn::StackHelper::getKeyChain().sign(*data);
+    if (!m_validInterestQueue.empty()) {
+      auto data = std::make_shared<ndn::Data>(m_validInterestQueue.front());
+      data->setFreshnessPeriod(ndn::time::milliseconds(5000));
+      data->setContent(std::make_shared< ::ndn::Buffer>(1024));
+      ndn::StackHelper::getKeyChain().sign(*data);
 
-    m_appLink->onReceiveData(*data);
-    m_validInterestQueue.pop_front();
+      m_appLink->onReceiveData(*data);
+      m_validInterestQueue.pop_front();
+    }
   }
 
   ScheduleNextReply();
