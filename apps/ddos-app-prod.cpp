@@ -70,7 +70,11 @@ DDoSProdApp::ScheduleNextChecks()
 void
 DDoSProdApp::ScheduleNextReply()
 {
-  if (!m_replyEvent.IsRunning()) {
+  if (m_firstTime) {
+    m_replyEvent = Simulator::Schedule(Seconds(0.1), &DDoSProdApp::ProcessValidInterest, this);
+    m_firstTime = false;
+  }
+  else if (!m_replyEvent.IsRunning()) {
     m_replyEvent = Simulator::Schedule(Seconds(0.1), &DDoSProdApp::ProcessValidInterest, this);
   }
 }
@@ -89,6 +93,7 @@ DDoSProdApp::ProcessValidInterest()
     m_validInterestQueue.pop_front();
   }
 
+  ScheduleNextReply();
 }
 
 
@@ -166,6 +171,7 @@ DDoSProdApp::StartApplication()
   FibHelper::AddRoute(GetNode(), m_prefix, m_face, 0);
 
   ScheduleNextChecks();
+  ScheduleNextReply();
 }
 
 void
