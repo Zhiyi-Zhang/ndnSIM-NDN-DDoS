@@ -28,6 +28,8 @@ namespace ndn {
 
 NS_OBJECT_ENSURE_REGISTERED(DDoSProdApp);
 
+const static int DEFAULT_ID_MAX = 10000;
+
 TypeId
 DDoSProdApp::GetTypeId(void)
 {
@@ -79,12 +81,6 @@ DDoSProdApp::CheckViolations()
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
     for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
-      // Bloomfilter bf;
-      // for (const auto& name : it->second) {
-      //   const auto& block = name.wireEncode();
-      //   bf.add(block.value(), block)
-      // }
-
       ndn::lp::Nack nack(*m_nackFakeInterest);
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
@@ -92,6 +88,7 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
       nackHeader.m_timer = m_timer;
       nackHeader.m_fakeInterestNames = it->second;
+      nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
 
       // send to nack to app link service
@@ -100,6 +97,7 @@ DDoSProdApp::CheckViolations()
     }
 
   }
+  
   else if (validInterestPerSec > m_validInterestThreshold) {
     for (std::set<Name>::iterator it = validPrefixSet.begin();
       it != validPrefixSet.end(); ++it){
@@ -156,6 +154,12 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     NS_LOG_INFO("Receive Fake Interest " << interest->getName());
     fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
+
+    // check if fake interest count exceeds threshold
+    if (m_fakeInterestCount >= m_fakeInterestThreshold) {
+      this->CheckViolations();
+    }
+
     if (m_nackFakeInterest == nullptr) {
       m_nackFakeInterest = interest;
     }
