@@ -37,9 +37,8 @@ protected:
 
 protected:
 
-  EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
+  EventId m_checkViolationEvent; ///< @brief EventId of pending "send packet" event
   bool m_firstTime;
-
 
 private:
   Name m_prefix;

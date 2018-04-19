@@ -57,10 +57,11 @@ void
 DDoSProdApp::ScheduleNextChecks()
 {
   if (m_firstTime){
-    m_sendEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
+    m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
     m_firstTime = false;
-  } else if (!m_sendEvent.IsRunning()) {
-      m_sendEvent = Simulator::Schedule(Seconds(m_checkWindow),
+  }
+  else if (!m_checkViolationEvent.IsRunning()) {
+      m_checkViolationEvent = Simulator::Schedule(Seconds(m_checkWindow),
                                       &DDoSProdApp::CheckViolations, this);
   }
 
@@ -79,7 +80,7 @@ DDoSProdApp::CheckViolations()
   NS_LOG_DEBUG("Fake interests per sec: " << fakeInterestPerSec);
   NS_LOG_DEBUG("Valid interests per sec: " << validInterestPerSec);
 
-  if (fakeInterestPerSec > m_fakeInterestThreshold) {
+  if (fakeInterestPerSec >= m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
     for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
@@ -165,7 +166,7 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
     // check if fake interest count exceeds threshold
     if (m_fakeInterestCount >= m_fakeInterestThreshold) {
-      Simulator::Cancel(m_sendEvent);
+      Simulator::Cancel(m_checkViolationEvent);
       this->CheckViolations();
     }
   }

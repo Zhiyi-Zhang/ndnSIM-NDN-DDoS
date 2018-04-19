@@ -1,6 +1,6 @@
 // b-1-1.cpp
 // Please make sure each time to set a different RngRun
-// ./waf --run "fake-interest-ddos --RngRun=2 --maxRange=400 --frequency=10 --withStrategy=true --topo=fake-interest-ddos --output=test"
+// ./waf --run "fake-interest-ddos --RngRun=2 --maxRange=400 --frequency=10 --withStrategy=false --topo=fake-interest-ddos --output=test"
 // fake-interest-ddos topology contains: 12 good users, 60 attackers
 // B-1: Interest Aggregation with valid Interests
 
@@ -17,9 +17,9 @@ main(int argc, char* argv[]) {
   // parameters
   std::string maxRange = "10000";
   std::string frequency = "200";
-  std::string topo = "meshed-bad";
-  std::string outFile = "raw";
-  std::string useStrategy = "false";
+  std::string topo = "fake-interest-ddos";
+  std::string outFile = "test";
+  std::string useStrategy = "true";
 
   CommandLine cmd;
   cmd.AddValue("maxRange", "Max Data Range", maxRange);
@@ -35,6 +35,7 @@ main(int argc, char* argv[]) {
 
   // Install NDN stack on all nodes
   ndn::StackHelper ndnHelper;
+  ndnHelper.SetOldContentStore("ns3::ndn::cs::Nocache");
   ndnHelper.SetDefaultRoutes(false);
   ndnHelper.InstallAll();
 
@@ -64,7 +65,9 @@ main(int argc, char* argv[]) {
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+    consumerHelper.SetAttribute("Frequency", StringValue("50"));
     evilApp.Add(consumerHelper.Install(attackers[i]));
+
 
     evilApp.Start(Seconds (10.0));
   }
