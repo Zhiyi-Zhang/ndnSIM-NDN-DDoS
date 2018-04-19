@@ -126,7 +126,6 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_prefixLen = it->first.size();
       nackHeader.m_tolerance = m_fakeInterestThreshold;
-      nackHeader.m_timer = m_timer;
       nackHeader.m_fakeInterestNames = it->second;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
@@ -146,7 +145,6 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
       nackHeader.m_prefixLen = it->size();
       nackHeader.m_tolerance = m_validInterestCapacity;
-      nackHeader.m_timer = m_timer;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
 

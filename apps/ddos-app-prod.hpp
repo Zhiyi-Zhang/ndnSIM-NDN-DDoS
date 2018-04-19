@@ -66,9 +66,6 @@ private:
   // perform threshold violation checks after every checkWindow sec
   int m_checkWindow = 1;
 
-  // nack timer
-  int m_timer = 5;
-
   // store fake interest prefixes and corresponding interest names
   // TODO: we need remove this and use per prefix threshold check
   std::map<Name, std::list<Name>> m_fakePrefixMap;
