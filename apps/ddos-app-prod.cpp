@@ -97,7 +97,7 @@ DDoSProdApp::CheckViolations()
     }
 
   }
-  
+
   else if (validInterestPerSec > m_validInterestThreshold) {
     for (std::set<Name>::iterator it = validPrefixSet.begin();
       it != validPrefixSet.end(); ++it){
@@ -157,6 +157,7 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
     // check if fake interest count exceeds threshold
     if (m_fakeInterestCount >= m_fakeInterestThreshold) {
+      Simulator::Cancel(m_sendEvent);
       this->CheckViolations();
     }
 
