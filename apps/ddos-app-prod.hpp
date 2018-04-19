@@ -52,7 +52,7 @@ private:
   uint32_t m_virtualPayloadSize;
 
   // average tolerable fake interests before sending NACK
-  int m_fakeInterestThreshold = 50;
+  int m_fakeInterestThreshold = 500;
 
   // total fake interests received in given time window
   int m_fakeInterestCount = 0;

@@ -43,7 +43,7 @@ DDoSProdApp::GetTypeId(void)
     .AddAttribute("PayloadSize", "Virtual payload size for Content packets", UintegerValue(1024),
                   MakeUintegerAccessor(&DDoSProdApp::m_virtualPayloadSize),
                   MakeUintegerChecker<uint32_t>())
-    .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(50),
+    .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(0),
                   MakeUintegerAccessor(&DDoSProdApp::m_fakeInterestThreshold),
                   MakeUintegerChecker<uint32_t>())
     .AddAttribute("ValidThreshold", "Threshold for valid interests", UintegerValue(200),
