@@ -43,7 +43,7 @@ DDoSProdApp::GetTypeId(void)
     .AddAttribute("PayloadSize", "Virtual payload size for Content packets", UintegerValue(1024),
                   MakeUintegerAccessor(&DDoSProdApp::m_virtualPayloadSize),
                   MakeUintegerChecker<uint32_t>())
-    .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(50),
+    .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(0),
                   MakeUintegerAccessor(&DDoSProdApp::m_fakeInterestThreshold),
                   MakeUintegerChecker<uint32_t>())
     .AddAttribute("ValidThreshold", "Threshold for valid interests", UintegerValue(200),
@@ -126,7 +126,6 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_prefixLen = it->first.size();
       nackHeader.m_tolerance = m_fakeInterestThreshold;
-      nackHeader.m_timer = m_timer;
       nackHeader.m_fakeInterestNames = it->second;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
@@ -146,7 +145,6 @@ DDoSProdApp::CheckViolations()
       nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
       nackHeader.m_prefixLen = it->size();
       nackHeader.m_tolerance = m_validInterestCapacity;
-      nackHeader.m_timer = m_timer;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
 
