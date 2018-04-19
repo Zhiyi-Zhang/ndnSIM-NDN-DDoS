@@ -56,7 +56,7 @@ DDoSProdApp::DDoSProdApp()
 void
 DDoSProdApp::ScheduleNextChecks()
 {
-  if (m_firstTime){
+  if (m_firstTime) {
     m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
     m_firstTime = false;
   }
@@ -66,6 +66,31 @@ DDoSProdApp::ScheduleNextChecks()
   }
 
 }
+
+void
+DDoSProdApp::ScheduleNextReply()
+{
+  if (!m_replyEvent.IsRunning()) {
+    m_replyEvent = Simulator::Schedule(Seconds(0.1), &DDoSProdApp::ProcessValidInterest, this);
+  }
+}
+
+void
+DDoSProdApp::ProcessValidInterest()
+{
+  int totalNumber = m_validInterestCapacity/10;
+  for (int i = 0; i < totalNumber; i++) {
+    auto data = std::make_shared<ndn::Data>(m_validInterestQueue.front());
+    data->setFreshnessPeriod(ndn::time::milliseconds(5000));
+    data->setContent(std::make_shared< ::ndn::Buffer>(1024));
+    ndn::StackHelper::getKeyChain().sign(*data);
+
+    m_appLink->onReceiveData(*data);
+    m_validInterestQueue.pop_front();
+  }
+
+}
+
 
 void
 DDoSProdApp::CheckViolations()
@@ -80,10 +105,10 @@ DDoSProdApp::CheckViolations()
   NS_LOG_DEBUG("Fake interests per sec: " << fakeInterestPerSec);
   NS_LOG_DEBUG("Valid interests per sec: " << validInterestPerSec);
 
-  if (fakeInterestPerSec >= m_fakeInterestThreshold) {
+  if (fakeInterestPerSec > m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
-    for (auto it = fakePrefixMap.begin(); it != fakePrefixMap.end(); ++it) {
+    for (auto it = m_fakePrefixMap.begin(); it != m_fakePrefixMap.end(); ++it) {
       ndn::lp::Nack nack(*m_nackFakeInterest);
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
@@ -99,10 +124,11 @@ DDoSProdApp::CheckViolations()
       NS_LOG_INFO("send out FAKE INTERST NACK!!!");
     }
 
-  } else if (validInterestPerSec > m_validInterestCapacity) {
+  }
+  else if (validInterestPerSec > m_validInterestCapacity) {
     NS_LOG_INFO("Violate VALID INTEREST capacity!!!");
 
-    for (auto it = validPrefixSet.begin(); it != validPrefixSet.end(); ++it) {
+    for (auto it = m_validPrefixSet.begin(); it != m_validPrefixSet.end(); ++it) {
       ndn::lp::Nack nack(*m_nackValidInterest);
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
@@ -122,10 +148,11 @@ DDoSProdApp::CheckViolations()
   m_fakeInterestCount = 0;
   m_validInterestCount = 0;
   m_nackFakeInterest = nullptr;
+  m_nackValidInterest = nullptr;
 
   // reset maps
-  fakePrefixMap.clear();
-  validPrefixSet.clear();
+  m_fakePrefixMap.clear();
+  m_validPrefixSet.clear();
 
   ScheduleNextChecks();
 }
@@ -157,7 +184,7 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
   std::string lastComponent = interest->getName().get(-1).toUri();
   if (lastComponent[0] == 'a') {
     NS_LOG_INFO("Receive Fake Interest " << interest->getName());
-    fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
+    m_fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
 
     if (m_nackFakeInterest == nullptr) {
@@ -165,7 +192,8 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     }
 
     // check if fake interest count exceeds threshold
-    if (m_fakeInterestCount >= m_fakeInterestThreshold) {
+    if (m_fakeInterestCount > m_fakeInterestThreshold) {
+      m_nackFakeInterest = interest;
       Simulator::Cancel(m_checkViolationEvent);
       this->CheckViolations();
     }
@@ -174,7 +202,7 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
   else {
     NS_LOG_INFO("Receive Valid Interest " << interest->getName());
 
-    validPrefixSet.insert(interestName.getPrefix(-1));
+    m_validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
 
     if (m_nackValidInterest == nullptr) {
@@ -182,18 +210,12 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     }
 
     // check if valid interest count exceeds capacity
-    if (m_validInterestCount >= m_validInterestCapacity) {
-      Simulator::Cancel(m_sendEvent);
+    if (m_validInterestCount > m_validInterestCapacity) {
+      m_nackValidInterest = interest;
+      Simulator::Cancel(m_checkViolationEvent);
       this->CheckViolations();
     }
-
-    auto data = std::make_shared<ndn::Data>(interest->getName());
-    data->setFreshnessPeriod(ndn::time::milliseconds(5000));
-    data->setContent(std::make_shared< ::ndn::Buffer>(1024));
-    ndn::StackHelper::getKeyChain().sign(*data);
-
-    m_appLink->onReceiveData(*data);
-    NS_LOG_INFO("Sending Data packet with name " << data->getName());
+    m_validInterestQueue.push_back(interest->getName());
   }
 }
 

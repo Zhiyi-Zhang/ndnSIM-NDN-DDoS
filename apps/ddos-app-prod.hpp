@@ -21,6 +21,18 @@ public:
   virtual void
   OnInterest(shared_ptr<const Interest> interest);
 
+  void
+  ScheduleNextChecks(); // schedule check for threshold violations
+
+  void
+  CheckViolations(); // check for threshold violations
+
+  void
+  ScheduleNextReply();
+
+  void
+  ProcessValidInterest();
+
 protected:
   // inherited from Application base class.
   virtual void
@@ -29,15 +41,10 @@ protected:
   virtual void
   StopApplication(); // Called at time specified by Stop
 
-  virtual void
-  ScheduleNextChecks(); // schedule check for threshold violations
-
-  virtual void
-  CheckViolations(); // check for threshold violations
-
 protected:
 
   EventId m_checkViolationEvent; ///< @brief EventId of pending "send packet" event
+  EventId m_replyEvent;
   bool m_firstTime;
 
 private:
@@ -63,13 +70,17 @@ private:
   int m_timer = 5;
 
   // store fake interest prefixes and corresponding interest names
-  std::map<Name, std::list<Name>> fakePrefixMap;
+  // TODO: we need remove this and use per prefix threshold check
+  std::map<Name, std::list<Name>> m_fakePrefixMap;
   shared_ptr<const Interest> m_nackFakeInterest;
 
   // store valid interest prefixes
-  std::set<Name> validPrefixSet;
+  // TODO: we need remove this and use per prefix threshold check
+  std::set<Name> m_validPrefixSet;
   shared_ptr<const Interest> m_nackValidInterest;
 
+  // buffer the valid interest for processing
+  std::list<Name> m_validInterestQueue;
 };
 
 } // namespace ndn

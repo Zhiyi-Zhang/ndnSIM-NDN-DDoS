@@ -44,16 +44,16 @@ main(int argc, char* argv[])
   ndn::AppHelper consumerHelper("ConsApp");
   // Consumer will request /prefix/0, /prefix/1, ...
   consumerHelper.SetAttribute("Name", StringValue("/prefix"));
-  consumerHelper.SetAttribute("Frequency", StringValue("10"));
-  consumerHelper.SetAttribute("MaxSeq", StringValue("10"));
-  consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
-  consumerHelper.Install(nodes.Get(0));                        // first node
+  consumerHelper.SetAttribute("Frequency", StringValue("300"));
+  consumerHelper.SetAttribute("MaxSeq", StringValue("1000"));
+  // consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
+  consumerHelper.Install(nodes.Get(0));
 
   // Producer
   ndn::AppHelper producerHelper("DDoSProdApp");
   producerHelper.SetPrefix("/prefix");
   producerHelper.SetAttribute("PayloadSize", StringValue("1024"));
-  producerHelper.Install(nodes.Get(2)); // last node
+  producerHelper.Install(nodes.Get(2));
 
   Simulator::Stop(Seconds(10.0));
 
