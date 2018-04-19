@@ -76,7 +76,9 @@ DDoSProdApp::CheckViolations()
   int fakeInterestPerSec = m_fakeInterestCount;
   int validInterestPerSec = m_validInterestCount;
 
-  std::cout << fakeInterestPerSec << std::endl;
+  NS_LOG_DEBUG("Fake interests per sec: " << fakeInterestPerSec);
+  NS_LOG_DEBUG("Valid interests per sec: " << validInterestPerSec);
+
   if (fakeInterestPerSec > m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
 
@@ -85,7 +87,7 @@ DDoSProdApp::CheckViolations()
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_prefixLen = it->first.size();
-      nackHeader.m_fakeTolerance = m_fakeInterestThreshold;
+      nackHeader.m_tolerance = m_fakeInterestThreshold;
       nackHeader.m_timer = m_timer;
       nackHeader.m_fakeInterestNames = it->second;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
@@ -96,19 +98,21 @@ DDoSProdApp::CheckViolations()
       NS_LOG_INFO("send out FAKE INTERST NACK!!!");
     }
 
-  }
+  } else if (validInterestPerSec > m_validInterestCapacity) {
+    NS_LOG_INFO("Violate VALID INTEREST capacity!!!");
 
-  else if (validInterestPerSec > m_validInterestThreshold) {
-    for (std::set<Name>::iterator it = validPrefixSet.begin();
-      it != validPrefixSet.end(); ++it){
-      auto nack = std::make_shared<ndn::lp::Nack>(Interest(*it));
+    for (auto it = validPrefixSet.begin(); it != validPrefixSet.end(); ++it) {
+      ndn::lp::Nack nack(*m_nackValidInterest);
       lp::NackHeader nackHeader;
-      nackHeader.setReason(lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD);
+      nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
       nackHeader.m_prefixLen = it->size();
-      nack->setHeader(nackHeader);
+      nackHeader.m_tolerance = m_validInterestCapacity;
+      nackHeader.m_timer = m_timer;
+      nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
+      nack.setHeader(nackHeader);
 
       // send to nack to app link service
-      m_appLink->onReceiveNack(*nack);
+      m_appLink->onReceiveNack(nack);
       NS_LOG_INFO("send out VALID OVERLOAD NACK!!!");
     }
   }
@@ -155,14 +159,14 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
 
+    if (m_nackFakeInterest == nullptr) {
+      m_nackFakeInterest = interest;
+    }
+
     // check if fake interest count exceeds threshold
     if (m_fakeInterestCount >= m_fakeInterestThreshold) {
       Simulator::Cancel(m_sendEvent);
       this->CheckViolations();
-    }
-
-    if (m_nackFakeInterest == nullptr) {
-      m_nackFakeInterest = interest;
     }
   }
   // valid interest
@@ -171,6 +175,16 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
     validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
+
+    if (m_nackValidInterest == nullptr) {
+      m_nackValidInterest = interest;
+    }
+
+    // check if valid interest count exceeds capacity
+    if (m_validInterestCount >= m_validInterestCapacity) {
+      Simulator::Cancel(m_sendEvent);
+      this->CheckViolations();
+    }
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
     data->setFreshnessPeriod(ndn::time::milliseconds(5000));

@@ -52,7 +52,7 @@ private:
   int m_fakeInterestCount = 0;
 
   // average tolerable valid interests before sending NACK
-  int m_validInterestThreshold = 200;
+  int m_validInterestCapacity = 200;
 
   // total valid interests received in given time window
   int m_validInterestCount = 0;
