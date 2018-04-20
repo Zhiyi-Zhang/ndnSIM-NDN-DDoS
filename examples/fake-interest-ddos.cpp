@@ -62,11 +62,11 @@ main(int argc, char* argv[]) {
 
   NodeContainer attackers;
   fillAttackerContainer(attackers);
-  consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
   consumerHelper.SetAttribute("Frequency", StringValue(frequency));
   for (int i = 0; i < attackers.size(); i++) {
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+    consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (10.0));
