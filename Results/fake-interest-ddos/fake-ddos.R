@@ -8,7 +8,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-target = "test-with-no-cache-2"
+target = "test-t50"
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)
