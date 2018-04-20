@@ -10,8 +10,9 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-args = commandArgs(trailingOnly=TRUE)
-target = args[1]
+#args = commandArgs(trailingOnly=TRUE)
+#target = args[1]
+target="test-f20-t0"
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)
@@ -111,6 +112,7 @@ data.gateway$Node = "gateway"
 data.consumer$Node = "consumer"
 
 result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
+#result = rbind(data.victim, data.attacker, data.gateway)
 
 # graph rates on selected nodes in number of incoming interest packets
 g.nodes <- ggplot(result) +

@@ -46,7 +46,7 @@ DDoSProdApp::GetTypeId(void)
     .AddAttribute("FakeThreshold", "Threshold for fake interests", UintegerValue(0),
                   MakeUintegerAccessor(&DDoSProdApp::m_fakeInterestThreshold),
                   MakeUintegerChecker<uint32_t>())
-    .AddAttribute("ValidThreshold", "Threshold for valid interests", UintegerValue(200),
+    .AddAttribute("ValidThreshold", "Threshold for valid interests", UintegerValue(1000),
                   MakeUintegerAccessor(&DDoSProdApp::m_validInterestCapacity),
                   MakeUintegerChecker<uint32_t>())
     ;
@@ -55,6 +55,7 @@ DDoSProdApp::GetTypeId(void)
 
 DDoSProdApp::DDoSProdApp()
   : m_firstTime(true)
+  , m_firstNack(true)
 {
 }
 
@@ -111,11 +112,14 @@ DDoSProdApp::CheckViolations()
               << " valid:" << m_validInterestCount);
 
   // fake interest/time unit increases threshold
-  int fakeInterestPerSec = m_fakeInterestCount;
-  int validInterestPerSec = m_validInterestCount;
+  int fakeInterestPerSec = static_cast<int>(m_fakeInterestCount/m_checkWindow + 0.5);
+  int validInterestPerSec = static_cast<int>(m_validInterestCount/m_checkWindow + 0.5);
 
   NS_LOG_DEBUG("Fake interests per sec: " << fakeInterestPerSec);
   NS_LOG_DEBUG("Valid interests per sec: " << validInterestPerSec);
+
+  std::cout << "Fake interests per sec: " << fakeInterestPerSec
+            << " Valid interests per sec: " << validInterestPerSec << std::endl;
 
   if (fakeInterestPerSec > m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
@@ -194,24 +198,17 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
   // fake interest
   std::string lastComponent = interest->getName().get(-1).toUri();
   if (lastComponent[0] == 'a') {
-    NS_LOG_INFO("Receive Fake Interest " << interest->getName());
+    // NS_LOG_INFO("Receive Fake Interest " << interest->getName());
     m_fakePrefixMap[interestName.getPrefix(-1)].push_back(interestName);
     m_fakeInterestCount += 1;
 
     if (m_nackFakeInterest == nullptr) {
       m_nackFakeInterest = interest;
     }
-
-    // check if fake interest count exceeds threshold
-    if (m_fakeInterestCount > m_fakeInterestThreshold) {
-      m_nackFakeInterest = interest;
-      Simulator::Cancel(m_checkViolationEvent);
-      this->CheckViolations();
-    }
   }
   // valid interest
   else {
-    NS_LOG_INFO("Receive Valid Interest " << interest->getName());
+    // NS_LOG_INFO("Receive Valid Interest " << interest->getName());
 
     m_validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
@@ -220,12 +217,6 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
       m_nackValidInterest = interest;
     }
 
-    // check if valid interest count exceeds capacity
-    if (m_validInterestCount > m_validInterestCapacity) {
-      m_nackValidInterest = interest;
-      Simulator::Cancel(m_checkViolationEvent);
-      this->CheckViolations();
-    }
     m_validInterestQueue.push_back(interest->getName());
   }
 }

@@ -1,0 +1,74 @@
+router
+#name   city    y   x
+
+# infrastructure
+as1-1   NA  200 150
+as1-2   NA  200 250
+as1-cs  NA  150    100
+as1-math    NA  150    200
+as2-1       NA  250   100
+as2-math    NA  300  50
+as2-cs      NA  350 150
+as3-1       NA  200 300
+as3-math    NA  200 400
+as3-cs    NA  150    350
+as4-1           NA  250   200
+as4-hw          NA  350 200
+as4-sm          NA  300  250
+
+# targets
+as1-cs-server NA  150    0
+
+
+as1-math-a0     NA  100    250
+
+as2-math-a0     NA  350    0
+
+as2-cs-a0       NA  400   150
+
+as3-cs-a0       NA  250   450
+
+as4-hw-a0       NA  400    250
+
+as4-sm-a0       NA  350    300
+
+
+link
+#from   to  capacity    metric  delay   queue
+
+# eBGP
+as1-1   as1-2   200Mbps  1   20ms    1000
+as1-1   as2-1   200Mbps  1   20ms    1000
+as1-1   as4-1   200Mbps  1   20ms    1000
+as1-2   as3-1   200Mbps  1   20ms    1000
+as2-1   as4-1   200Mbps  1   20ms    1000
+as3-1   as4-1   200Mbps  1   20ms    1000
+
+# iBGP
+as1-1    as1-cs         100Mbps   1   10ms    1000
+as1-1    as1-math     100Mbps   1   10ms    1000
+as1-2    as1-math     100Mbps   1   10ms    1000
+as1-cs   as1-math   100Mbps  1   10ms    1000
+
+as2-1    as2-math     100Mbps  1   10ms    1000
+as2-1    as2-cs          100Mbps  1   10ms    1000
+as2-math  as2-cs   100Mbps  1   10ms    1000
+
+as3-1    as3-math     100Mbps  1   10ms    1000
+as3-1    as3-cs          100Mbps  1   10ms    1000
+as3-cs    as3-math     100Mbps  1   10ms    1000
+
+as4-1    as4-hw         100Mbps  1   10ms    1000
+as4-1    as4-sm         100Mbps  1   10ms    1000
+
+# Edge targets
+as1-cs   as1-cs-server    100Mbps  1   5ms    1000
+
+
+# Edge attackers
+as1-math   as1-math-a0  10Mbps  1   10ms    1000
+as2-cs   as2-cs-a0  10Mbps  1   10ms    1000
+as2-math as2-math-a0    1Mbps  1   10ms    1000
+as3-cs  as3-cs-a0    1Mbps  1   10ms    1000
+as4-hw as4-hw-a0    1Mbps  1   10ms    1000
+as4-sm as4-sm-a0    1Mbps  1   10ms    1000
