@@ -41,7 +41,7 @@ main(int argc, char* argv[])
   consumerHelper.SetAttribute("Name", StringValue("/prefix"));
   consumerHelper.SetAttribute("Frequency", StringValue("15"));
   consumerHelper.SetAttribute("MaxSeq", StringValue("1000"));
-  consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
+  // consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
   consumerHelper.Install(Names::Find<Node>("node1"));
 
   // Producer
