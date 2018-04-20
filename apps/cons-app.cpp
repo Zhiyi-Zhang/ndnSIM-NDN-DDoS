@@ -159,7 +159,12 @@ ConsApp::SendInterest()
     }
   }
   else{
-    interest_copy.append("a" + std::to_string(rand()%200));
+    interest_copy.append("a" + std::to_string(rand()%400) + std::to_string(m_lastSeq + 1));
+    m_lastSeq += 1;
+
+    if (m_lastSeq == m_maxSeq){
+      m_lastSeq = -1;
+    }
   }
 
   // Create and configure ndn::Interest
