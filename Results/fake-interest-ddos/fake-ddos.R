@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 # install.packages('ggplot2')
 library(ggplot2)
 # install.packages('scales')
@@ -8,7 +10,8 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-target = "test-20-t51"
+args = commandArgs(trailingOnly=TRUE)
+target = args[1]
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)
