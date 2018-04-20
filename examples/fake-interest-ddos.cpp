@@ -69,7 +69,7 @@ main(int argc, char* argv[]) {
     consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
-    evilApp.Start(Seconds (2.0));
+    evilApp.Start(Seconds (3.0));
   }
 
   // Getting producers
@@ -86,7 +86,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(6.0));
+  Simulator::Stop(Seconds(10.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();
