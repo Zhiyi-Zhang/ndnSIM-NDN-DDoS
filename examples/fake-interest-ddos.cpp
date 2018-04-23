@@ -12,7 +12,7 @@ namespace ns3 {
 int
 main(int argc, char* argv[]) {
 
-  Config::SetDefault("ns3::PointToPointNetDevice::Mtu", StringValue("9000"));
+  Config::SetDefault("ns3::PointToPointNetDevice::Mtu", StringValue("65535"));
 
   // parameters
   std::string maxRange = "1000";
@@ -46,7 +46,7 @@ main(int argc, char* argv[]) {
   }
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/u1/cs/server"));
+  consumerHelper.SetAttribute("Name", StringValue("/u1"));
   consumerHelper.SetAttribute("Frequency", StringValue("10"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
@@ -69,25 +69,24 @@ main(int argc, char* argv[]) {
     consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
-    evilApp.Start(Seconds (10.0));
+    evilApp.Start(Seconds (3.0));
   }
 
   // Getting producers
   Ptr<Node> as1_cs_server = Names::Find<Node>("as1-cs-server");
   ndn::AppHelper producerHelper("DDoSProdApp");
-  producerHelper.SetPrefix("/u1/cs/server");
+  producerHelper.SetPrefix("/u1");
   producerHelper.SetAttribute("FakeThreshold", StringValue(tolerance));
+  producerHelper.SetAttribute("ValidThreshold", StringValue("1000"));
   producerHelper.Install(as1_cs_server);
 
   // Installing global routing interface on all nodes
   ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
   ndnGlobalRoutingHelper.InstallAll();
-  ndnGlobalRoutingHelper.AddOrigins("/u1/cs/server", as1_cs_server);
-  Ptr<Node> as1_cs = Names::Find<Node>("as1-cs");
-  ndnGlobalRoutingHelper.AddOrigins("/u1/cs", as1_cs);
+  ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(30.0));
+  Simulator::Stop(Seconds(9.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

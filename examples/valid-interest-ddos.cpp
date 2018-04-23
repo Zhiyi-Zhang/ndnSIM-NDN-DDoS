@@ -1,6 +1,6 @@
 // b-1-1.cpp
 // Please make sure each time to set a different RngRun
-// ./waf --run "fake-interest-ddos --RngRun=2 --maxRange=400 --frequency=200 --capacity=200 --withStrategy=false --output=test"
+// ./waf --run "valid-interest-ddos --RngRun=2 --maxRange=400 --frequency=50 --capacity=50 --topo=ddos-simple --output=test"
 // fake-interest-ddos topology contains: 12 good users, 60 attackers
 // B-1: Interest Aggregation with valid Interests
 
@@ -46,7 +46,7 @@ main(int argc, char* argv[]) {
   }
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/u1/cs/server"));
+  consumerHelper.SetAttribute("Name", StringValue("/u1"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
@@ -68,27 +68,24 @@ main(int argc, char* argv[]) {
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
-
-    evilApp.Start(Seconds (10.0));
+    evilApp.Start(Seconds (3.0));
   }
 
   // Getting producers
   Ptr<Node> as1_cs_server = Names::Find<Node>("as1-cs-server");
   ndn::AppHelper producerHelper("DDoSProdApp");
-  producerHelper.SetPrefix("/u1/cs/server");
+  producerHelper.SetPrefix("/u1");
   producerHelper.SetAttribute("ValidThreshold", StringValue(capacity));
   producerHelper.Install(as1_cs_server);
 
   // Installing global routing interface on all nodes
   ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
   ndnGlobalRoutingHelper.InstallAll();
-  ndnGlobalRoutingHelper.AddOrigins("/u1/cs/server", as1_cs_server);
-  Ptr<Node> as1_cs = Names::Find<Node>("as1-cs");
-  ndnGlobalRoutingHelper.AddOrigins("/u1/cs", as1_cs);
+  ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(30.0));
-  ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/vaild-interest-ddos/" + outFile + ".txt",
+  Simulator::Stop(Seconds(20.0));
+  ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/valid-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();
   Simulator::Destroy();

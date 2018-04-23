@@ -46,6 +46,7 @@ protected:
   EventId m_checkViolationEvent; ///< @brief EventId of pending "send packet" event
   EventId m_replyEvent;
   bool m_firstTime;
+  bool m_firstNack;
 
 private:
   Name m_prefix;
@@ -64,7 +65,7 @@ private:
   int m_validInterestCount = 0;
 
   // perform threshold violation checks after every checkWindow sec
-  int m_checkWindow = 1;
+  double m_checkWindow = 0.1;
 
   // store fake interest prefixes and corresponding interest names
   // TODO: we need remove this and use per prefix threshold check
