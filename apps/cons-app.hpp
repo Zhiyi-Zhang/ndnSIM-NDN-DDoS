@@ -31,6 +31,10 @@ public:
   virtual void
   OnData(std::shared_ptr<const ndn::Data> contentObject);
 
+  // (overridden from ndn:App) Callback that will be called when NACK arrives
+  virtual void
+  OnNack(std::shared_ptr<const ndn::lp::Nack> contentObject);
+
 protected:
   virtual void
   ScheduleNextPacket();
@@ -44,6 +48,7 @@ protected:
 protected:
   int m_frequency;
   bool m_firstTime;
+  bool m_isGood;
   Ptr<RandomVariableStream> m_random;
   std::string m_randomType;
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event

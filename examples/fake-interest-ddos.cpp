@@ -68,6 +68,7 @@ main(int argc, char* argv[]) {
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+    consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (3.0));
   }

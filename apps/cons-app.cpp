@@ -53,6 +53,11 @@ ConsApp::GetTypeId()
                   "Auto append sequence number: true (default), false",
                   BooleanValue(true),
                   MakeBooleanAccessor(&ConsApp::m_validInterest), MakeBooleanChecker())
+    
+    .AddAttribute("GoodConsumer",
+                  "Consumer is good: true (default), false (attacker)",
+                  BooleanValue(true),
+                  MakeBooleanAccessor(&ConsApp::m_isGood), MakeBooleanChecker())
 
     .AddAttribute("InitSeq",
                   "The first seq to send",
@@ -70,6 +75,7 @@ ConsApp::GetTypeId()
 ConsApp::ConsApp()
   : m_frequency(1.0)
   , m_firstTime(true)
+  , m_isGood(true)
   , m_interestNames("/")
 {
 }
@@ -84,6 +90,8 @@ ConsApp::ScheduleNextPacket()
 {
   // double mean = 8.0 * m_payloadSize / m_desiredRate.GetBitRate ();
   // std::cout << "next: " << Simulator::Now().ToDouble(Time::S) + mean << "s\n";
+
+  NS_LOG_INFO("Current Frequency: " << m_frequency);
 
   if (m_firstTime) {
     m_sendEvent = Simulator::Schedule(Seconds(0.0), &ConsApp::SendInterest, this);
@@ -211,6 +219,16 @@ void
 ConsApp::OnData(std::shared_ptr<const ndn::Data> data)
 {
   NS_LOG_INFO("DATA received for name: " << data->getName());
+}
+
+// Callback that will be called when NACK arrives
+void
+ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
+{
+  NS_LOG_INFO("NACK received");
+  if (m_isGood) {
+    m_frequency = nack->getHeader().m_tolerance;
+  }
 }
 
 } // namespace ndn
