@@ -20,8 +20,6 @@ as4-sm          NA  300  250
 
 # targets
 as1-cs-server NA  150    0
-as1-cs-backend NA  100    50
-as3-math-server  NA  100    350
 
 # attackers and good consumers
 as1-math-g0     NA  100    260
