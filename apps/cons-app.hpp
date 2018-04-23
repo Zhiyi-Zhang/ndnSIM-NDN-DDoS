@@ -47,9 +47,11 @@ protected:
   Ptr<RandomVariableStream> m_random;
   std::string m_randomType;
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
-  std::string m_interestName;
+  std::string m_interestNames; // parameter passed in scenario
+  std::vector<std::string> m_interestNameList;
   bool m_validInterest;
-  int m_lastSeq;
+  std::map<std::string, int> m_lastSeq; // per prefix last seq
+  int m_initSeq;
   int m_maxSeq;
 
 private:

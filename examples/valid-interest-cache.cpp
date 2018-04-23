@@ -80,7 +80,7 @@ main(int argc, char* argv[]) {
                              Names::Find<Node>("as4-sm-a4")};
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/server"));
+  consumerHelper.SetAttribute("Names", StringValue("/edu/u1/cs/server"));
   consumerHelper.SetAttribute("Frequency", StringValue(frequency));
   // consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));

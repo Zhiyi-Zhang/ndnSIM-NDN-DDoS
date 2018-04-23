@@ -44,10 +44,10 @@ ConsApp::GetTypeId()
                   MakeStringAccessor(&ConsApp::SetRandomize, &ConsApp::GetRandomize),
                   MakeStringChecker())
 
-    .AddAttribute("Name",
-                  "Name of interest",
+    .AddAttribute("Names",
+                  "Name of interests separated by comma",
                   StringValue("/"),
-                  MakeStringAccessor(&ConsApp::m_interestName), MakeStringChecker())
+                  MakeStringAccessor(&ConsApp::m_interestNames), MakeStringChecker())
 
     .AddAttribute("ValidInterest",
                   "Auto append sequence number: true (default), false",
@@ -57,7 +57,7 @@ ConsApp::GetTypeId()
     .AddAttribute("InitSeq",
                   "The first seq to send",
                   IntegerValue(-1),
-                  MakeIntegerAccessor(&ConsApp::m_lastSeq), MakeIntegerChecker<int32_t>())
+                  MakeIntegerAccessor(&ConsApp::m_initSeq), MakeIntegerChecker<int32_t>())
 
     .AddAttribute("MaxSeq",
                   "The max seq to send",
@@ -70,7 +70,7 @@ ConsApp::GetTypeId()
 ConsApp::ConsApp()
   : m_frequency(1.0)
   , m_firstTime(true)
-  , m_interestName("/")
+  , m_interestNames("/")
 {
 }
 
@@ -128,6 +128,19 @@ ConsApp::StartApplication()
   ndn::App::StartApplication();
   // std::cout << "Interest Name is " << m_interestName << std::endl;
 
+  size_t pos = 0;
+  std::string delimeter = ",";
+  std::string token;
+  while ((pos = m_interestNames.find(delimeter)) != std::string::npos) {
+    token = m_interestNames.substr(0, pos); 
+    m_interestNameList.push_back(token);
+    m_lastSeq[token] = m_initSeq;
+    m_interestNames.erase(0, pos + delimeter.length());
+  }
+
+  m_interestNameList.push_back(m_interestNames);
+  m_lastSeq[m_interestNames] = m_initSeq;
+
   NS_LOG_INFO("Current Frequency: " << m_frequency);
   NS_LOG_INFO("Current Max Range: " << m_maxSeq);
 
@@ -145,27 +158,36 @@ ConsApp::StopApplication()
 void
 ConsApp::SendInterest()
 {
-  /////////////////////////////////////
-  // Sending one Interest packet out //
-  /////////////////////////////////////
-  Name interest_copy(m_interestName);
+ 
+
+  /////////////////////////////////////////////
+  // Sending one Interest packet out randomly//
+  ////////////////////////////////////////////
+  int random = rand() % m_interestNameList.size();
+  std::string interestName = m_interestNameList.at(random);
+
+  Name interest_copy(interestName);
+
+  int lastSeq = m_lastSeq.find(interestName)->second;
 
   if (m_validInterest){
-    interest_copy.append(std::to_string(m_lastSeq + 1));
-    m_lastSeq += 1;
+    interest_copy.append(std::to_string(lastSeq + 1));
+    lastSeq += 1;
 
-    if (m_lastSeq == m_maxSeq){
-      m_lastSeq = -1;
+    if (lastSeq == m_maxSeq){
+      lastSeq = -1;
     }
   }
   else{
-    interest_copy.append("a" + std::to_string(rand()%400) + std::to_string(m_lastSeq + 1));
-    m_lastSeq += 1;
+    interest_copy.append("a" + std::to_string(rand()%400) + std::to_string(lastSeq + 1));
+    lastSeq += 1;
 
-    if (m_lastSeq == m_maxSeq){
-      m_lastSeq = -1;
+    if (lastSeq == m_maxSeq){
+      lastSeq = -1;
     }
   }
+
+  m_lastSeq[interestName] = lastSeq;
 
   // Create and configure ndn::Interest
   auto interest = std::make_shared<ndn::Interest>(interest_copy);

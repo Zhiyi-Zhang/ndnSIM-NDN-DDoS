@@ -37,31 +37,31 @@ namespace ns3 {
 
 
         ndn::AppHelper consumerHelper("ConsApp");
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html"));
         consumerHelper.SetAttribute("Frequency", StringValue("20"));
         consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/alicelovecpp"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/alicelovecpp"));
         consumerHelper.Install(ucla_cs_attacker);
 
         consumerHelper.SetAttribute("AutoAppend", StringValue("false"));
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha"));
         consumerHelper.Install(ucla_math_attacker);
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha1"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha1"));
         consumerHelper.Install(az_cs_attacker);
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha2"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha2"));
         consumerHelper.Install(az_math_attacker);
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha3"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha3"));
         consumerHelper.Install(wc_westwood_attacker);
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha4"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha4"));
         consumerHelper.Install(wc_santa_monica_attacker);
 
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html/haha5"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html/haha5"));
         consumerHelper.Install(mmphs_ee_attacker);
 
 

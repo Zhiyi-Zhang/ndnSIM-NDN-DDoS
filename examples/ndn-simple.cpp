@@ -38,7 +38,7 @@ main(int argc, char* argv[])
   // Consumer
   ndn::AppHelper consumerHelper("ConsApp");
   // Consumer will request /prefix/0, /prefix/1, ...
-  consumerHelper.SetAttribute("Name", StringValue("/prefix"));
+  consumerHelper.SetAttribute("Names", StringValue("/prefix/type1,/prefix/type2,/prefix/type3"));
   consumerHelper.SetAttribute("Frequency", StringValue("15"));
   consumerHelper.SetAttribute("MaxSeq", StringValue("1000"));
   // consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));

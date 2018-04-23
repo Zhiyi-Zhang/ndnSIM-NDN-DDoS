@@ -41,7 +41,7 @@ namespace ns3 {
 
 
         ndn::AppHelper consumerHelper("ConsApp");
-        consumerHelper.SetAttribute("Name", StringValue("/edu/ucla/cs/webserver0/index.html"));
+        consumerHelper.SetAttribute("Names", StringValue("/edu/ucla/cs/webserver0/index.html"));
         consumerHelper.SetAttribute("Frequency", StringValue("20"));
         //consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
         consumerHelper.Install(ucla_cs_attacker);

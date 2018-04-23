@@ -41,12 +41,12 @@ main(int argc, char* argv[]) {
   Ptr<Node> as4_sm_a0 = Names::Find<Node>("as4-sm-a0");
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/backend"));
+  consumerHelper.SetAttribute("Names", StringValue("/edu/u1/cs/backend"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
   consumerHelper.Install(as1_cs_a0);
 
-  consumerHelper.SetAttribute("Name", StringValue("/edu/u1/cs/something"));
+  consumerHelper.SetAttribute("Names", StringValue("/edu/u1/cs/something"));
   consumerHelper.Install(as1_math_a0);
   consumerHelper.Install(as2_cs_a0);
   consumerHelper.Install(as2_math_a0);
