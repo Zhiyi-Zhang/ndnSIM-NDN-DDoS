@@ -54,6 +54,7 @@ main(int argc, char* argv[]) {
 
   NodeContainer consumers;
   fillConsumerContainer(consumers);
+  // consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
   for (int i = 0; i < consumers.size(); i++) {
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
@@ -63,11 +64,11 @@ main(int argc, char* argv[]) {
   NodeContainer attackers;
   fillAttackerContainer(attackers);
   consumerHelper.SetAttribute("Frequency", StringValue(frequency));
+  consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
   for (int i = 0; i < attackers.size(); i++) {
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-    consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (3.0));
   }
@@ -85,7 +86,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(20.0));
+  Simulator::Stop(Seconds(10.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/valid-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

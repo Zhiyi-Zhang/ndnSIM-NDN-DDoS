@@ -68,7 +68,6 @@ main(int argc, char* argv[]) {
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-    consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (3.0));
   }
@@ -87,7 +86,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(9.0));
+  Simulator::Stop(Seconds(10.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/fake-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

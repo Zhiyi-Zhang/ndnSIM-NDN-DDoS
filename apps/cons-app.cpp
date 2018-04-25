@@ -53,7 +53,7 @@ ConsApp::GetTypeId()
                   "Auto append sequence number: true (default), false",
                   BooleanValue(true),
                   MakeBooleanAccessor(&ConsApp::m_validInterest), MakeBooleanChecker())
-    
+
     .AddAttribute("GoodConsumer",
                   "Consumer is good: true (default), false (attacker)",
                   BooleanValue(true),
@@ -74,6 +74,7 @@ ConsApp::GetTypeId()
 
 ConsApp::ConsApp()
   : m_frequency(1.0)
+  , m_originFreq(1.0)
   , m_firstTime(true)
   , m_isGood(true)
   , m_interestNames("/")
@@ -140,7 +141,7 @@ ConsApp::StartApplication()
   std::string delimeter = ",";
   std::string token;
   while ((pos = m_interestNames.find(delimeter)) != std::string::npos) {
-    token = m_interestNames.substr(0, pos); 
+    token = m_interestNames.substr(0, pos);
     m_interestNameList.push_back(token);
     m_lastSeq[token] = m_initSeq;
     m_interestNames.erase(0, pos + delimeter.length());
@@ -148,6 +149,8 @@ ConsApp::StartApplication()
 
   m_interestNameList.push_back(m_interestNames);
   m_lastSeq[m_interestNames] = m_initSeq;
+
+  m_originFreq = m_frequency;
 
   NS_LOG_INFO("Current Frequency: " << m_frequency);
   NS_LOG_INFO("Current Max Range: " << m_maxSeq);
@@ -166,7 +169,7 @@ ConsApp::StopApplication()
 void
 ConsApp::SendInterest()
 {
- 
+
 
   /////////////////////////////////////////////
   // Sending one Interest packet out randomly//
@@ -227,7 +230,17 @@ ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
 {
   NS_LOG_INFO("NACK received");
   if (m_isGood) {
-    m_frequency = nack->getHeader().m_tolerance;
+    if (nack->getReason() == lp::NackReason::DDOS_RESET_RATE) {
+      m_frequency = m_originFreq;
+      std::cout << "Consumer: I reset my frequency!!!!!! the new value " << m_frequency << std::endl;
+    }
+    else {
+      m_frequency = nack->getHeader().m_tolerance - 1;
+      std::cout << "Consumer: I change my frequency!!!!!! the new value " << m_frequency << std::endl;
+      if (m_frequency <= 0) {
+        m_frequency = 1;
+      }
+    }
   }
 }
 

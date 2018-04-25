@@ -123,6 +123,7 @@ DDoSProdApp::CheckViolations()
 
   if (fakeInterestPerSec > m_fakeInterestThreshold) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
+    std::cout << "Violate FAKE INTERST threshold!!!" << std::endl;
 
     for (auto it = m_fakePrefixMap.begin(); it != m_fakePrefixMap.end(); ++it) {
       ndn::lp::Nack nack(*m_nackFakeInterest);
@@ -140,8 +141,10 @@ DDoSProdApp::CheckViolations()
     }
 
   }
-  else if (validInterestPerSec > m_validInterestCapacity) {
+
+  if (validInterestPerSec > m_validInterestCapacity) {
     NS_LOG_INFO("Violate VALID INTEREST capacity!!!");
+    std::cout << "Violate VALID INTERST threshold!!!" << std::endl;
 
     for (auto it = m_validPrefixSet.begin(); it != m_validPrefixSet.end(); ++it) {
       ndn::lp::Nack nack(*m_nackValidInterest);
@@ -213,9 +216,7 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     m_validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
 
-    if (m_nackValidInterest == nullptr) {
-      m_nackValidInterest = interest;
-    }
+    m_nackValidInterest = interest;
 
     m_validInterestQueue.push_back(interest->getName());
   }

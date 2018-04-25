@@ -21,11 +21,13 @@ main(int argc, char* argv[]) {
   std::string outFile = "test";
   std::string useStrategy = "true";
   std::string capacity = "200";
+  std::string tolerance = "100";
 
   CommandLine cmd;
   cmd.AddValue("maxRange", "Max Data Range", maxRange);
   cmd.AddValue("frequency", "Sending Frequency", frequency);
   cmd.AddValue("capacity", "valid capacity", capacity);
+  cmd.AddValue("tolerance", "fake tolerance", tolerance);
   cmd.AddValue("withStrategy", "Whether use ddos strategy", useStrategy);
   cmd.AddValue("topo", "Topology File", topo);
   cmd.AddValue("output", "Output File Name", outFile);
@@ -46,7 +48,7 @@ main(int argc, char* argv[]) {
   }
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Name", StringValue("/u1"));
+  consumerHelper.SetAttribute("Names", StringValue("/u1"));
   consumerHelper.SetAttribute("Frequency", StringValue("20"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));\
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
@@ -62,7 +64,6 @@ main(int argc, char* argv[]) {
 
   NodeContainer attackers;
   fillAttackerContainer(attackers);
-  consumerHelper.SetAttribute("Frequency", StringValue(frequency));
   for (int i = 0; i < attackers.size(); i++) {
     if (i % 2 == 0) {
       consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
@@ -72,6 +73,8 @@ main(int argc, char* argv[]) {
     }
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+    consumerHelper.SetAttribute("Frequency", StringValue(frequency));
+    consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (3.0));
@@ -82,7 +85,7 @@ main(int argc, char* argv[]) {
   ndn::AppHelper producerHelper("DDoSProdApp");
   producerHelper.SetPrefix("/u1");
   producerHelper.SetAttribute("ValidThreshold", StringValue(capacity));
-  producerHelper.SetAttribute("FakeThreshold", StringValue(capacity));
+  producerHelper.SetAttribute("FakeThreshold", StringValue(tolerance));
   producerHelper.Install(as1_cs_server);
 
   // Installing global routing interface on all nodes
@@ -91,7 +94,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(10.0));
+  Simulator::Stop(Seconds(20.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/mixed-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

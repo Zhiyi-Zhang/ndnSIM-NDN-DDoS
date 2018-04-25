@@ -47,6 +47,7 @@ protected:
 
 protected:
   int m_frequency;
+  int m_originFreq;
   bool m_firstTime;
   bool m_isGood;
   Ptr<RandomVariableStream> m_random;
