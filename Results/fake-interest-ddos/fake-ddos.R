@@ -12,6 +12,7 @@ library(doBy)
 #########################
 args = commandArgs(trailingOnly=TRUE)
 target = args[1]
+threshold = args[2]
 #target="test-f20-t0"
 
 data = read.table(paste(target, "txt", sep="."), header=T)
@@ -117,6 +118,8 @@ result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 g.nodes <- ggplot(result) +
   geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
+  geom_hline(yintercept = as.numeric(threshold), linetype="dashed") + 
+  annotate("text", x=1, y=as.numeric(threshold), vjust = -1, label = "Capacity") +
   ylab("Rate [Incoming Interest/s]")
 
 png(paste(target, "png", sep="."), width=500, height=250)
