@@ -98,10 +98,18 @@ ConsApp::ScheduleNextPacket()
     m_sendEvent = Simulator::Schedule(Seconds(0.0), &ConsApp::SendInterest, this);
     m_firstTime = false;
   }
-  else if (!m_sendEvent.IsRunning())
-    m_sendEvent = Simulator::Schedule((m_random == 0) ? Seconds(1.0 / m_frequency)
-                                                      : Seconds(m_random->GetValue()),
-                                      &ConsApp::SendInterest, this);
+  else if (!m_sendEvent.IsRunning()) {
+    if (m_frequency == 0) {
+      m_sendEvent = Simulator::Schedule((m_random == 0) ? Seconds(1.0 / 1)
+                                        : Seconds(m_random->GetValue()),
+                                        &ConsApp::SendInterest, this);
+    }
+    else {
+      m_sendEvent = Simulator::Schedule((m_random == 0) ? Seconds(1.0 / m_frequency)
+                                        : Seconds(m_random->GetValue()),
+                                        &ConsApp::SendInterest, this);
+    }
+  }
 }
 
 void
@@ -169,7 +177,10 @@ ConsApp::StopApplication()
 void
 ConsApp::SendInterest()
 {
-
+  if (m_frequency == 0) {
+    ScheduleNextPacket();
+    return;
+  }
 
   /////////////////////////////////////////////
   // Sending one Interest packet out randomly//
@@ -234,12 +245,13 @@ ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
       m_frequency = m_originFreq;
       std::cout << "Consumer: I reset my frequency!!!!!! the new value " << m_frequency << std::endl;
     }
-    else {
+    else if (nack->getReason() == lp::NackReason::DDOS_FAKE_INTEREST
+             || nack->getReason() == lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD) {
       m_frequency = nack->getHeader().m_tolerance - 1;
-      std::cout << "Consumer: I change my frequency!!!!!! the new value " << m_frequency << std::endl;
       if (m_frequency <= 0) {
-        m_frequency = 1;
+        m_frequency = 0;
       }
+      std::cout << "Consumer: I change my frequency!!!!!! the new value " << m_frequency << std::endl;
     }
   }
 }

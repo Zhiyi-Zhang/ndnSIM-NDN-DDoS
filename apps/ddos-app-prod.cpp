@@ -151,7 +151,7 @@ DDoSProdApp::CheckViolations()
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
       nackHeader.m_prefixLen = it->size();
-      nackHeader.m_tolerance = m_validInterestCapacity;
+      nackHeader.m_tolerance = static_cast<int>(m_validInterestCapacity * 0.9);
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
 

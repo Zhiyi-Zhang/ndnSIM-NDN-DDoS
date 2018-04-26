@@ -64,6 +64,7 @@ main(int argc, char* argv[]) {
   fillAttackerContainer(attackers);
   consumerHelper.SetAttribute("Frequency", StringValue(frequency));
   consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
+  consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
   for (int i = 0; i < attackers.size(); i++) {
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
