@@ -115,11 +115,12 @@ data.consumer$Node = "consumer"
 result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
+labelstr = paste(c("Valid Capacity (", threshold, ")"), collapse = "")
 g.nodes <- ggplot(result) +
   geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
   geom_hline(yintercept = as.numeric(threshold), linetype="dashed") + 
-  annotate("text", x=1, y=as.numeric(threshold), vjust = -1, label = "Capacity") +
+  annotate("text", x=13, y=as.numeric(threshold), vjust = -1, label = labelstr) +
   ylab("Rate [Incoming Interest/s]")
 
 png(paste(target, "png", sep="."), width=500, height=250)

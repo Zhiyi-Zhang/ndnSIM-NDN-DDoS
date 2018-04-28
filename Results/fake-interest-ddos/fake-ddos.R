@@ -13,7 +13,10 @@ library(doBy)
 args = commandArgs(trailingOnly=TRUE)
 target = args[1]
 threshold = args[2]
-#target="test-f20-t0"
+validAmount = 240
+
+#target="test-f50-t500"
+#threshold = 500
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)
@@ -115,11 +118,13 @@ data.consumer$Node = "consumer"
 result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
+
+labelstr = paste(c("Fake Tolerance (", threshold, ") + Good Interests (", validAmount, ")"), collapse = "")
 g.nodes <- ggplot(result) +
   geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
-  geom_hline(yintercept = as.numeric(threshold), linetype="dashed") + 
-  annotate("text", x=1, y=as.numeric(threshold), vjust = -1, label = "Capacity") +
+  geom_hline(yintercept = as.numeric(threshold) + validAmount, linetype="dashed") + 
+  annotate("text", x=13, y=as.numeric(threshold) + validAmount, vjust = -1, label = labelstr ) +
   ylab("Rate [Incoming Interest/s]")
 
 png(paste(target, "png", sep="."), width=500, height=250)

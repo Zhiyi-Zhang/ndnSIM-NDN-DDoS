@@ -15,7 +15,7 @@ main(int argc, char* argv[]) {
   Config::SetDefault("ns3::PointToPointNetDevice::Mtu", StringValue("65535"));
 
   // parameters
-  std::string maxRange = "1000";
+  std::string maxRange = "9000";
   std::string frequency = "200";
   std::string topo = "fake-interest-ddos";
   std::string outFile = "test";
@@ -47,7 +47,7 @@ main(int argc, char* argv[]) {
 
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Names", StringValue("/u1"));
-  consumerHelper.SetAttribute("Frequency", StringValue("10"));
+  consumerHelper.SetAttribute("Frequency", StringValue("20"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 

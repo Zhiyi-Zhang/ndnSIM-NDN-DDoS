@@ -112,16 +112,14 @@ DDoSProdApp::CheckViolations()
               << " valid:" << m_validInterestCount);
 
   // fake interest/time unit increases threshold
-  int fakeInterestPerSec = static_cast<int>(m_fakeInterestCount/m_checkWindow + 0.5);
-  int validInterestPerSec = static_cast<int>(m_validInterestCount/m_checkWindow + 0.5);
 
-  NS_LOG_DEBUG("Fake interests per sec: " << fakeInterestPerSec);
-  NS_LOG_DEBUG("Valid interests per sec: " << validInterestPerSec);
+  NS_LOG_DEBUG("Fake interests per unit: " << m_fakeInterestCount);
+  NS_LOG_DEBUG("Valid interests per unit: " << m_validInterestCount);
 
-  std::cout << "Fake interests per sec: " << fakeInterestPerSec
-            << " Valid interests per sec: " << validInterestPerSec << std::endl;
+  std::cout << "Fake interests per unit: " << m_fakeInterestCount
+            << " Valid interests per unit: " << m_validInterestCount << std::endl;
 
-  if (fakeInterestPerSec > m_fakeInterestThreshold) {
+  if (static_cast<double>(m_fakeInterestCount) > m_fakeInterestThreshold * m_checkWindow) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
     std::cout << "Violate FAKE INTERST threshold!!!" << std::endl;
 
@@ -130,7 +128,7 @@ DDoSProdApp::CheckViolations()
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_FAKE_INTEREST;
       nackHeader.m_prefixLen = it->first.size();
-      nackHeader.m_tolerance = m_fakeInterestThreshold;
+      nackHeader.m_tolerance = static_cast<int>(m_fakeInterestThreshold * 0.9);
       nackHeader.m_fakeInterestNames = it->second;
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
@@ -142,7 +140,7 @@ DDoSProdApp::CheckViolations()
 
   }
 
-  if (validInterestPerSec > m_validInterestCapacity) {
+  if (static_cast<double>(m_validInterestCount) > m_validInterestCapacity * m_checkWindow) {
     NS_LOG_INFO("Violate VALID INTEREST capacity!!!");
     std::cout << "Violate VALID INTERST threshold!!!" << std::endl;
 
@@ -151,7 +149,7 @@ DDoSProdApp::CheckViolations()
       lp::NackHeader nackHeader;
       nackHeader.m_reason = lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD;
       nackHeader.m_prefixLen = it->size();
-      nackHeader.m_tolerance = static_cast<int>(m_validInterestCapacity * 0.9);
+      nackHeader.m_tolerance = static_cast<int>(m_validInterestCapacity * 0.95);
       nackHeader.m_nackId = rand() % DEFAULT_ID_MAX;
       nack.setHeader(nackHeader);
 
