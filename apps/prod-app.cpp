@@ -78,7 +78,7 @@ ProdApp::OnInterest(shared_ptr<const Interest> interest)
     // Note that Interests send out by the app will not be sent back to the app !
 
     auto data = std::make_shared<ndn::Data>(interest->getName());
-    data->setFreshnessPeriod(ndn::time::milliseconds(5000));
+    data->setFreshnessPeriod(ndn::time::milliseconds(4000));
     data->setContent(std::make_shared< ::ndn::Buffer>(1024));
     ndn::StackHelper::getKeyChain().sign(*data);
     // std::cout << "Sending Data packet for " << data->getName() << std::endl;

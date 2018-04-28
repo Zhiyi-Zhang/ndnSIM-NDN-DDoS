@@ -1,6 +1,6 @@
 // b-1-1.cpp
 // Please make sure each time to set a different RngRun
-// ./waf --run "mixed-ddos --RngRun=2 --maxRange=400 --frequency=50 --capacity=50 --topo=ddos-simple --output=test"
+// ./waf --run "mixed-ddos --RngRun=2 --maxRange=400 --frequency=50 --capacity=50 --tolerance=50 --topo=ddos-simple --output=test"
 // fake-interest-ddos topology contains: 12 good users, 60 attackers
 // B-1: Interest Aggregation with valid Interests
 
@@ -54,16 +54,18 @@ main(int argc, char* argv[]) {
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 
 
-  // NodeContainer consumers;
-  // fillConsumerContainer(consumers);
-  // for (int i = 0; i < consumers.size(); i++) {
-  //   int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
-  //   consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-  //   consumerHelper.Install(consumers[i]);
-  // }
+  NodeContainer consumers;
+  fillConsumerContainer(consumers);
+  for (int i = 0; i < consumers.size(); i++) {
+    int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+    consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+    consumerHelper.Install(consumers[i]);
+  }
 
   NodeContainer attackers;
   fillAttackerContainer(attackers);
+  consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
+  consumerHelper.SetAttribute("Frequency", StringValue(frequency));
   for (int i = 0; i < attackers.size(); i++) {
     if (i % 2 == 0) {
       consumerHelper.SetAttribute("ValidInterest", BooleanValue(false));
@@ -73,8 +75,6 @@ main(int argc, char* argv[]) {
     }
     ApplicationContainer evilApp;
     int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
-    consumerHelper.SetAttribute("Frequency", StringValue(frequency));
-    consumerHelper.SetAttribute("GoodConsumer", BooleanValue(false));
     consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
     evilApp.Add(consumerHelper.Install(attackers[i]));
     evilApp.Start(Seconds (3.0));

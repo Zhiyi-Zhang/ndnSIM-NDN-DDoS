@@ -8,7 +8,7 @@ library(doBy)
 #########################
 # Rate trace processing #
 #########################
-target = "300-200-20-bad"
+target = "test"
 
 data = read.table(paste(target, "txt", sep="."), header=T)
 data$Node = factor(data$Node)
@@ -19,41 +19,66 @@ data$Type = factor(data$Type)
 # exlude irrelevant types
 data = subset(data, Type %in% c("InInterests"))
 
-data.attacker = subset(data, Node %in% c("as1-cs-a0",
-                                         "as1-cs-a1",
-                                         "as1-cs-a2",
-                                         "as1-cs-a3",
-                                         "as1-cs-a4",
-                                         "as1-math-a0",
+data.attacker = subset(data, Node %in% c("as1-math-a0",
                                          "as1-math-a1",
                                          "as1-math-a2",
                                          "as1-math-a3",
                                          "as1-math-a4",
-                                         "as2-cs-a0",
-                                         "as2-cs-a1",
-                                         "as2-cs-a2",
-                                         "as2-cs-a3",
-                                         "as2-cs-a4",
+                                         "as1-math-a5",
+                                         "as1-math-a6",
+                                         "as1-math-a7",
+                                         "as1-math-a8",
+                                         "as1-math-a9",
                                          "as2-math-a0",
                                          "as2-math-a1",
                                          "as2-math-a2",
                                          "as2-math-a3",
                                          "as2-math-a4",
+                                         "as2-math-a5",
+                                         "as2-math-a6",
+                                         "as2-math-a7",
+                                         "as2-math-a8",
+                                         "as2-math-a9",
+                                         "as2-cs-a0",
+                                         "as2-cs-a1",
+                                         "as2-cs-a2",
+                                         "as2-cs-a3",
+                                         "as2-cs-a4",
+                                         "as2-cs-a5",
+                                         "as2-cs-a6",
+                                         "as2-cs-a7",
+                                         "as2-cs-a8",
+                                         "as2-cs-a9",
                                          "as3-cs-a0",
                                          "as3-cs-a1",
                                          "as3-cs-a2",
                                          "as3-cs-a3",
                                          "as3-cs-a4",
+                                         "as3-cs-a5",
+                                         "as3-cs-a6",
+                                         "as3-cs-a7",
+                                         "as3-cs-a8",
+                                         "as3-cs-a9",
                                          "as4-hw-a0",
                                          "as4-hw-a1",
                                          "as4-hw-a2",
                                          "as4-hw-a3",
                                          "as4-hw-a4",
+                                         "as4-hw-a5",
+                                         "as4-hw-a6",
+                                         "as4-hw-a7",
+                                         "as4-hw-a8",
+                                         "as4-hw-a9",
                                          "as4-sm-a0",
                                          "as4-sm-a1",
                                          "as4-sm-a2",
                                          "as4-sm-a3",
-                                         "as4-sm-a4"))
+                                         "as4-sm-a4",
+                                         "as4-sm-a5",
+                                         "as4-sm-a6",
+                                         "as4-sm-a7",
+                                         "as4-sm-a8",
+                                         "as4-sm-a9"))
 data.victim = subset(data, Node %in% c("as1-cs-server"))
 data.gateway = subset(data, Node %in% c("as1-cs"))
 
