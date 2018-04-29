@@ -121,8 +121,10 @@ g.nodes <- ggplot(result) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
   geom_hline(yintercept = as.numeric(threshold), linetype="dashed") + 
   annotate("text", x=13, y=as.numeric(threshold), vjust = -1, label = labelstr) +
-  ylab("Rate [Incoming Interest/s]")
+  xlab("Time [second]") +
+  ylab("Rate [Interest / second]") +
+  theme(legend.position="none", text = element_text(size=12) )
 
-png(paste(target, "png", sep="."), width=500, height=250)
+png(paste(target, "png", sep="."), width=500, height=300)
 print(g.nodes)
 retval <- dev.off()

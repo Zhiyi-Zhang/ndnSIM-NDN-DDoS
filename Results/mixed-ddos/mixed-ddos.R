@@ -112,7 +112,6 @@ data.attacker$Node = "attacker"
 data.victim$Node = "victim"
 data.gateway$Node = "gateway"
 data.consumer$Node = "consumer"
-
 result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
@@ -122,7 +121,10 @@ g.nodes <- ggplot(result) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
   geom_hline(yintercept = as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, linetype="dashed") + 
   annotate("text", x=12, y=as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, vjust = -1, label = labelstr ) +
-  ylab("Rate [Incoming Interest/s]")
-png(paste(target, "png", sep="."), width=500, height=250)
+  xlab("Time [second]") +
+  ylab("Rate [Interest / second]") +
+  theme(legend.position="none", text = element_text(size=12) )
+
+png(paste(target, "png", sep="."), width=500, height=300)
 print(g.nodes)
 retval <- dev.off()

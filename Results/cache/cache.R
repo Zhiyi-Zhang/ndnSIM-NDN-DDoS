@@ -20,6 +20,20 @@ data$Type = factor(data$Type)
 # exlude irrelevant types
 data = subset(data, Type %in% c("InInterests"))
 
+
+data.consumer = subset(data, Node %in% c("as1-math-g0",
+                                         "as1-math-g1",
+                                         "as2-math-g0",
+                                         "as2-math-g1",
+                                         "as2-cs-g0",
+                                         "as2-cs-g1",
+                                         "as3-cs-g0",
+                                         "as3-cs-g1",
+                                         "as4-hw-g0",
+                                         "as4-hw-g1",
+                                         "as4-sm-g0",
+                                         "as4-sm-g1"))
+
 data.attacker = subset(data, Node %in% c("as1-math-a0",
                                          "as1-math-a1",
                                          "as1-math-a2",
@@ -88,18 +102,21 @@ data = summaryBy(. ~ Time + Node + Type, data=data, FUN=sum)
 data.attacker = summaryBy(. ~ Time + Type, data=data.attacker, FUN=sum)
 data.victim = summaryBy(. ~ Time + Type, data=data.victim, FUN=sum)
 data.gateway = summaryBy(. ~ Time + Type, data=data.gateway, FUN=sum)
+data.consumer = summaryBy(. ~ Time + Type, data=data.consumer, FUN=sum)
 data.attacker$Node = "attacker"
 data.victim$Node = "victim"
 data.gateway$Node = "gateway"
-
-result = rbind(data.victim, data.attacker, data.gateway)
+data.consumer$Node = "consumer"
+result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
 g.nodes <- ggplot(result) +
   geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
-  ylab("Rate [Incoming Interest/s]")
+  xlab("Time [second]") +
+  ylab("Rate [Interest / second]") +
+  theme(legend.position="none", text = element_text(size=12) )
 
-png(paste(target, "png", sep="."), width=500, height=250)
+png(paste(target, "png", sep="."), width=500, height=300)
 print(g.nodes)
 retval <- dev.off()
