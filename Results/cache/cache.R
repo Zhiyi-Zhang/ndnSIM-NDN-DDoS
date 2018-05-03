@@ -113,6 +113,7 @@ result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 g.nodes <- ggplot(result) +
   geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
   scale_shape_manual(values=c(8, 16, 17, 15)) +
+  scale_color_manual(values=c("red","chartreuse3", "goldenrod", "deepskyblue")) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +

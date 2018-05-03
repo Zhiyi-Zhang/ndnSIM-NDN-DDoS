@@ -119,6 +119,7 @@ labelstr = paste(c("Tolerance (", fake_threshold, ") + Capacity (", valid_thresh
 g.nodes <- ggplot(result) + 
   geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
   scale_shape_manual(values=c(8, 16, 17, 15)) +
+  scale_color_manual(values=c("red","chartreuse3", "goldenrod", "deepskyblue")) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
   geom_hline(yintercept = as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, linetype="dashed") + 
   annotate("text", x=12, y=as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, vjust = -1, label = labelstr ) +
