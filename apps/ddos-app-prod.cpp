@@ -64,11 +64,11 @@ DDoSProdApp::ScheduleNextChecks()
 {
   if (m_firstTime) {
     m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
-    m_firstTime = false;
+    // m_firstTime = false;
   }
   else if (!m_checkViolationEvent.IsRunning()) {
-      m_checkViolationEvent = Simulator::Schedule(Seconds(m_checkWindow),
-                                      &DDoSProdApp::CheckViolations, this);
+    m_checkViolationEvent = Simulator::Schedule(Seconds(m_checkWindow),
+                                                &DDoSProdApp::CheckViolations, this);
   }
 
 }
@@ -77,7 +77,7 @@ void
 DDoSProdApp::ScheduleNextReply()
 {
   if (m_firstTime) {
-    m_replyEvent = Simulator::Schedule(Seconds(0.1), &DDoSProdApp::ProcessValidInterest, this);
+    m_replyEvent = Simulator::Schedule(Seconds(0.01), &DDoSProdApp::ProcessValidInterest, this);
     m_firstTime = false;
   }
   else if (!m_replyEvent.IsRunning()) {
@@ -206,6 +206,13 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     if (m_nackFakeInterest == nullptr) {
       m_nackFakeInterest = interest;
     }
+
+    // if (m_firstNack
+    //     && static_cast<double>(m_fakeInterestCount) > m_fakeInterestThreshold * m_checkWindow) {
+    //   ns3::Simulator::Cancel(m_checkViolationEvent);
+    //   m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
+    //   m_firstNack = false;
+    // }
   }
   // valid interest
   else {
@@ -217,6 +224,13 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
     m_nackValidInterest = interest;
 
     m_validInterestQueue.push_back(interest->getName());
+
+    //  if (m_firstNack
+    //     && static_cast<double>(m_validInterestCount) > m_validInterestCapacity * m_checkWindow) {
+    //   ns3::Simulator::Cancel(m_checkViolationEvent);
+    //   m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
+    //   m_firstNack = false;
+    // }
   }
 }
 

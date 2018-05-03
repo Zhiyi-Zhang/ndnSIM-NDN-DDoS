@@ -111,11 +111,13 @@ result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
 g.nodes <- ggplot(result) +
-  geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
+  geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
+  scale_shape_manual(values=c(8, 16, 17, 15)) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
-  theme(legend.position="none", text = element_text(size=12) )
+  theme_linedraw() +
+  theme(legend.position="none", text = element_text(size=12)) 
 
 png(paste(target, "png", sep="."), width=500, height=300)
 print(g.nodes)

@@ -116,13 +116,15 @@ result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
 
 # graph rates on selected nodes in number of incoming interest packets
 labelstr = paste(c("Tolerance (", fake_threshold, ") + Capacity (", valid_threshold, ") + Good Interest (", validAmount, ")"), collapse = "")
-g.nodes <- ggplot(result) +
-  geom_point(aes (x=Time, y=Packets.sum, color=Node), size=1) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.5) +
+g.nodes <- ggplot(result) + 
+  geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
+  scale_shape_manual(values=c(8, 16, 17, 15)) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
   geom_hline(yintercept = as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, linetype="dashed") + 
   annotate("text", x=12, y=as.numeric(fake_threshold) + as.numeric(valid_threshold) + validAmount, vjust = -1, label = labelstr ) +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
+  theme_linedraw() +
   theme(legend.position="none", text = element_text(size=12) )
 
 png(paste(target, "png", sep="."), width=500, height=300)
