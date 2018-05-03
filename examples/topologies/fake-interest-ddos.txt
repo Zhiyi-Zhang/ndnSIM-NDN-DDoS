@@ -139,7 +139,7 @@ as4-1    as4-sm         100Mbps  1   10ms    1000
 
 # Edge targets
 as1-cs   as1-cs-server    100Mbps  1   5ms    1000
-# as1-cs   as1-cs-backend    1Mbps  1   5ms    1000
+as1-cs   as1-cs-backend    100Mbps  1   5ms    1000
 # as3-math    as3-math-server   1Mbps  1   5ms    1000
 
 
