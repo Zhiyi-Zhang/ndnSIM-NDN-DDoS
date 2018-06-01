@@ -117,7 +117,8 @@ DDoSProdApp::CheckViolations()
   NS_LOG_DEBUG("Valid interests per unit: " << m_validInterestCount);
 
   std::cout << "Fake interests per unit: " << m_fakeInterestCount
-            << " Valid interests per unit: " << m_validInterestCount << std::endl;
+            << " Valid interests per unit: " << m_validInterestCount
+            << " Good interests per unit: " << m_goodInterests << std::endl;
 
   if (static_cast<double>(m_fakeInterestCount) > m_fakeInterestThreshold * m_checkWindow) {
     NS_LOG_INFO("Violate FAKE INTERST threshold!!!");
@@ -162,6 +163,7 @@ DDoSProdApp::CheckViolations()
   // reset the counter
   m_fakeInterestCount = 0;
   m_validInterestCount = 0;
+  m_goodInterests = 0;
   m_nackFakeInterest = nullptr;
   m_nackValidInterest = nullptr;
 
@@ -207,17 +209,14 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
       m_nackFakeInterest = interest;
     }
 
-    // if (m_firstNack
-    //     && static_cast<double>(m_fakeInterestCount) > m_fakeInterestThreshold * m_checkWindow) {
-    //   ns3::Simulator::Cancel(m_checkViolationEvent);
-    //   m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
-    //   m_firstNack = false;
-    // }
   }
   // valid interest
   else {
     // NS_LOG_INFO("Receive Valid Interest " << interest->getName());
 
+    if (lastComponent[0] == 'g') {
+      ++m_goodInterests;
+    }
     m_validPrefixSet.insert(interestName.getPrefix(-1));
     m_validInterestCount += 1;
 
@@ -225,12 +224,6 @@ DDoSProdApp::OnInterest(shared_ptr<const Interest> interest)
 
     m_validInterestQueue.push_back(interest->getName());
 
-    //  if (m_firstNack
-    //     && static_cast<double>(m_validInterestCount) > m_validInterestCapacity * m_checkWindow) {
-    //   ns3::Simulator::Cancel(m_checkViolationEvent);
-    //   m_checkViolationEvent = Simulator::Schedule(Seconds(0.0), &DDoSProdApp::CheckViolations, this);
-    //   m_firstNack = false;
-    // }
   }
 }
 

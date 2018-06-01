@@ -193,7 +193,12 @@ ConsApp::SendInterest()
   int lastSeq = m_lastSeq.find(interestName)->second;
 
   if (m_validInterest){
-    interest_copy.append(std::to_string(lastSeq + 1));
+    if (m_isGood) {
+      interest_copy.append("g" + std::to_string(lastSeq + 1));
+    }
+    else {
+      interest_copy.append("b" + std::to_string(lastSeq + 1));
+    }
     lastSeq += 1;
 
     if (lastSeq == m_maxSeq){
@@ -201,6 +206,7 @@ ConsApp::SendInterest()
     }
   }
   else{
+    // fake Interest packet
     interest_copy.append("a" + std::to_string(rand()%400) + std::to_string(lastSeq + 1));
     lastSeq += 1;
 

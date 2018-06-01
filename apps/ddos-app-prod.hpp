@@ -79,6 +79,8 @@ private:
 
   // buffer the valid interest for processing
   std::list<Name> m_validInterestQueue;
+
+  int m_goodInterests = 0;
 };
 
 } // namespace ndn
