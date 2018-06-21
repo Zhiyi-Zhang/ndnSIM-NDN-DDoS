@@ -49,7 +49,7 @@ main(int argc, char* argv[]) {
 
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Names", StringValue("/u1"));
-  consumerHelper.SetAttribute("Frequency", StringValue("20"));
+  consumerHelper.SetAttribute("Frequency", StringValue("40"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));\
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 
@@ -94,7 +94,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(20.0));
+  Simulator::Stop(Seconds(30.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/mixed-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

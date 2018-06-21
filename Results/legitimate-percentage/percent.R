@@ -1,16 +1,5 @@
 #!/usr/bin/env Rscript
 
-# install.packages('ggplot2')
-library(ggplot2)
-# install.packages('scales')
-library(scales)
-# install.packages('doBy')
-library(doBy)
-
-#########################
-# Rate trace processing #
-#########################
-
 rawData <- readLines("valid.txt")
 options(scipen=999)
 
@@ -24,9 +13,12 @@ df <- data.frame(time = numeric(length(result)),
                  stringsAsFactors = FALSE)
 
 for (i in 1:length(result)) {
-  df$time[i] <- i
+  df$time[i] <- i/10
   numberA <- as.numeric(sub(pattern, "\\1", result[i]))
   numberB <- as.numeric(sub(pattern, "\\2", result[i]))
   numberC <- as.numeric(sub(pattern, "\\3", result[i]))
   df$percent[i] <- numberC / (numberB+numberA)
 }
+
+plot(df$time, df$percent, type="l",xlab="Time (second)", ylab="Legitimate Precentage")
+title("Fake Interest Attack")

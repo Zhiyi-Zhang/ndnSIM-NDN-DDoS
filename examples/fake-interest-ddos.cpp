@@ -47,7 +47,7 @@ main(int argc, char* argv[]) {
 
   ndn::AppHelper consumerHelper("ConsApp");
   consumerHelper.SetAttribute("Names", StringValue("/u1"));
-  consumerHelper.SetAttribute("Frequency", StringValue("20"));
+  consumerHelper.SetAttribute("Frequency", StringValue("40"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 

@@ -1,7 +1,28 @@
 Waf: Entering directory `/Users/ZhangZhiyi/Develop/ndnSIM/ns-3/build'
+[2512/3085] Compiling src/ndnSIM/examples/valid-interest-ddos.cpp
+In file included from ../src/ndnSIM/examples/valid-interest-ddos.cpp:7:
+In file included from ../src/ndnSIM/examples/helper.hpp:7:
+In file included from ./ns3/ndnSIM-module.h:10:
+In file included from ./ns3/ndn-all.hpp:23:
+In file included from ./ns3/ndnSIM/helper/ndn-stack-helper.hpp:32:
+In file included from ./ns3/ndnSIM/helper/ndn-strategy-choice-helper.hpp:30:
+In file included from ./ns3/ndnSIM/NFD/daemon/mgmt/strategy-choice-manager.hpp:29:
+In file included from ./ns3/ndnSIM/NFD/daemon/mgmt/nfd-manager-base.hpp:29:
+In file included from ns3/ndnSIM/NFD/core/manager-base.hpp:31:
+In file included from ns3/ndnSIM/ndn-cxx/mgmt/dispatcher.hpp:25:
+ns3/ndnSIM/ndn-cxx/mgmt/nfd/../../face.hpp:465:12: warning: binding dereferenced null pointer to reference has undefined behavior [-Wnull-dereference]
+    return *static_cast<boost::asio::io_service*>(nullptr);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/ndnSIM/examples/valid-interest-ddos.cpp:7:
+../src/ndnSIM/examples/helper.hpp:52:1: warning: unused function 'fillRouterContainer' [-Wunused-function]
+fillRouterContainer(NodeContainer& container)
+^
+2 warnings generated.
+
+[3067/3085] Linking build/src/ndnSIM/examples/ns3-dev-valid-interest-ddos-debug
 Waf: Leaving directory `/Users/ZhangZhiyi/Develop/ndnSIM/ns-3/build'
 Build commands will be stored in build/compile_commands.json
-'build' finished successfully (2.370s)
+'build' finished successfully (6.241s)
 Fake interests per unit: 0 Valid interests per unit: 0 Good interests per unit: 0
 ************** I am a consumer gateway router
 /u1/g759
@@ -33,36 +54,36 @@ face id 258
 node id 12
 face id 257
 face id 258
-Fake interests per unit: 0 Valid interests per unit: 14 Good interests per unit: 14
 Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 48
 face id 265
 face id 267
 face id 261
@@ -123,2191 +144,1834 @@ face id 265
 face id 266
 face id 267
 face id 268
-Fake interests per unit: 0 Valid interests per unit: 334 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 604 Good interests per unit: 48
 Violate VALID INTERST threshold!!!
 I recieve a nack!!!! I am node 13
-pitTable size: 351
+pitTable size: 641
 node id :13
-receiving tolerance570
-before division: 326	 totalmatchedInterest: 326
-	 face id: 256	 weight1	 weighted tolerance: 570
+receiving tolerance950
+before division: 592	 totalmatchedInterest: 592
+	 face id: 256	 weight1	 weighted tolerance: 950
 I recieve a nack!!!! I am node 2
-pitTable size: 418
+pitTable size: 765
 node id :2
-receiving tolerance570
-before division: 299	 totalmatchedInterest: 393
-	 face id: 256	 weight0.760814	 weighted tolerance: 434
-before division: 94	 totalmatchedInterest: 393
-	 face id: 257	 weight0.239186	 weighted tolerance: 136
+receiving tolerance950
+before division: 540	 totalmatchedInterest: 717
+	 face id: 256	 weight0.753138	 weighted tolerance: 715
+before division: 177	 totalmatchedInterest: 717
+	 face id: 257	 weight0.246862	 weighted tolerance: 235
 I recieve a nack!!!! I am node 3
-pitTable size: 121
+pitTable size: 239
 node id :3
-receiving tolerance136
-before division: 3	 totalmatchedInterest: 116
-	 face id: 259	 weight0.0258621	 weighted tolerance: 4
-before division: 3	 totalmatchedInterest: 116
-	 face id: 260	 weight0.0258621	 weighted tolerance: 4
-before division: 11	 totalmatchedInterest: 116
-	 face id: 261	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 262	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 263	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 264	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 265	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 266	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 267	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 268	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 269	 weight0.0948276	 weighted tolerance: 13
-before division: 11	 totalmatchedInterest: 116
-	 face id: 270	 weight0.0948276	 weighted tolerance: 13
+receiving tolerance235
+before division: 5	 totalmatchedInterest: 230
+	 face id: 259	 weight0.0217391	 weighted tolerance: 5
+before division: 5	 totalmatchedInterest: 230
+	 face id: 260	 weight0.0217391	 weighted tolerance: 5
+before division: 22	 totalmatchedInterest: 230
+	 face id: 261	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 262	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 263	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 264	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 265	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 266	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 267	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 268	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 269	 weight0.0956522	 weighted tolerance: 22
+before division: 22	 totalmatchedInterest: 230
+	 face id: 270	 weight0.0956522	 weighted tolerance: 22
 I recieve a nack!!!! I am node 0
-pitTable size: 420
+pitTable size: 774
 node id :0
-receiving tolerance434
-before division: 66	 totalmatchedInterest: 399
-	 face id: 256	 weight0.165414	 weighted tolerance: 72
-before division: 166.5	 totalmatchedInterest: 399
-	 face id: 257	 weight0.417293	 weighted tolerance: 181
-before division: 166.5	 totalmatchedInterest: 399
-	 face id: 258	 weight0.417293	 weighted tolerance: 181
+receiving tolerance715
+before division: 120.5	 totalmatchedInterest: 734
+	 face id: 256	 weight0.164169	 weighted tolerance: 117
+before division: 309.5	 totalmatchedInterest: 734
+	 face id: 257	 weight0.421662	 weighted tolerance: 301
+before division: 304	 totalmatchedInterest: 734
+	 face id: 258	 weight0.414169	 weighted tolerance: 296
 I recieve a nack!!!! I am node 20
-pitTable size: 14
+pitTable size: 27
 node id :20
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 22
-pitTable size: 14
+pitTable size: 27
 node id :22
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 14
-pitTable size: 6
+pitTable size: 11
 node id :14
-receiving tolerance4
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 4
+receiving tolerance5
+before division: 6	 totalmatchedInterest: 6
+	 face id: 258	 weight1	 weighted tolerance: 5
 I recieve a nack!!!! I am node 15
-pitTable size: 6
+pitTable size: 11
 node id :15
-receiving tolerance4
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 4
+receiving tolerance5
+before division: 6	 totalmatchedInterest: 6
+	 face id: 258	 weight1	 weighted tolerance: 5
 I recieve a nack!!!! I am node 16
-pitTable size: 14
+pitTable size: 27
 node id :16
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 17
-pitTable size: 14
+pitTable size: 27
 node id :17
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 18
-pitTable size: 14
+pitTable size: 27
 node id :18
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 19
-pitTable size: 14
+pitTable size: 27
 node id :19
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 21
-pitTable size: 14
+pitTable size: 27
 node id :21
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 23
-pitTable size: 14
+pitTable size: 27
 node id :23
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 24
-pitTable size: 14
+pitTable size: 27
 node id :24
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
 I recieve a nack!!!! I am node 25
-pitTable size: 14
+pitTable size: 27
 node id :25
-receiving tolerance13
-before division: 13	 totalmatchedInterest: 13
-	 face id: 258	 weight1	 weighted tolerance: 13
-Consumer: I change my frequency!!!!!! the new value 3
-Consumer: I change my frequency!!!!!! the new value 3
+receiving tolerance22
+before division: 26	 totalmatchedInterest: 26
+	 face id: 258	 weight1	 weighted tolerance: 22
+Consumer: I change my frequency!!!!!! the new value 4
+Consumer: I change my frequency!!!!!! the new value 4
 I recieve a nack!!!! I am node 1
-pitTable size: 111
+pitTable size: 213
 node id :1
-receiving tolerance72
-before division: 106	 totalmatchedInterest: 106
-	 face id: 257	 weight1	 weighted tolerance: 72
+receiving tolerance117
+before division: 204	 totalmatchedInterest: 204
+	 face id: 257	 weight1	 weighted tolerance: 117
 I recieve a nack!!!! I am node 4
-pitTable size: 261
+pitTable size: 506
 node id :4
-receiving tolerance181
-before division: 126	 totalmatchedInterest: 252
-	 face id: 258	 weight0.5	 weighted tolerance: 91
-before division: 126	 totalmatchedInterest: 252
-	 face id: 259	 weight0.5	 weighted tolerance: 91
+receiving tolerance301
+before division: 245	 totalmatchedInterest: 489
+	 face id: 258	 weight0.501022	 weighted tolerance: 151
+before division: 244	 totalmatchedInterest: 489
+	 face id: 259	 weight0.498978	 weighted tolerance: 150
 I recieve a nack!!!! I am node 10
-pitTable size: 259
+pitTable size: 489
 node id :10
-receiving tolerance181
-before division: 124	 totalmatchedInterest: 250
-	 face id: 259	 weight0.496	 weighted tolerance: 90
-before division: 126	 totalmatchedInterest: 250
-	 face id: 260	 weight0.504	 weighted tolerance: 91
+receiving tolerance296
+before division: 231	 totalmatchedInterest: 475
+	 face id: 259	 weight0.486316	 weighted tolerance: 144
+before division: 244	 totalmatchedInterest: 475
+	 face id: 260	 weight0.513684	 weighted tolerance: 152
 I recieve a nack!!!! I am node 5
-pitTable size: 151
+pitTable size: 300
 node id :5
-receiving tolerance91
-before division: 3	 totalmatchedInterest: 146
-	 face id: 258	 weight0.0205479	 weighted tolerance: 2
-before division: 3	 totalmatchedInterest: 146
-	 face id: 259	 weight0.0205479	 weighted tolerance: 2
-before division: 14	 totalmatchedInterest: 146
-	 face id: 260	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 261	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 262	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 263	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 264	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 265	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 266	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 267	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 268	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 269	 weight0.0958904	 weighted tolerance: 9
+receiving tolerance151
+before division: 7	 totalmatchedInterest: 291
+	 face id: 258	 weight0.024055	 weighted tolerance: 4
+before division: 7	 totalmatchedInterest: 291
+	 face id: 259	 weight0.024055	 weighted tolerance: 4
+before division: 28	 totalmatchedInterest: 291
+	 face id: 260	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 261	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 262	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 263	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 264	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 265	 weight0.0962199	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 291
+	 face id: 266	 weight0.0962199	 weighted tolerance: 15
+before division: 26.5	 totalmatchedInterest: 291
+	 face id: 267	 weight0.0910653	 weighted tolerance: 14
+before division: 26.5	 totalmatchedInterest: 291
+	 face id: 268	 weight0.0910653	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 291
+	 face id: 269	 weight0.0962199	 weighted tolerance: 15
 I recieve a nack!!!! I am node 6
-pitTable size: 151
-node id :6
-receiving tolerance91
-before division: 3	 totalmatchedInterest: 146
-	 face id: 258	 weight0.0205479	 weighted tolerance: 2
-before division: 3	 totalmatchedInterest: 146
-	 face id: 259	 weight0.0205479	 weighted tolerance: 2
-before division: 14	 totalmatchedInterest: 146
-	 face id: 260	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 261	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 262	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 263	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 264	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 265	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 266	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 267	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 268	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 269	 weight0.0958904	 weighted tolerance: 9
-I recieve a nack!!!! I am node 11
-pitTable size: 147
-node id :11
-receiving tolerance90
-before division: 3	 totalmatchedInterest: 142
-	 face id: 257	 weight0.0211268	 weighted tolerance: 2
-before division: 3	 totalmatchedInterest: 142
-	 face id: 258	 weight0.0211268	 weighted tolerance: 2
-before division: 14	 totalmatchedInterest: 142
-	 face id: 259	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 260	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 261	 weight0.0985915	 weighted tolerance: 9
-before division: 12	 totalmatchedInterest: 142
-	 face id: 262	 weight0.084507	 weighted tolerance: 8
-before division: 14	 totalmatchedInterest: 142
-	 face id: 263	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 264	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 265	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 266	 weight0.0985915	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 142
-	 face id: 267	 weight0.0985915	 weighted tolerance: 9
-before division: 12	 totalmatchedInterest: 142
-	 face id: 268	 weight0.084507	 weighted tolerance: 8
-I recieve a nack!!!! I am node 12
-pitTable size: 151
-node id :12
-receiving tolerance91
-before division: 3	 totalmatchedInterest: 146
-	 face id: 257	 weight0.0205479	 weighted tolerance: 2
-before division: 3	 totalmatchedInterest: 146
-	 face id: 258	 weight0.0205479	 weighted tolerance: 2
-before division: 14	 totalmatchedInterest: 146
-	 face id: 259	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 260	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 261	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 262	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 263	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 264	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 265	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 266	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 267	 weight0.0958904	 weighted tolerance: 9
-before division: 14	 totalmatchedInterest: 146
-	 face id: 268	 weight0.0958904	 weighted tolerance: 9
-I recieve a nack!!!! I am node 7
-pitTable size: 153
-node id :7
-receiving tolerance72
-before division: 148	 totalmatchedInterest: 148
-	 face id: 259	 weight1	 weighted tolerance: 72
-I recieve a nack!!!! I am node 27
-pitTable size: 7
-node id :27
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 29
-pitTable size: 17
-node id :29
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 26
-pitTable size: 7
-node id :26
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 28
-pitTable size: 17
-node id :28
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 30
-pitTable size: 17
-node id :30
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 31
-pitTable size: 17
-node id :31
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 32
-pitTable size: 17
-node id :32
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 33
-pitTable size: 17
-node id :33
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 34
-pitTable size: 17
-node id :34
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 35
-pitTable size: 17
-node id :35
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 36
-pitTable size: 17
-node id :36
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 37
-pitTable size: 17
-node id :37
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 38
-pitTable size: 7
-node id :38
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 39
-pitTable size: 7
-node id :39
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 40
-pitTable size: 17
-node id :40
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 41
-pitTable size: 17
-node id :41
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 42
-pitTable size: 17
-node id :42
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 43
-pitTable size: 17
-node id :43
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 44
-pitTable size: 17
-node id :44
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 45
-pitTable size: 17
-node id :45
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 46
-pitTable size: 17
-node id :46
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 47
-pitTable size: 17
-node id :47
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 48
-pitTable size: 17
-node id :48
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 49
-pitTable size: 17
-node id :49
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 62
-pitTable size: 7
-node id :62
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 63
-pitTable size: 7
-node id :63
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 64
-pitTable size: 17
-node id :64
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 65
-pitTable size: 17
-node id :65
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 66
-pitTable size: 17
-node id :66
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 67
-pitTable size: 17
-node id :67
-receiving tolerance8
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 8
-I recieve a nack!!!! I am node 68
-pitTable size: 17
-node id :68
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 69
-pitTable size: 17
-node id :69
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 70
-pitTable size: 17
-node id :70
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 71
-pitTable size: 17
-node id :71
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 72
-pitTable size: 17
-node id :72
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 73
-pitTable size: 17
-node id :73
-receiving tolerance8
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 8
-I recieve a nack!!!! I am node 74
-pitTable size: 7
-node id :74
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 75
-pitTable size: 7
-node id :75
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 76
-pitTable size: 17
-node id :76
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 77
-pitTable size: 17
-node id :77
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 78
-pitTable size: 17
-node id :78
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 79
-pitTable size: 17
-node id :79
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 80
-pitTable size: 17
-node id :80
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 81
-pitTable size: 17
-node id :81
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 82
-pitTable size: 17
-node id :82
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 83
-pitTable size: 17
-node id :83
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 84
-pitTable size: 17
-node id :84
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 85
-pitTable size: 17
-node id :85
-receiving tolerance9
-before division: 16	 totalmatchedInterest: 16
-	 face id: 258	 weight1	 weighted tolerance: 9
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 9
-pitTable size: 175
-node id :9
-receiving tolerance72
-before division: 5	 totalmatchedInterest: 170
-	 face id: 258	 weight0.0294118	 weighted tolerance: 2
-before division: 5	 totalmatchedInterest: 170
-	 face id: 259	 weight0.0294118	 weighted tolerance: 2
-before division: 16	 totalmatchedInterest: 170
-	 face id: 260	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 261	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 262	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 263	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 264	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 265	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 266	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 267	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 268	 weight0.0941176	 weighted tolerance: 7
-before division: 16	 totalmatchedInterest: 170
-	 face id: 269	 weight0.0941176	 weighted tolerance: 7
-I recieve a nack!!!! I am node 52
-pitTable size: 19
-node id :52
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 59
-pitTable size: 19
-node id :59
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 60
-pitTable size: 19
-node id :60
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 50
-pitTable size: 8
-node id :50
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 51
-pitTable size: 8
-node id :51
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 53
-pitTable size: 19
-node id :53
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 54
-pitTable size: 19
-node id :54
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 55
-pitTable size: 19
-node id :55
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 56
-pitTable size: 19
-node id :56
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 57
-pitTable size: 19
-node id :57
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 58
-pitTable size: 19
-node id :58
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 61
-pitTable size: 19
-node id :61
-receiving tolerance7
-before division: 18	 totalmatchedInterest: 18
-	 face id: 258	 weight1	 weighted tolerance: 7
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Fake interests per unit: 0 Valid interests per unit: 490 Good interests per unit: 22
-Violate VALID INTERST threshold!!!
-I recieve a nack!!!! I am node 13
-pitTable size: 813
-node id :13
-receiving tolerance570
-before division: 756	 totalmatchedInterest: 756
-	 face id: 256	 weight1	 weighted tolerance: 570
-I recieve a nack!!!! I am node 2
-pitTable size: 822
-node id :2
-receiving tolerance570
-before division: 691.5	 totalmatchedInterest: 765
-	 face id: 256	 weight0.903922	 weighted tolerance: 515
-before division: 73.5	 totalmatchedInterest: 765
-	 face id: 257	 weight0.0960784	 weighted tolerance: 55
-I recieve a nack!!!! I am node 3
-pitTable size: 219
-node id :3
-receiving tolerance55
-before division: 3	 totalmatchedInterest: 176
-	 face id: 259	 weight0.0170455	 weighted tolerance: 1
-before division: 3	 totalmatchedInterest: 176
-	 face id: 260	 weight0.0170455	 weighted tolerance: 1
-before division: 17	 totalmatchedInterest: 176
-	 face id: 261	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 262	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 263	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 264	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 265	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 266	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 267	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 268	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 269	 weight0.0965909	 weighted tolerance: 5
-before division: 17	 totalmatchedInterest: 176
-	 face id: 270	 weight0.0965909	 weighted tolerance: 5
-I recieve a nack!!!! I am node 0
-pitTable size: 731
-node id :0
-receiving tolerance515
-before division: 165	 totalmatchedInterest: 712
-	 face id: 256	 weight0.231742	 weighted tolerance: 119
-before division: 274	 totalmatchedInterest: 712
-	 face id: 257	 weight0.384831	 weighted tolerance: 198
-before division: 273	 totalmatchedInterest: 712
-	 face id: 258	 weight0.383427	 weighted tolerance: 197
-I recieve a nack!!!! I am node 20
-pitTable size: 24
-node id :20
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 22
-pitTable size: 24
-node id :22
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 14
-pitTable size: 5
-node id :14
-receiving tolerance1
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 1
-I recieve a nack!!!! I am node 15
-pitTable size: 5
-node id :15
-receiving tolerance1
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 1
-I recieve a nack!!!! I am node 16
-pitTable size: 24
-node id :16
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 17
-pitTable size: 24
-node id :17
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 18
-pitTable size: 24
-node id :18
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 19
-pitTable size: 24
-node id :19
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 21
-pitTable size: 24
-node id :21
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 23
-pitTable size: 24
-node id :23
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 24
-pitTable size: 24
-node id :24
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-I recieve a nack!!!! I am node 25
-pitTable size: 24
-node id :25
-receiving tolerance5
-before division: 19	 totalmatchedInterest: 19
-	 face id: 258	 weight1	 weighted tolerance: 5
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-I recieve a nack!!!! I am node 1
-pitTable size: 171
-node id :1
-receiving tolerance119
-before division: 168	 totalmatchedInterest: 168
-	 face id: 257	 weight1	 weighted tolerance: 119
-I recieve a nack!!!! I am node 4
-pitTable size: 293
-node id :4
-receiving tolerance198
-before division: 142	 totalmatchedInterest: 284
-	 face id: 258	 weight0.5	 weighted tolerance: 99
-before division: 142	 totalmatchedInterest: 284
-	 face id: 259	 weight0.5	 weighted tolerance: 99
-I recieve a nack!!!! I am node 10
-pitTable size: 289
-node id :10
-receiving tolerance197
-before division: 138	 totalmatchedInterest: 280
-	 face id: 259	 weight0.492857	 weighted tolerance: 97
-before division: 142	 totalmatchedInterest: 280
-	 face id: 260	 weight0.507143	 weighted tolerance: 100
-I recieve a nack!!!! I am node 5
-pitTable size: 251
-node id :5
-receiving tolerance99
-before division: 4	 totalmatchedInterest: 246
-	 face id: 258	 weight0.0162602	 weighted tolerance: 2
-before division: 4	 totalmatchedInterest: 246
-	 face id: 259	 weight0.0162602	 weighted tolerance: 2
-before division: 23	 totalmatchedInterest: 246
-	 face id: 260	 weight0.0934959	 weighted tolerance: 9
-before division: 23	 totalmatchedInterest: 246
-	 face id: 261	 weight0.0934959	 weighted tolerance: 9
-before division: 24	 totalmatchedInterest: 246
-	 face id: 262	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 263	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 264	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 265	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 266	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 267	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 268	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 269	 weight0.097561	 weighted tolerance: 10
-I recieve a nack!!!! I am node 6
-pitTable size: 251
-node id :6
-receiving tolerance99
-before division: 4	 totalmatchedInterest: 246
-	 face id: 258	 weight0.0162602	 weighted tolerance: 2
-before division: 4	 totalmatchedInterest: 246
-	 face id: 259	 weight0.0162602	 weighted tolerance: 2
-before division: 23	 totalmatchedInterest: 246
-	 face id: 260	 weight0.0934959	 weighted tolerance: 9
-before division: 23	 totalmatchedInterest: 246
-	 face id: 261	 weight0.0934959	 weighted tolerance: 9
-before division: 24	 totalmatchedInterest: 246
-	 face id: 262	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 263	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 264	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 265	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 266	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 267	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 268	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 269	 weight0.097561	 weighted tolerance: 10
-I recieve a nack!!!! I am node 11
-pitTable size: 237
-node id :11
-receiving tolerance97
-before division: 4	 totalmatchedInterest: 232
-	 face id: 257	 weight0.0172414	 weighted tolerance: 2
-before division: 4	 totalmatchedInterest: 232
-	 face id: 258	 weight0.0172414	 weighted tolerance: 2
-before division: 23	 totalmatchedInterest: 232
-	 face id: 259	 weight0.0991379	 weighted tolerance: 10
-before division: 23	 totalmatchedInterest: 232
-	 face id: 260	 weight0.0991379	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 232
-	 face id: 261	 weight0.103448	 weighted tolerance: 10
-before division: 17	 totalmatchedInterest: 232
-	 face id: 262	 weight0.0732759	 weighted tolerance: 7
-before division: 24	 totalmatchedInterest: 232
-	 face id: 263	 weight0.103448	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 232
-	 face id: 264	 weight0.103448	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 232
-	 face id: 265	 weight0.103448	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 232
-	 face id: 266	 weight0.103448	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 232
-	 face id: 267	 weight0.103448	 weighted tolerance: 10
-before division: 17	 totalmatchedInterest: 232
-	 face id: 268	 weight0.0732759	 weighted tolerance: 7
-I recieve a nack!!!! I am node 12
-pitTable size: 251
-node id :12
-receiving tolerance100
-before division: 4	 totalmatchedInterest: 246
-	 face id: 257	 weight0.0162602	 weighted tolerance: 2
-before division: 4	 totalmatchedInterest: 246
-	 face id: 258	 weight0.0162602	 weighted tolerance: 2
-before division: 23	 totalmatchedInterest: 246
-	 face id: 259	 weight0.0934959	 weighted tolerance: 9
-before division: 23	 totalmatchedInterest: 246
-	 face id: 260	 weight0.0934959	 weighted tolerance: 9
-before division: 24	 totalmatchedInterest: 246
-	 face id: 261	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 262	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 263	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 264	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 265	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 266	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 267	 weight0.097561	 weighted tolerance: 10
-before division: 24	 totalmatchedInterest: 246
-	 face id: 268	 weight0.097561	 weighted tolerance: 10
-I recieve a nack!!!! I am node 7
-pitTable size: 171
-node id :7
-receiving tolerance119
-before division: 168	 totalmatchedInterest: 168
-	 face id: 259	 weight1	 weighted tolerance: 119
-I recieve a nack!!!! I am node 27
-pitTable size: 6
-node id :27
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 29
-pitTable size: 27
-node id :29
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 26
-pitTable size: 6
-node id :26
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 28
-pitTable size: 27
-node id :28
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 30
-pitTable size: 27
-node id :30
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 31
-pitTable size: 27
-node id :31
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 32
-pitTable size: 27
-node id :32
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 33
-pitTable size: 27
-node id :33
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 34
-pitTable size: 27
-node id :34
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 35
-pitTable size: 27
-node id :35
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 36
-pitTable size: 27
-node id :36
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 37
-pitTable size: 27
-node id :37
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 38
-pitTable size: 6
-node id :38
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 39
-pitTable size: 6
-node id :39
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 40
-pitTable size: 27
-node id :40
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 41
-pitTable size: 27
-node id :41
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 42
-pitTable size: 27
-node id :42
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 43
-pitTable size: 27
-node id :43
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 44
-pitTable size: 27
-node id :44
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 45
-pitTable size: 27
-node id :45
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 46
-pitTable size: 27
-node id :46
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 47
-pitTable size: 27
-node id :47
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 48
-pitTable size: 27
-node id :48
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 49
-pitTable size: 27
-node id :49
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 62
-pitTable size: 6
-node id :62
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 63
-pitTable size: 6
-node id :63
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 64
-pitTable size: 27
-node id :64
-receiving tolerance10
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 65
-pitTable size: 27
-node id :65
-receiving tolerance10
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 66
-pitTable size: 27
-node id :66
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 67
-pitTable size: 27
-node id :67
-receiving tolerance7
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 68
-pitTable size: 27
-node id :68
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 69
-pitTable size: 27
-node id :69
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 70
-pitTable size: 27
-node id :70
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 71
-pitTable size: 27
-node id :71
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 72
-pitTable size: 27
-node id :72
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 73
-pitTable size: 27
-node id :73
-receiving tolerance7
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 7
-I recieve a nack!!!! I am node 74
-pitTable size: 6
-node id :74
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 75
-pitTable size: 6
-node id :75
-receiving tolerance2
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 76
-pitTable size: 27
-node id :76
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 77
-pitTable size: 27
-node id :77
-receiving tolerance9
-before division: 25	 totalmatchedInterest: 25
-	 face id: 258	 weight1	 weighted tolerance: 9
-I recieve a nack!!!! I am node 78
-pitTable size: 27
-node id :78
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 79
-pitTable size: 27
-node id :79
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 80
-pitTable size: 27
-node id :80
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 81
-pitTable size: 27
-node id :81
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 82
-pitTable size: 27
-node id :82
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 83
-pitTable size: 27
-node id :83
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 84
-pitTable size: 27
-node id :84
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-I recieve a nack!!!! I am node 85
-pitTable size: 27
-node id :85
-receiving tolerance10
-before division: 26	 totalmatchedInterest: 26
-	 face id: 258	 weight1	 weighted tolerance: 10
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-I recieve a nack!!!! I am node 9
-pitTable size: 273
-node id :9
-receiving tolerance119
-before division: 5	 totalmatchedInterest: 270
-	 face id: 258	 weight0.0185185	 weighted tolerance: 2
-before division: 5	 totalmatchedInterest: 270
-	 face id: 259	 weight0.0185185	 weighted tolerance: 2
-before division: 26	 totalmatchedInterest: 270
-	 face id: 260	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 261	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 262	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 263	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 264	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 265	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 266	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 267	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 268	 weight0.0962963	 weighted tolerance: 11
-before division: 26	 totalmatchedInterest: 270
-	 face id: 269	 weight0.0962963	 weighted tolerance: 11
-I recieve a nack!!!! I am node 52
-pitTable size: 29
-node id :52
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 59
-pitTable size: 29
-node id :59
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 60
-pitTable size: 29
-node id :60
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 50
-pitTable size: 7
-node id :50
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 51
-pitTable size: 7
-node id :51
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
-I recieve a nack!!!! I am node 53
-pitTable size: 29
-node id :53
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 54
-pitTable size: 29
-node id :54
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 55
-pitTable size: 29
-node id :55
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 56
-pitTable size: 29
-node id :56
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 57
-pitTable size: 29
-node id :57
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 58
-pitTable size: 29
-node id :58
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-I recieve a nack!!!! I am node 61
-pitTable size: 29
-node id :61
-receiving tolerance11
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 11
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Fake interests per unit: 0 Valid interests per unit: 75 Good interests per unit: 4
-Violate VALID INTERST threshold!!!
-I recieve a nack!!!! I am node 13
-pitTable size: 832
-node id :13
-receiving tolerance570
-before division: 771	 totalmatchedInterest: 771
-	 face id: 256	 weight1	 weighted tolerance: 570
-I recieve a nack!!!! I am node 2
-pitTable size: 832
-node id :2
-receiving tolerance570
-before division: 694.5	 totalmatchedInterest: 771
-	 face id: 256	 weight0.900778	 weighted tolerance: 513
-before division: 76.5	 totalmatchedInterest: 771
-	 face id: 257	 weight0.0992218	 weighted tolerance: 57
-I recieve a nack!!!! I am node 3
-pitTable size: 277
-node id :3
-receiving tolerance57
-before division: 3	 totalmatchedInterest: 266
-	 face id: 259	 weight0.0112782	 weighted tolerance: 1
-before division: 3	 totalmatchedInterest: 266
-	 face id: 260	 weight0.0112782	 weighted tolerance: 1
-before division: 26	 totalmatchedInterest: 266
-	 face id: 261	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 262	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 263	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 264	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 265	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 266	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 267	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 268	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 269	 weight0.0977444	 weighted tolerance: 6
-before division: 26	 totalmatchedInterest: 266
-	 face id: 270	 weight0.0977444	 weighted tolerance: 6
-I recieve a nack!!!! I am node 0
-pitTable size: 747
-node id :0
-receiving tolerance513
-before division: 164.5	 totalmatchedInterest: 695
-	 face id: 256	 weight0.236691	 weighted tolerance: 121
-before division: 267	 totalmatchedInterest: 695
-	 face id: 257	 weight0.384173	 weighted tolerance: 197
-before division: 263.5	 totalmatchedInterest: 695
-	 face id: 258	 weight0.379137	 weighted tolerance: 194
-I recieve a nack!!!! I am node 20
-pitTable size: 30
-node id :20
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 22
-pitTable size: 30
-node id :22
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 14
-pitTable size: 4
-node id :14
-receiving tolerance1
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 1
-I recieve a nack!!!! I am node 15
-pitTable size: 4
-node id :15
-receiving tolerance1
-before division: 3	 totalmatchedInterest: 3
-	 face id: 258	 weight1	 weighted tolerance: 1
-I recieve a nack!!!! I am node 16
-pitTable size: 30
-node id :16
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 17
-pitTable size: 30
-node id :17
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 18
-pitTable size: 30
-node id :18
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 19
-pitTable size: 30
-node id :19
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 21
-pitTable size: 30
-node id :21
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 23
-pitTable size: 30
-node id :23
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 24
-pitTable size: 30
-node id :24
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-I recieve a nack!!!! I am node 25
-pitTable size: 30
-node id :25
-receiving tolerance6
-before division: 28	 totalmatchedInterest: 28
-	 face id: 258	 weight1	 weighted tolerance: 6
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-I recieve a nack!!!! I am node 1
-pitTable size: 177
-node id :1
-receiving tolerance121
-before division: 175	 totalmatchedInterest: 175
-	 face id: 257	 weight1	 weighted tolerance: 121
-I recieve a nack!!!! I am node 4
 pitTable size: 303
-node id :4
-receiving tolerance197
-before division: 137	 totalmatchedInterest: 276
-	 face id: 258	 weight0.496377	 weighted tolerance: 98
-before division: 139	 totalmatchedInterest: 276
-	 face id: 259	 weight0.503623	 weighted tolerance: 99
-I recieve a nack!!!! I am node 10
-pitTable size: 299
-node id :10
-receiving tolerance194
-before division: 133	 totalmatchedInterest: 270
-	 face id: 259	 weight0.492593	 weighted tolerance: 96
-before division: 137	 totalmatchedInterest: 270
-	 face id: 260	 weight0.507407	 weighted tolerance: 98
-I recieve a nack!!!! I am node 5
-pitTable size: 338
-node id :5
-receiving tolerance98
-before division: 4	 totalmatchedInterest: 325
-	 face id: 258	 weight0.0123077	 weighted tolerance: 1
-before division: 4	 totalmatchedInterest: 325
-	 face id: 259	 weight0.0123077	 weighted tolerance: 1
-before division: 32	 totalmatchedInterest: 325
-	 face id: 260	 weight0.0984615	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 325
-	 face id: 261	 weight0.0984615	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 325
-	 face id: 262	 weight0.0984615	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 325
-	 face id: 263	 weight0.0984615	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 325
-	 face id: 264	 weight0.0984615	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 325
-	 face id: 265	 weight0.101538	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 325
-	 face id: 266	 weight0.101538	 weighted tolerance: 10
-before division: 29	 totalmatchedInterest: 325
-	 face id: 267	 weight0.0892308	 weighted tolerance: 9
-before division: 29	 totalmatchedInterest: 325
-	 face id: 268	 weight0.0892308	 weighted tolerance: 9
-before division: 33	 totalmatchedInterest: 325
-	 face id: 269	 weight0.101538	 weighted tolerance: 10
-I recieve a nack!!!! I am node 6
-pitTable size: 347
 node id :6
-receiving tolerance99
-before division: 4	 totalmatchedInterest: 333
-	 face id: 258	 weight0.012012	 weighted tolerance: 1
-before division: 4	 totalmatchedInterest: 333
-	 face id: 259	 weight0.012012	 weighted tolerance: 1
-before division: 31	 totalmatchedInterest: 333
-	 face id: 260	 weight0.0930931	 weighted tolerance: 9
-before division: 32	 totalmatchedInterest: 333
-	 face id: 261	 weight0.0960961	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 333
-	 face id: 262	 weight0.0960961	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 333
-	 face id: 263	 weight0.0960961	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 264	 weight0.0990991	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 265	 weight0.0990991	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 266	 weight0.0990991	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 267	 weight0.0990991	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 268	 weight0.0990991	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 333
-	 face id: 269	 weight0.0990991	 weighted tolerance: 10
+receiving tolerance150
+before division: 7	 totalmatchedInterest: 294
+	 face id: 258	 weight0.0238095	 weighted tolerance: 4
+before division: 7	 totalmatchedInterest: 294
+	 face id: 259	 weight0.0238095	 weighted tolerance: 4
+before division: 28	 totalmatchedInterest: 294
+	 face id: 260	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 261	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 262	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 263	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 264	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 265	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 266	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 267	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 268	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 269	 weight0.0952381	 weighted tolerance: 14
 I recieve a nack!!!! I am node 11
-pitTable size: 323
+pitTable size: 281
 node id :11
-receiving tolerance96
-before division: 4	 totalmatchedInterest: 308
-	 face id: 257	 weight0.012987	 weighted tolerance: 1
-before division: 4	 totalmatchedInterest: 308
-	 face id: 258	 weight0.012987	 weighted tolerance: 1
-before division: 32	 totalmatchedInterest: 308
-	 face id: 259	 weight0.103896	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 308
-	 face id: 260	 weight0.103896	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 308
-	 face id: 261	 weight0.103896	 weighted tolerance: 10
-before division: 19.5	 totalmatchedInterest: 308
-	 face id: 262	 weight0.0633117	 weighted tolerance: 6
-before division: 32	 totalmatchedInterest: 308
-	 face id: 263	 weight0.103896	 weighted tolerance: 10
-before division: 32	 totalmatchedInterest: 308
-	 face id: 264	 weight0.103896	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 308
-	 face id: 265	 weight0.107143	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 308
-	 face id: 266	 weight0.107143	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 308
-	 face id: 267	 weight0.107143	 weighted tolerance: 10
-before division: 21.5	 totalmatchedInterest: 308
-	 face id: 268	 weight0.0698052	 weighted tolerance: 7
+receiving tolerance144
+before division: 7	 totalmatchedInterest: 276
+	 face id: 257	 weight0.0253623	 weighted tolerance: 4
+before division: 7	 totalmatchedInterest: 276
+	 face id: 258	 weight0.0253623	 weighted tolerance: 4
+before division: 28	 totalmatchedInterest: 276
+	 face id: 259	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 260	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 261	 weight0.101449	 weighted tolerance: 15
+before division: 19	 totalmatchedInterest: 276
+	 face id: 262	 weight0.0688406	 weighted tolerance: 10
+before division: 28	 totalmatchedInterest: 276
+	 face id: 263	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 264	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 265	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 266	 weight0.101449	 weighted tolerance: 15
+before division: 28	 totalmatchedInterest: 276
+	 face id: 267	 weight0.101449	 weighted tolerance: 15
+before division: 19	 totalmatchedInterest: 276
+	 face id: 268	 weight0.0688406	 weighted tolerance: 10
 I recieve a nack!!!! I am node 12
-pitTable size: 347
+pitTable size: 303
 node id :12
-receiving tolerance98
-before division: 4	 totalmatchedInterest: 332
-	 face id: 257	 weight0.0120482	 weighted tolerance: 1
-before division: 4	 totalmatchedInterest: 332
-	 face id: 258	 weight0.0120482	 weighted tolerance: 1
-before division: 32	 totalmatchedInterest: 332
-	 face id: 259	 weight0.0963855	 weighted tolerance: 9
-before division: 32	 totalmatchedInterest: 332
-	 face id: 260	 weight0.0963855	 weighted tolerance: 9
-before division: 32	 totalmatchedInterest: 332
-	 face id: 261	 weight0.0963855	 weighted tolerance: 9
-before division: 32	 totalmatchedInterest: 332
-	 face id: 262	 weight0.0963855	 weighted tolerance: 9
-before division: 33	 totalmatchedInterest: 332
-	 face id: 263	 weight0.0993976	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 332
-	 face id: 264	 weight0.0993976	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 332
-	 face id: 265	 weight0.0993976	 weighted tolerance: 10
-before division: 33	 totalmatchedInterest: 332
-	 face id: 266	 weight0.0993976	 weighted tolerance: 10
-before division: 31	 totalmatchedInterest: 332
-	 face id: 267	 weight0.0933735	 weighted tolerance: 9
-before division: 33	 totalmatchedInterest: 332
-	 face id: 268	 weight0.0993976	 weighted tolerance: 10
+receiving tolerance152
+before division: 7	 totalmatchedInterest: 294
+	 face id: 257	 weight0.0238095	 weighted tolerance: 4
+before division: 7	 totalmatchedInterest: 294
+	 face id: 258	 weight0.0238095	 weighted tolerance: 4
+before division: 28	 totalmatchedInterest: 294
+	 face id: 259	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 260	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 261	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 262	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 263	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 264	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 265	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 266	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 267	 weight0.0952381	 weighted tolerance: 14
+before division: 28	 totalmatchedInterest: 294
+	 face id: 268	 weight0.0952381	 weighted tolerance: 14
 I recieve a nack!!!! I am node 7
-pitTable size: 177
+pitTable size: 299
 node id :7
-receiving tolerance121
-before division: 175	 totalmatchedInterest: 175
-	 face id: 259	 weight1	 weighted tolerance: 121
+receiving tolerance117
+before division: 290	 totalmatchedInterest: 290
+	 face id: 259	 weight1	 weighted tolerance: 117
 I recieve a nack!!!! I am node 27
-pitTable size: 5
+pitTable size: 13
 node id :27
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 29
-pitTable size: 36
+pitTable size: 33
 node id :29
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
-Consumer: I change my frequency!!!!!! the new value 0
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
+Consumer: I change my frequency!!!!!! the new value 3
 I recieve a nack!!!! I am node 26
-pitTable size: 5
+pitTable size: 13
 node id :26
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 28
-pitTable size: 36
+pitTable size: 33
 node id :28
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 30
-pitTable size: 37
+pitTable size: 33
 node id :30
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 31
-pitTable size: 37
+pitTable size: 33
 node id :31
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 32
-pitTable size: 37
+pitTable size: 33
 node id :32
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 33
-pitTable size: 37
+pitTable size: 33
 node id :33
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 34
-pitTable size: 37
+pitTable size: 33
 node id :34
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 35
-pitTable size: 37
+pitTable size: 33
 node id :35
-receiving tolerance9
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 36
-pitTable size: 37
+pitTable size: 33
 node id :36
-receiving tolerance9
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 37
-pitTable size: 37
+pitTable size: 33
 node id :37
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
-Consumer: I change my frequency!!!!!! the new value 0
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 38
-pitTable size: 5
+pitTable size: 13
 node id :38
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 39
-pitTable size: 5
+pitTable size: 13
 node id :39
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 40
-pitTable size: 36
+pitTable size: 33
 node id :40
-receiving tolerance9
-before division: 33	 totalmatchedInterest: 33
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 41
-pitTable size: 36
+pitTable size: 33
 node id :41
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 42
-pitTable size: 37
+pitTable size: 33
 node id :42
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 43
-pitTable size: 37
+pitTable size: 33
 node id :43
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 44
-pitTable size: 37
+pitTable size: 33
 node id :44
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 45
-pitTable size: 37
+pitTable size: 33
 node id :45
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 46
-pitTable size: 37
+pitTable size: 33
 node id :46
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 47
-pitTable size: 37
+pitTable size: 33
 node id :47
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 48
-pitTable size: 37
+pitTable size: 33
 node id :48
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 49
-pitTable size: 37
+pitTable size: 33
 node id :49
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 62
-pitTable size: 5
+pitTable size: 13
 node id :62
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 63
-pitTable size: 5
-node id :63
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
 I recieve a nack!!!! I am node 64
-pitTable size: 36
+pitTable size: 33
 node id :64
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 65
-pitTable size: 36
+pitTable size: 33
 node id :65
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 66
-pitTable size: 37
+pitTable size: 33
 node id :66
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 67
-pitTable size: 37
+pitTable size: 33
 node id :67
-receiving tolerance6
-before division: 33	 totalmatchedInterest: 33
-	 face id: 258	 weight1	 weighted tolerance: 6
+receiving tolerance10
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 10
 I recieve a nack!!!! I am node 68
-pitTable size: 37
+pitTable size: 33
 node id :68
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 69
-pitTable size: 37
+pitTable size: 33
 node id :69
-receiving tolerance10
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 70
-pitTable size: 37
+pitTable size: 33
 node id :70
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 71
-pitTable size: 37
+pitTable size: 33
 node id :71
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 72
-pitTable size: 37
+pitTable size: 33
 node id :72
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance15
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 15
 I recieve a nack!!!! I am node 73
-pitTable size: 37
+pitTable size: 33
 node id :73
-receiving tolerance7
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 7
+receiving tolerance10
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 10
 I recieve a nack!!!! I am node 74
-pitTable size: 5
+pitTable size: 13
 node id :74
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 75
-pitTable size: 5
+pitTable size: 13
 node id :75
-receiving tolerance1
-before division: 4	 totalmatchedInterest: 4
-	 face id: 258	 weight1	 weighted tolerance: 1
+receiving tolerance4
+before division: 8	 totalmatchedInterest: 8
+	 face id: 258	 weight1	 weighted tolerance: 4
 I recieve a nack!!!! I am node 76
-pitTable size: 36
+pitTable size: 33
 node id :76
-receiving tolerance9
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 77
-pitTable size: 36
+pitTable size: 33
 node id :77
-receiving tolerance9
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 78
-pitTable size: 37
+pitTable size: 33
 node id :78
-receiving tolerance9
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 79
-pitTable size: 37
+pitTable size: 33
 node id :79
-receiving tolerance9
-before division: 34	 totalmatchedInterest: 34
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 80
-pitTable size: 37
+pitTable size: 33
 node id :80
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 81
-pitTable size: 37
+pitTable size: 33
 node id :81
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 82
-pitTable size: 37
+pitTable size: 33
 node id :82
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 83
-pitTable size: 37
+pitTable size: 33
 node id :83
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 84
-pitTable size: 37
+pitTable size: 33
 node id :84
-receiving tolerance9
-before division: 33	 totalmatchedInterest: 33
-	 face id: 258	 weight1	 weighted tolerance: 9
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
 I recieve a nack!!!! I am node 85
-pitTable size: 37
+pitTable size: 33
 node id :85
-receiving tolerance10
-before division: 35	 totalmatchedInterest: 35
-	 face id: 258	 weight1	 weighted tolerance: 10
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
-Consumer: I change my frequency!!!!!! the new value 0
+receiving tolerance14
+before division: 32	 totalmatchedInterest: 32
+	 face id: 258	 weight1	 weighted tolerance: 14
+Consumer: I change my frequency!!!!!! the new value 3
+Consumer: I change my frequency!!!!!! the new value 3
+Consumer: I change my frequency!!!!!! the new value 3
+Consumer: I change my frequency!!!!!! the new value 3
+Consumer: I change my frequency!!!!!! the new value 3
+Consumer: I change my frequency!!!!!! the new value 3
 I recieve a nack!!!! I am node 9
-pitTable size: 371
+pitTable size: 347
 node id :9
-receiving tolerance121
-before division: 5	 totalmatchedInterest: 369
-	 face id: 258	 weight0.0135501	 weighted tolerance: 2
-before division: 5	 totalmatchedInterest: 369
-	 face id: 259	 weight0.0135501	 weighted tolerance: 2
-before division: 36	 totalmatchedInterest: 369
-	 face id: 260	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 261	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 262	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 263	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 264	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 265	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 266	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 267	 weight0.097561	 weighted tolerance: 12
-before division: 36	 totalmatchedInterest: 369
-	 face id: 268	 weight0.097561	 weighted tolerance: 12
-before division: 35	 totalmatchedInterest: 369
-	 face id: 269	 weight0.0948509	 weighted tolerance: 11
+receiving tolerance117
+before division: 9	 totalmatchedInterest: 338
+	 face id: 258	 weight0.0266272	 weighted tolerance: 3
+before division: 9	 totalmatchedInterest: 338
+	 face id: 259	 weight0.0266272	 weighted tolerance: 3
+before division: 32	 totalmatchedInterest: 338
+	 face id: 260	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 261	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 262	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 263	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 264	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 265	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 266	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 267	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 268	 weight0.0946746	 weighted tolerance: 11
+before division: 32	 totalmatchedInterest: 338
+	 face id: 269	 weight0.0946746	 weighted tolerance: 11
 I recieve a nack!!!! I am node 52
-pitTable size: 39
+pitTable size: 37
 node id :52
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 59
-pitTable size: 39
+pitTable size: 37
 node id :59
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 60
-pitTable size: 39
+pitTable size: 37
 node id :60
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 50
-pitTable size: 6
+pitTable size: 15
 node id :50
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
+receiving tolerance3
+before division: 10	 totalmatchedInterest: 10
+	 face id: 258	 weight1	 weighted tolerance: 3
 I recieve a nack!!!! I am node 51
-pitTable size: 6
+pitTable size: 15
 node id :51
-receiving tolerance2
-before division: 5	 totalmatchedInterest: 5
-	 face id: 258	 weight1	 weighted tolerance: 2
+receiving tolerance3
+before division: 10	 totalmatchedInterest: 10
+	 face id: 258	 weight1	 weighted tolerance: 3
 I recieve a nack!!!! I am node 53
-pitTable size: 39
+pitTable size: 37
 node id :53
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 54
-pitTable size: 39
+pitTable size: 37
 node id :54
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 55
-pitTable size: 39
+pitTable size: 37
 node id :55
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 56
-pitTable size: 39
+pitTable size: 37
 node id :56
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 57
-pitTable size: 39
+pitTable size: 37
 node id :57
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 58
-pitTable size: 39
+pitTable size: 37
 node id :58
-receiving tolerance12
-before division: 38	 totalmatchedInterest: 38
-	 face id: 258	 weight1	 weighted tolerance: 12
+receiving tolerance11
+before division: 36	 totalmatchedInterest: 36
+	 face id: 258	 weight1	 weighted tolerance: 11
 I recieve a nack!!!! I am node 61
-pitTable size: 39
+pitTable size: 37
 node id :61
 receiving tolerance11
-before division: 37	 totalmatchedInterest: 37
+before division: 36	 totalmatchedInterest: 36
 	 face id: 258	 weight1	 weighted tolerance: 11
-Consumer: I change my frequency!!!!!! the new value 1
-Consumer: I change my frequency!!!!!! the new value 1
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 0
-I recieve a nack!!!! I am node 50
-I recieve a nack!!!! I am node 51
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 0
+Consumer: I change my frequency!!!!!! the new value 2
+Consumer: I change my frequency!!!!!! the new value 2
+Fake interests per unit: 0 Valid interests per unit: 964 Good interests per unit: 44
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 13
+pitTable size: 1555
+node id :13
+receiving tolerance950
+before division: 1456	 totalmatchedInterest: 1456
+	 face id: 256	 weight1	 weighted tolerance: 950
+I recieve a nack!!!! I am node 2
+pitTable size: 1575
+node id :2
+receiving tolerance950
+before division: 1326	 totalmatchedInterest: 1476
+	 face id: 256	 weight0.898374	 weighted tolerance: 853
+before division: 150	 totalmatchedInterest: 1476
+	 face id: 257	 weight0.101626	 weighted tolerance: 97
+I recieve a nack!!!! I am node 3
+pitTable size: 435
+node id :3
+receiving tolerance97
+before division: 5	 totalmatchedInterest: 360
+	 face id: 259	 weight0.0138889	 weighted tolerance: 1
+before division: 5	 totalmatchedInterest: 360
+	 face id: 260	 weight0.0138889	 weighted tolerance: 1
+before division: 35	 totalmatchedInterest: 360
+	 face id: 261	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 262	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 263	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 264	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 265	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 266	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 267	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 268	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 269	 weight0.0972222	 weighted tolerance: 9
+before division: 35	 totalmatchedInterest: 360
+	 face id: 270	 weight0.0972222	 weighted tolerance: 9
+I recieve a nack!!!! I am node 0
+pitTable size: 1403
+node id :0
+receiving tolerance853
+before division: 314.5	 totalmatchedInterest: 1371
+	 face id: 256	 weight0.229395	 weighted tolerance: 196
+before division: 533.5	 totalmatchedInterest: 1371
+	 face id: 257	 weight0.389132	 weighted tolerance: 332
+before division: 523	 totalmatchedInterest: 1371
+	 face id: 258	 weight0.381473	 weighted tolerance: 325
+I recieve a nack!!!! I am node 20
+pitTable size: 47
+node id :20
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 22
+pitTable size: 47
+node id :22
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
 I recieve a nack!!!! I am node 14
+pitTable size: 8
+node id :14
+receiving tolerance1
+before division: 5	 totalmatchedInterest: 5
+	 face id: 258	 weight1	 weighted tolerance: 1
 I recieve a nack!!!! I am node 15
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
+pitTable size: 8
+node id :15
+receiving tolerance1
+before division: 5	 totalmatchedInterest: 5
+	 face id: 258	 weight1	 weighted tolerance: 1
+I recieve a nack!!!! I am node 16
+pitTable size: 47
+node id :16
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 17
+pitTable size: 47
+node id :17
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 18
+pitTable size: 47
+node id :18
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 19
+pitTable size: 47
+node id :19
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 21
+pitTable size: 47
+node id :21
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 23
+pitTable size: 47
+node id :23
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 24
+pitTable size: 47
+node id :24
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+I recieve a nack!!!! I am node 25
+pitTable size: 47
+node id :25
+receiving tolerance9
+before division: 39	 totalmatchedInterest: 39
+	 face id: 258	 weight1	 weighted tolerance: 9
+Consumer: I change my frequency!!!!!! the new value 0
+Consumer: I change my frequency!!!!!! the new value 0
+I recieve a nack!!!! I am node 1
+pitTable size: 339
+node id :1
+receiving tolerance196
+before division: 334	 totalmatchedInterest: 334
+	 face id: 257	 weight1	 weighted tolerance: 196
+I recieve a nack!!!! I am node 4
+I recieve a nack!!!! I am node 10
+pitTable size: 571
+node id :10
+receiving tolerance325
+before division: 264	 totalmatchedInterest: 553
+	 face id: 259	 weight0.477396	 weighted tolerance: 155
+before division: 289	 totalmatchedInterest: 553
+	 face id: 260	 weight0.522604	 weighted tolerance: 170
+I recieve a nack!!!! I am node 11
+pitTable size: 454
+node id :11
+receiving tolerance155
+before division: 6	 totalmatchedInterest: 443
+	 face id: 257	 weight0.013544	 weighted tolerance: 2
+before division: 8	 totalmatchedInterest: 443
+	 face id: 258	 weight0.0180587	 weighted tolerance: 3
+before division: 47	 totalmatchedInterest: 443
+	 face id: 259	 weight0.106095	 weighted tolerance: 16
+before division: 47	 totalmatchedInterest: 443
+	 face id: 260	 weight0.106095	 weighted tolerance: 16
+before division: 48	 totalmatchedInterest: 443
+	 face id: 261	 weight0.108352	 weighted tolerance: 17
+before division: 29	 totalmatchedInterest: 443
+	 face id: 262	 weight0.0654628	 weighted tolerance: 10
+before division: 48	 totalmatchedInterest: 443
+	 face id: 263	 weight0.108352	 weighted tolerance: 17
+before division: 39.5	 totalmatchedInterest: 443
+	 face id: 264	 weight0.0891648	 weighted tolerance: 14
+before division: 48	 totalmatchedInterest: 443
+	 face id: 265	 weight0.108352	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 443
+	 face id: 266	 weight0.108352	 weighted tolerance: 17
+before division: 45.5	 totalmatchedInterest: 443
+	 face id: 267	 weight0.102709	 weighted tolerance: 16
+before division: 29	 totalmatchedInterest: 443
+	 face id: 268	 weight0.0654628	 weighted tolerance: 10
+I recieve a nack!!!! I am node 12
+pitTable size: 499
+node id :12
+receiving tolerance170
+before division: 7	 totalmatchedInterest: 493
+	 face id: 257	 weight0.0141988	 weighted tolerance: 2
+before division: 7	 totalmatchedInterest: 493
+	 face id: 258	 weight0.0141988	 weighted tolerance: 2
+before division: 47	 totalmatchedInterest: 493
+	 face id: 259	 weight0.0953347	 weighted tolerance: 16
+before division: 48	 totalmatchedInterest: 493
+	 face id: 260	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 261	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 262	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 263	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 264	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 265	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 266	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 267	 weight0.0973631	 weighted tolerance: 17
+before division: 48	 totalmatchedInterest: 493
+	 face id: 268	 weight0.0973631	 weighted tolerance: 17
+I recieve a nack!!!! I am node 7
+pitTable size: 339
+node id :7
+receiving tolerance196
+before division: 334	 totalmatchedInterest: 334
+	 face id: 259	 weight1	 weighted tolerance: 196
+I recieve a nack!!!! I am node 62
+pitTable size: 10
+node id :62
+receiving tolerance2
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 63
+I recieve a nack!!!! I am node 64
+pitTable size: 53
+node id :64
+receiving tolerance16
+before division: 51	 totalmatchedInterest: 51
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 65
+pitTable size: 53
+node id :65
+receiving tolerance16
+before division: 51	 totalmatchedInterest: 51
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 66
+pitTable size: 53
+node id :66
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 67
+I recieve a nack!!!! I am node 68
+pitTable size: 53
+node id :68
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 69
+pitTable size: 53
+node id :69
+receiving tolerance14
+before division: 46	 totalmatchedInterest: 46
+	 face id: 258	 weight1	 weighted tolerance: 14
+I recieve a nack!!!! I am node 70
+pitTable size: 53
+node id :70
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 71
+pitTable size: 53
+node id :71
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 72
+pitTable size: 53
+node id :72
+receiving tolerance16
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 73
+pitTable size: 53
+node id :73
+receiving tolerance10
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 74
+pitTable size: 10
+node id :74
+receiving tolerance2
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 75
+pitTable size: 10
+node id :75
+receiving tolerance2
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 76
+pitTable size: 53
+node id :76
+receiving tolerance16
+before division: 51	 totalmatchedInterest: 51
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 77
+pitTable size: 53
+node id :77
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 78
+pitTable size: 53
+node id :78
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 79
+pitTable size: 53
+node id :79
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 80
+pitTable size: 53
+node id :80
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 81
+pitTable size: 53
+node id :81
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 82
+pitTable size: 53
+node id :82
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 83
+pitTable size: 53
+node id :83
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 84
+pitTable size: 53
+node id :84
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 85
+pitTable size: 53
+node id :85
+receiving tolerance17
+before division: 52	 totalmatchedInterest: 52
+	 face id: 258	 weight1	 weighted tolerance: 17
+Consumer: I change my frequency!!!!!! the new value 1
+Consumer: I change my frequency!!!!!! the new value 1
+Consumer: I change my frequency!!!!!! the new value 1
+I recieve a nack!!!! I am node 9
+pitTable size: 543
+node id :9
+receiving tolerance196
+before division: 9	 totalmatchedInterest: 538
+	 face id: 258	 weight0.0167286	 weighted tolerance: 3
+before division: 9	 totalmatchedInterest: 538
+	 face id: 259	 weight0.0167286	 weighted tolerance: 3
+before division: 52	 totalmatchedInterest: 538
+	 face id: 260	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 261	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 262	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 263	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 264	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 265	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 266	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 267	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 268	 weight0.0966543	 weighted tolerance: 19
+before division: 52	 totalmatchedInterest: 538
+	 face id: 269	 weight0.0966543	 weighted tolerance: 19
+I recieve a nack!!!! I am node 52
+pitTable size: 57
+node id :52
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 59
+pitTable size: 57
+node id :59
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 60
+pitTable size: 57
+node id :60
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 50
+pitTable size: 12
+node id :50
+receiving tolerance3
+before division: 9	 totalmatchedInterest: 9
+	 face id: 258	 weight1	 weighted tolerance: 3
+I recieve a nack!!!! I am node 51
+pitTable size: 12
+node id :51
+receiving tolerance3
+before division: 9	 totalmatchedInterest: 9
+	 face id: 258	 weight1	 weighted tolerance: 3
+I recieve a nack!!!! I am node 53
+pitTable size: 57
+node id :53
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 54
+pitTable size: 57
+node id :54
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 55
+pitTable size: 57
+node id :55
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 56
+pitTable size: 57
+node id :56
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 57
+pitTable size: 57
+node id :57
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 58
+pitTable size: 57
+node id :58
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+I recieve a nack!!!! I am node 61
+pitTable size: 57
+node id :61
+receiving tolerance19
+before division: 56	 totalmatchedInterest: 56
+	 face id: 258	 weight1	 weighted tolerance: 19
+Consumer: I change my frequency!!!!!! the new value 2
+Consumer: I change my frequency!!!!!! the new value 2
+Fake interests per unit: 0 Valid interests per unit: 141 Good interests per unit: 10
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 13
+pitTable size: 1598
+node id :13
+receiving tolerance950
+before division: 1497	 totalmatchedInterest: 1497
+	 face id: 256	 weight1	 weighted tolerance: 950
+I recieve a nack!!!! I am node 2
+pitTable size: 1598
+node id :2
+receiving tolerance950
+before division: 1342.5	 totalmatchedInterest: 1497
+	 face id: 256	 weight0.896794	 weighted tolerance: 852
+before division: 154.5	 totalmatchedInterest: 1497
+	 face id: 257	 weight0.103206	 weighted tolerance: 98
+I recieve a nack!!!! I am node 3
+pitTable size: 561
+node id :3
+receiving tolerance98
+before division: 5	 totalmatchedInterest: 541
+	 face id: 259	 weight0.00924214	 weighted tolerance: 1
+before division: 5	 totalmatchedInterest: 541
+	 face id: 260	 weight0.00924214	 weighted tolerance: 1
+before division: 53	 totalmatchedInterest: 541
+	 face id: 261	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 262	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 263	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 264	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 265	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 266	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 267	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 268	 weight0.0979667	 weighted tolerance: 10
+before division: 53	 totalmatchedInterest: 541
+	 face id: 269	 weight0.0979667	 weighted tolerance: 10
+before division: 54	 totalmatchedInterest: 541
+	 face id: 270	 weight0.0998152	 weighted tolerance: 10
+I recieve a nack!!!! I am node 0
+pitTable size: 1432
+node id :0
+receiving tolerance852
+before division: 322	 totalmatchedInterest: 1348
+	 face id: 256	 weight0.238872	 weighted tolerance: 204
+before division: 518.5	 totalmatchedInterest: 1348
+	 face id: 257	 weight0.384644	 weighted tolerance: 328
+before division: 507.5	 totalmatchedInterest: 1348
+	 face id: 258	 weight0.376484	 weighted tolerance: 321
+I recieve a nack!!!! I am node 20
+pitTable size: 60
+node id :20
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 22
+pitTable size: 60
+node id :22
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 14
+pitTable size: 6
+node id :14
+receiving tolerance1
+before division: 5	 totalmatchedInterest: 5
+	 face id: 258	 weight1	 weighted tolerance: 1
+I recieve a nack!!!! I am node 15
+pitTable size: 6
+node id :15
+receiving tolerance1
+before division: 5	 totalmatchedInterest: 5
+	 face id: 258	 weight1	 weighted tolerance: 1
+I recieve a nack!!!! I am node 16
+pitTable size: 60
+node id :16
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 17
+pitTable size: 60
+node id :17
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 18
+pitTable size: 60
+node id :18
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 19
+pitTable size: 60
+node id :19
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 21
+pitTable size: 60
+node id :21
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 23
+pitTable size: 60
+node id :23
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 24
+pitTable size: 60
+node id :24
+receiving tolerance10
+before division: 57	 totalmatchedInterest: 57
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 25
+pitTable size: 60
+node id :25
+receiving tolerance10
+before division: 58	 totalmatchedInterest: 58
+	 face id: 258	 weight1	 weighted tolerance: 10
+Consumer: I change my frequency!!!!!! the new value 0
+Consumer: I change my frequency!!!!!! the new value 0
+I recieve a nack!!!! I am node 1
+pitTable size: 348
+node id :1
+receiving tolerance204
+before division: 345	 totalmatchedInterest: 345
+	 face id: 257	 weight1	 weighted tolerance: 204
+I recieve a nack!!!! I am node 4
+I recieve a nack!!!! I am node 10
+pitTable size: 585
+node id :10
+receiving tolerance321
+before division: 253	 totalmatchedInterest: 536
+	 face id: 259	 weight0.472015	 weighted tolerance: 152
+before division: 283	 totalmatchedInterest: 536
+	 face id: 260	 weight0.527985	 weighted tolerance: 169
+I recieve a nack!!!! I am node 11
+pitTable size: 604
+node id :11
+receiving tolerance152
+before division: 4	 totalmatchedInterest: 579
+	 face id: 257	 weight0.00690846	 weighted tolerance: 1
+before division: 10	 totalmatchedInterest: 579
+	 face id: 258	 weight0.0172712	 weighted tolerance: 3
+before division: 65	 totalmatchedInterest: 579
+	 face id: 259	 weight0.112263	 weighted tolerance: 17
+before division: 65	 totalmatchedInterest: 579
+	 face id: 260	 weight0.112263	 weighted tolerance: 17
+before division: 64	 totalmatchedInterest: 579
+	 face id: 261	 weight0.110535	 weighted tolerance: 17
+before division: 36	 totalmatchedInterest: 579
+	 face id: 262	 weight0.0621762	 weighted tolerance: 9
+before division: 66	 totalmatchedInterest: 579
+	 face id: 263	 weight0.11399	 weighted tolerance: 17
+before division: 44.5	 totalmatchedInterest: 579
+	 face id: 264	 weight0.0768566	 weighted tolerance: 12
+before division: 66	 totalmatchedInterest: 579
+	 face id: 265	 weight0.11399	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 579
+	 face id: 266	 weight0.11399	 weighted tolerance: 17
+before division: 54.5	 totalmatchedInterest: 579
+	 face id: 267	 weight0.0941278	 weighted tolerance: 14
+before division: 38	 totalmatchedInterest: 579
+	 face id: 268	 weight0.0656304	 weighted tolerance: 10
+I recieve a nack!!!! I am node 12
+pitTable size: 694
+node id :12
+receiving tolerance169
+before division: 7	 totalmatchedInterest: 669
+	 face id: 257	 weight0.0104634	 weighted tolerance: 2
+before division: 7	 totalmatchedInterest: 669
+	 face id: 258	 weight0.0104634	 weighted tolerance: 2
+before division: 65	 totalmatchedInterest: 669
+	 face id: 259	 weight0.0971599	 weighted tolerance: 16
+before division: 66	 totalmatchedInterest: 669
+	 face id: 260	 weight0.0986547	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 669
+	 face id: 261	 weight0.0986547	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 669
+	 face id: 262	 weight0.0986547	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 669
+	 face id: 263	 weight0.0986547	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 669
+	 face id: 264	 weight0.0986547	 weighted tolerance: 17
+before division: 66	 totalmatchedInterest: 669
+	 face id: 265	 weight0.0986547	 weighted tolerance: 17
+before division: 64	 totalmatchedInterest: 669
+	 face id: 266	 weight0.0956652	 weighted tolerance: 16
+before division: 64	 totalmatchedInterest: 669
+	 face id: 267	 weight0.0956652	 weighted tolerance: 16
+before division: 66	 totalmatchedInterest: 669
+	 face id: 268	 weight0.0986547	 weighted tolerance: 17
+I recieve a nack!!!! I am node 7
+pitTable size: 348
+node id :7
+receiving tolerance204
+before division: 345	 totalmatchedInterest: 345
+	 face id: 259	 weight1	 weighted tolerance: 204
+I recieve a nack!!!! I am node 62
+pitTable size: 8
+node id :62
+receiving tolerance1
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 1
+I recieve a nack!!!! I am node 63
+I recieve a nack!!!! I am node 64
+pitTable size: 72
+node id :64
+receiving tolerance17
+before division: 69	 totalmatchedInterest: 69
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 65
+pitTable size: 72
+node id :65
+receiving tolerance17
+before division: 69	 totalmatchedInterest: 69
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 66
+pitTable size: 73
+node id :66
+receiving tolerance17
+before division: 68	 totalmatchedInterest: 68
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 67
+I recieve a nack!!!! I am node 68
+pitTable size: 73
+node id :68
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 69
+I recieve a nack!!!! I am node 70
+pitTable size: 73
+node id :70
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 71
+pitTable size: 73
+node id :71
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 72
+pitTable size: 73
+node id :72
+receiving tolerance14
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 14
+I recieve a nack!!!! I am node 73
+pitTable size: 73
+node id :73
+receiving tolerance10
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 10
+I recieve a nack!!!! I am node 74
+pitTable size: 8
+node id :74
+receiving tolerance2
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 75
+pitTable size: 8
+node id :75
+receiving tolerance2
+before division: 7	 totalmatchedInterest: 7
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 76
+pitTable size: 72
+node id :76
+receiving tolerance16
+before division: 69	 totalmatchedInterest: 69
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 77
+pitTable size: 73
+node id :77
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 78
+pitTable size: 73
+node id :78
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 79
+pitTable size: 73
+node id :79
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 80
+pitTable size: 73
+node id :80
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 81
+pitTable size: 73
+node id :81
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 82
+pitTable size: 73
+node id :82
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+I recieve a nack!!!! I am node 83
+pitTable size: 73
+node id :83
+receiving tolerance16
+before division: 68	 totalmatchedInterest: 68
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 84
+pitTable size: 73
+node id :84
+receiving tolerance16
+before division: 68	 totalmatchedInterest: 68
+	 face id: 258	 weight1	 weighted tolerance: 16
+I recieve a nack!!!! I am node 85
+pitTable size: 73
+node id :85
+receiving tolerance17
+before division: 70	 totalmatchedInterest: 70
+	 face id: 258	 weight1	 weighted tolerance: 17
+Consumer: I change my frequency!!!!!! the new value 0
+Consumer: I change my frequency!!!!!! the new value 1
+Consumer: I change my frequency!!!!!! the new value 1
+I recieve a nack!!!! I am node 9
+pitTable size: 739
+node id :9
+receiving tolerance204
+before division: 9	 totalmatchedInterest: 736
+	 face id: 258	 weight0.0122283	 weighted tolerance: 2
+before division: 9	 totalmatchedInterest: 736
+	 face id: 259	 weight0.0122283	 weighted tolerance: 2
+before division: 72	 totalmatchedInterest: 736
+	 face id: 260	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 261	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 262	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 263	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 264	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 265	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 266	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 267	 weight0.0978261	 weighted tolerance: 20
+before division: 72	 totalmatchedInterest: 736
+	 face id: 268	 weight0.0978261	 weighted tolerance: 20
+before division: 70	 totalmatchedInterest: 736
+	 face id: 269	 weight0.0951087	 weighted tolerance: 19
+I recieve a nack!!!! I am node 52
+pitTable size: 77
+node id :52
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 59
+pitTable size: 77
+node id :59
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 60
+pitTable size: 77
+node id :60
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 50
+pitTable size: 10
+node id :50
+receiving tolerance2
+before division: 9	 totalmatchedInterest: 9
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 51
+pitTable size: 10
+node id :51
+receiving tolerance2
+before division: 9	 totalmatchedInterest: 9
+	 face id: 258	 weight1	 weighted tolerance: 2
+I recieve a nack!!!! I am node 53
+pitTable size: 77
+node id :53
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 54
+pitTable size: 77
+node id :54
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 55
+pitTable size: 77
+node id :55
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 56
+pitTable size: 77
+node id :56
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 57
+pitTable size: 77
+node id :57
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 58
+pitTable size: 77
+node id :58
+receiving tolerance20
+before division: 76	 totalmatchedInterest: 76
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 61
+pitTable size: 77
+node id :61
+receiving tolerance19
+before division: 74	 totalmatchedInterest: 74
+	 face id: 258	 weight1	 weighted tolerance: 19
+Consumer: I change my frequency!!!!!! the new value 1
+Consumer: I change my frequency!!!!!! the new value 1
+Fake interests per unit: 0 Valid interests per unit: 74 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 84 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 3
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 71 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 71 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 72 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 84 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 80 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 73 Good interests per unit: 2
+Fake interests per unit: 0 Valid interests per unit: 84 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 84 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 2
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 78 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 83 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 2
+Fake interests per unit: 0 Valid interests per unit: 72 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 79 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 88 Good interests per unit: 1
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 2
+Fake interests per unit: 0 Valid interests per unit: 83 Good interests per unit: 0
 I recieve a nack!!!! I am node 26
 I recieve a nack!!!! I am node 27
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
 I recieve a nack!!!! I am node 38
 I recieve a nack!!!! I am node 39
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Fake interests per unit: 0 Valid interests per unit: 79 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 12
+I recieve a nack!!!! I am node 14
+I recieve a nack!!!! I am node 15
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
 I recieve a nack!!!! I am node 62
-I recieve a nack!!!! I am node 63
+Consumer: I reset my frequency!!!!!! the new value 40
 I recieve a nack!!!! I am node 74
 I recieve a nack!!!! I am node 75
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Consumer: I reset my frequency!!!!!! the new value 20
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 0
-Fake interests per unit: 0 Valid interests per unit: 34 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 34 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 4
-Fake interests per unit: 0 Valid interests per unit: 42 Good interests per unit: 14
-Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 42 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 22
-Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 23
-Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 40 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 33 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 42 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 36 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 36 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 33 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 39 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 36 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 39 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 41 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 40 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 40 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 37 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 38 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 33 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 33 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 33 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 35 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 25 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 25 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 32 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 25 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 29 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 30 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 31 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 25 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 27 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 28 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
-Fake interests per unit: 0 Valid interests per unit: 26 Good interests per unit: 24
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 50
+I recieve a nack!!!! I am node 51
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Fake interests per unit: 0 Valid interests per unit: 86 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 69 Good interests per unit: 22
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 30
+Fake interests per unit: 0 Valid interests per unit: 76 Good interests per unit: 37
+Fake interests per unit: 0 Valid interests per unit: 84 Good interests per unit: 39
+Fake interests per unit: 0 Valid interests per unit: 86 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 85 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 87 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 86 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 88 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 92 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 90 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 89 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 91 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 85 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 91 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 86 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 88 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 83 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 83 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 90 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 86 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 90 Good interests per unit: 45
+Fake interests per unit: 0 Valid interests per unit: 92 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 91 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 89 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 89 Good interests per unit: 45
+Fake interests per unit: 0 Valid interests per unit: 85 Good interests per unit: 45
+Fake interests per unit: 0 Valid interests per unit: 90 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 80 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 82 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 76 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 67 Good interests per unit: 45
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 65 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 71 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 70 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 67 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 67 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 68 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 45
+Fake interests per unit: 0 Valid interests per unit: 70 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 75 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 64 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 64 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 73 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 68 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 69 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 65 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 77 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 69 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 68 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 66 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 59 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 60 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 57 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 56 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 58 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 58 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 58 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 61 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 55 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 58 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 52 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 53 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 54 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 50 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 51 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 48 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 49 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 47 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 45 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 46 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
+Fake interests per unit: 0 Valid interests per unit: 44 Good interests per unit: 44
