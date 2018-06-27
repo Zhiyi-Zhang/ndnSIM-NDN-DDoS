@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-rawData <- readLines("valid.txt")
+rawData <- readLines("fake.txt")
 options(scipen=999)
 
 # Extract Data Data

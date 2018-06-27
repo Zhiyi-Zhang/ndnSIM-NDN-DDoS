@@ -13,7 +13,7 @@ library(doBy)
 args = commandArgs(trailingOnly=TRUE)
 target = args[1]
 threshold = args[2]
-validAmount = 240
+validAmount = 480
 
 #target="test-f50-t500"
 #threshold = 500

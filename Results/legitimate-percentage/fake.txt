@@ -1,7 +1,7 @@
 Waf: Entering directory `/Users/ZhangZhiyi/Develop/ndnSIM/ns-3/build'
 Waf: Leaving directory `/Users/ZhangZhiyi/Develop/ndnSIM/ns-3/build'
 Build commands will be stored in build/compile_commands.json
-'build' finished successfully (2.322s)
+'build' finished successfully (2.485s)
 Fake interests per unit: 0 Valid interests per unit: 0 Good interests per unit: 0
 ************** I am a consumer gateway router
 /u1/g1727
