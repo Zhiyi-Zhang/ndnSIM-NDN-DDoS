@@ -107,19 +107,27 @@ data.victim$Node = "victim"
 data.gateway$Node = "gateway"
 data.consumer$Node = "consumer"
 
-result = rbind(data.victim, data.attacker, data.gateway, data.consumer)
+result = rbind(data.victim, data.attacker)
 
 # graph rates on selected nodes in number of incoming interest packets
-g.nodes <- ggplot(result) +
-  geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
-  scale_shape_manual(values=c(8, 16, 17, 15)) +
-  scale_color_manual(values=c("red","chartreuse3", "goldenrod", "deepskyblue")) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
+g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
+  scale_shape_manual(values=c(8, 15)) +
+  scale_color_manual(values=c("red", "deepskyblue")) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=2) +
+  scale_linetype_manual(values=c("dashed", "solid")) +
+  # geom_point(size=1.5) +
+  #geom_bar(stat="identity") +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
   theme_linedraw() +
-  theme(legend.position="none", text = element_text(size=12)) 
+  theme(
+    legend.position="none", text = element_text(size=12),
+    axis.text.x = element_text(color = "grey20", size = 20, angle = 0, face = "plain"),
+    axis.text.y = element_text(color = "grey20", size = 20, angle = 90, face = "plain"),
+    axis.title.x = element_text(color="black", size=20, face="bold"),
+    axis.title.y = element_text(color="black", size=20, face="bold")
+  )
 
-png(paste(target, "png", sep="."), width=500, height=300)
+png(paste(target, "png", sep="."), width=500, height=500)
 print(g.nodes)
 retval <- dev.off()
