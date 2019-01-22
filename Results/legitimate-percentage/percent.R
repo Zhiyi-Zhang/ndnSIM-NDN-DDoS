@@ -1,6 +1,12 @@
 #!/usr/bin/env Rscript
 
-rawData <- readLines("fake.txt")
+library(ggplot2)
+
+args = commandArgs(trailingOnly=TRUE)
+#target = args[1]
+
+target = "two-fake-f100-t500"
+rawData <- readLines(target)
 options(scipen=999)
 
 # Extract Data Data
@@ -12,7 +18,14 @@ df <- data.frame(time = numeric(length(result)),
                  percent = numeric(length(result)),
                  stringsAsFactors = FALSE)
 
+is.even <- function(x) x %% 2 == 0
+is.odd <- function(x) x %% 2 != 0
+
 for (i in 1:length(result)) {
+  if (is.even(i))
+    df$node[i] = "A"
+  if (is.odd(i))
+    df$node[i] = "B"
   df$time[i] <- i/10
   numberA <- as.numeric(sub(pattern, "\\1", result[i]))
   numberB <- as.numeric(sub(pattern, "\\2", result[i]))
@@ -20,5 +33,23 @@ for (i in 1:length(result)) {
   df$percent[i] <- numberC / (numberB+numberA)
 }
 
-plot(df$time, df$percent, type="l",xlab="Time (second)", ylab="Legitimate Precentage")
-title("Fake Interest Attack")
+#plot(df$time, df$percent, type="l",xlab="Time (second)", ylab="Legitimate Precentage")
+#title("Fake Interest Attack")
+
+# graph rates on selected nodes in number of incoming interest packets
+g.nodes <- ggplot(df, aes (x=time, y=percent, group=node)) +
+  geom_line(size=1) +
+  xlab("Time [second]") +
+  ylab("Legit Traffic pct. %") +
+  theme_linedraw() +
+  theme(
+    legend.position="none", text = element_text(size=12),
+    axis.text.x = element_text(color = "grey20", size = 33, angle = 0, face = "plain"),
+    axis.text.y = element_text(color = "grey20", size = 33, angle = 90, face = "plain"),
+    axis.title.x = element_text(color="black", size=33, face="bold"),
+    axis.title.y = element_text(color="black", size=33, face="bold")
+  )
+
+png(paste(target, "png", sep="."), width=500, height=500)
+print(g.nodes)
+retval <- dev.off()

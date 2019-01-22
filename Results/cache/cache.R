@@ -113,7 +113,7 @@ result = rbind(data.victim, data.attacker)
 g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   scale_shape_manual(values=c(8, 15)) +
   scale_color_manual(values=c("red", "deepskyblue")) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=2) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
   scale_linetype_manual(values=c("dashed", "solid")) +
   # geom_point(size=1.5) +
   #geom_bar(stat="identity") +
@@ -122,10 +122,10 @@ g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   theme_linedraw() +
   theme(
     legend.position="none", text = element_text(size=12),
-    axis.text.x = element_text(color = "grey20", size = 20, angle = 0, face = "plain"),
-    axis.text.y = element_text(color = "grey20", size = 20, angle = 90, face = "plain"),
-    axis.title.x = element_text(color="black", size=20, face="bold"),
-    axis.title.y = element_text(color="black", size=20, face="bold")
+    axis.text.x = element_text(color = "grey20", size = 33, angle = 0, face = "plain"),
+    axis.text.y = element_text(color = "grey20", size = 33, angle = 90, face = "plain"),
+    axis.title.x = element_text(color="black", size=33, face="bold"),
+    axis.title.y = element_text(color="black", size=33, face="bold")
   )
 
 png(paste(target, "png", sep="."), width=500, height=500)

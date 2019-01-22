@@ -86,7 +86,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u1", as1_cs_server);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(30.0));
+  Simulator::Stop(Seconds(20.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/valid-interest-ddos/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

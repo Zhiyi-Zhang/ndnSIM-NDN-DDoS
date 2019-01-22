@@ -2,7 +2,7 @@
 
 cd ../../../..
 
-./waf --run "two-targets-fake --RngRun=2 --maxRange=400 --frequency=100 --topo=fake-interest-ddos --output=two-fake-t500"
+./waf --run "two-targets-fake --RngRun=3 --frequency=100 --tolerance=500 --withStrategy=true --topo=fake-interest-ddos --output=fake-f100-t500" 2>&1 | tee src/ndnSIM/Results/legitimate-percentage/two-fake-f100-t500
 
 cd -
-Rscript two-targets.R two-fake-t500 500
+Rscript two-targets.R fake-f100-t500 500

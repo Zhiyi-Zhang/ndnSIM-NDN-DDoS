@@ -114,22 +114,26 @@ data.victim$Node = "victim-A"
 data.victim2$Node = "victim-B"
 data.gateway$Node = "gateway"
 data.consumer$Node = "consumer"
-result = rbind(data.victim, data.attacker, data.gateway, data.consumer, data.victim2)
+result = rbind(data.victim, data.attacker, data.consumer, data.victim2)
 
-# graph rates on selected nodes in number of incoming interest packets
-labelstr = paste(c("Tolerance (", as.numeric(fake_threshold), ") + Good Interest (", validAmount, ")"), collapse = "")
-g.nodes <- ggplot(result) + 
-  geom_point(aes (x=Time, y=Packets.sum, color=Node, shape=Node), size=2) +
-  scale_shape_manual(values=c(8, 16, 17, 15, 15)) +
-  scale_color_manual(values=c("red","chartreuse3", "goldenrod", "deepskyblue", "deepskyblue")) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node), size=0.8) +
-  geom_hline(yintercept = as.numeric(fake_threshold) + validAmount, linetype="dashed") + 
-  annotate("text", x=18, y=as.numeric(fake_threshold) + validAmount, vjust = -1, label = labelstr ) +
+# graph rates on selected nodes in number of incoming interest packetsaq
+g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
+  scale_shape_manual(values=c(8, 16, 15, 15)) +
+  scale_color_manual(values=c("red", "chartreuse3", "deepskyblue", "deepskyblue")) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
+  scale_linetype_manual(values=c("dashed", "dotdash", "solid", "solid")) +
+  geom_hline(yintercept = as.numeric(fake_threshold) + validAmount, linetype="longdash", size=1.3) + 
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
   theme_linedraw() +
-  theme(legend.position="none", text = element_text(size=12) )
+  theme(
+    legend.position="none", text = element_text(size=12),
+    axis.text.x = element_text(color = "grey20", size = 33, angle = 0, face = "plain"),
+    axis.text.y = element_text(color = "grey20", size = 33, angle = 90, face = "plain"),
+    axis.title.x = element_text(color="black", size=33, face="bold"),
+    axis.title.y = element_text(color="black", size=33, face="bold")
+  )
 
-png(paste(target, "png", sep="."), width=500, height=300)
+png(paste(target, "png", sep="."), width=500, height=500)
 print(g.nodes)
 retval <- dev.off()

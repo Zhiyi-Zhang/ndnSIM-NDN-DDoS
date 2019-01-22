@@ -74,15 +74,20 @@ main(int argc, char* argv[]) {
   for (int i = 0; i < attackers.size(); i++) {
     if (i % 2 == 0) {
       consumerHelper.SetAttribute("Names", StringValue("/u1"));
+      ApplicationContainer evilApp;
+      int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+      consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+      evilApp.Add(consumerHelper.Install(attackers[i]));
+      evilApp.Start(Seconds (2.0));
     }
     else {
       consumerHelper.SetAttribute("Names", StringValue("/u2"));
+      ApplicationContainer evilApp;
+      int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+      consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+      evilApp.Add(consumerHelper.Install(attackers[i]));
+      evilApp.Start(Seconds (4.0));
     }
-    ApplicationContainer evilApp;
-    int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
-    consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-    evilApp.Add(consumerHelper.Install(attackers[i]));
-    evilApp.Start(Seconds (3.0));
   }
 
   // Getting producers
