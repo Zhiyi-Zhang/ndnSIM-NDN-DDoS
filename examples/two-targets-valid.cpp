@@ -48,7 +48,7 @@ main(int argc, char* argv[]) {
   }
 
   ndn::AppHelper consumerHelper("ConsApp");
-  consumerHelper.SetAttribute("Frequency", StringValue("20"));
+  consumerHelper.SetAttribute("Frequency", StringValue("40"));
   consumerHelper.SetAttribute("MaxSeq", StringValue(maxRange));
   Ptr<UniformRandomVariable> x = CreateObject<UniformRandomVariable> ();
 
@@ -73,15 +73,20 @@ main(int argc, char* argv[]) {
   for (int i = 0; i < attackers.size(); i++) {
     if (i % 2 == 0) {
       consumerHelper.SetAttribute("Names", StringValue("/u1"));
+      ApplicationContainer evilApp;
+      int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+      consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+      evilApp.Add(consumerHelper.Install(attackers[i]));
+      evilApp.Start(Seconds (2.0));
     }
     else {
       consumerHelper.SetAttribute("Names", StringValue("/u2"));
+      ApplicationContainer evilApp;
+      int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
+      consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
+      evilApp.Add(consumerHelper.Install(attackers[i]));
+      evilApp.Start(Seconds (4.0));
     }
-    ApplicationContainer evilApp;
-    int init = static_cast<int>(x->GetValue()*(std::stoi(maxRange) - 1));
-    consumerHelper.SetAttribute("InitSeq", IntegerValue(init));
-    evilApp.Add(consumerHelper.Install(attackers[i]));
-    evilApp.Start(Seconds (3.0));
   }
 
   // Getting producers
@@ -103,7 +108,7 @@ main(int argc, char* argv[]) {
   ndnGlobalRoutingHelper.AddOrigins("/u2", as1_cs_backend);
   ndnGlobalRoutingHelper.CalculateRoutes();
 
-  Simulator::Stop(Seconds(25.0));
+  Simulator::Stop(Seconds(20.0));
   ndn::L3RateTracer::InstallAll("src/ndnSIM/Results/two-targets-valid/" + outFile + ".txt",
                                 Seconds(0.5));
   Simulator::Run();

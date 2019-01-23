@@ -17,8 +17,6 @@
 #include "ns3/ndnSIM/helper/ndn-fib-helper.hpp"
 
 #include <ndn-cxx/lp/tags.hpp>
-
-
 #include "ns3/random-variable-stream.h"
 
 NS_LOG_COMPONENT_DEFINE("ConsApp");
@@ -67,7 +65,12 @@ ConsApp::GetTypeId()
     .AddAttribute("MaxSeq",
                   "The max seq to send",
                   StringValue("200"),
-                  MakeIntegerAccessor(&ConsApp::m_maxSeq), MakeIntegerChecker<int32_t>());;
+                  MakeIntegerAccessor(&ConsApp::m_maxSeq), MakeIntegerChecker<int32_t>())
+
+    .AddAttribute("GoodTrafficAlso",
+                  "GoodTrafficAlso",
+                  IntegerValue(-1),
+                  MakeIntegerAccessor(&ConsApp::m_goodTrafficAlso), MakeIntegerChecker<int32_t>());
 
   return tid;
 }
@@ -78,6 +81,8 @@ ConsApp::ConsApp()
   , m_firstTime(true)
   , m_isGood(true)
   , m_interestNames("/")
+  , m_goodTrafficAlso(-1)
+  , m_goodTrafficSeq(1)
 {
 }
 
@@ -92,7 +97,7 @@ ConsApp::ScheduleNextPacket()
   // double mean = 8.0 * m_payloadSize / m_desiredRate.GetBitRate ();
   // std::cout << "next: " << Simulator::Now().ToDouble(Time::S) + mean << "s\n";
 
-  NS_LOG_INFO("Current Frequency: " << m_frequency);
+  // NS_LOG_INFO("Current Frequency: " << m_frequency);
 
   if (m_firstTime) {
     m_sendEvent = Simulator::Schedule(Seconds(0.0), &ConsApp::SendInterest, this);
@@ -110,6 +115,13 @@ ConsApp::ScheduleNextPacket()
                                         &ConsApp::SendInterest, this);
     }
   }
+}
+
+void
+ConsApp::ScheduleNextGoodPacket()
+{
+  m_sendGoodEvent = Simulator::Schedule(Seconds(1.0 / m_goodTrafficAlso),
+                                        &ConsApp::SendGoodInterest, this);
 }
 
 void
@@ -157,13 +169,16 @@ ConsApp::StartApplication()
 
   m_interestNameList.push_back(m_interestNames);
   m_lastSeq[m_interestNames] = m_initSeq;
-
+  m_goodTrafficSeq = m_initSeq;
   m_originFreq = m_frequency;
 
-  NS_LOG_INFO("Current Frequency: " << m_frequency);
-  NS_LOG_INFO("Current Max Range: " << m_maxSeq);
+  // NS_LOG_INFO("Current Frequency: " << m_frequency);
+  // NS_LOG_INFO("Current Max Range: " << m_maxSeq);
 
   ScheduleNextPacket();
+  if (m_goodTrafficAlso > 0) {
+    ScheduleNextGoodPacket();
+  }
 }
 
 // Processing when application is stopped
@@ -172,6 +187,29 @@ ConsApp::StopApplication()
 {
   // cleanup ndn::App
   ndn::App::StopApplication();
+}
+
+void
+ConsApp::SendGoodInterest()
+{
+  std::string interestName = "/good/interest"
+    + std::to_string(m_goodTrafficSeq) + std::to_string(GetNode()->GetId());
+  m_goodTrafficSeq++;
+  Name interest_copy(interestName);
+
+  auto interest = std::make_shared<ndn::Interest>(interest_copy);
+  Ptr<UniformRandomVariable> rand = CreateObject<UniformRandomVariable>();
+  interest->setNonce(rand->GetValue(0, std::numeric_limits<uint32_t>::max()));
+  interest->setMustBeFresh(true);
+  interest->setTag(make_shared<lp::HopCountTag>(0));
+
+  // Call trace (for logging purposes)
+  m_transmittedInterests(interest, this, m_face);
+
+  m_appLink->onReceiveInterest(*interest);
+  NS_LOG_INFO("Sending Good Interest " << interest->getName());
+
+  ScheduleNextGoodPacket();
 }
 
 void
@@ -228,9 +266,11 @@ ConsApp::SendInterest()
   // Call trace (for logging purposes)
   m_transmittedInterests(interest, this, m_face);
 
-  m_appLink->onReceiveInterest(*interest);
-  NS_LOG_INFO("Sending Interest packet for: " << interest->getName());
+  if (m_goodTrafficAlso > 0) {
+    NS_LOG_INFO("Send Attack Interest " << interest->getName());
+  }
 
+  m_appLink->onReceiveInterest(*interest);
   ScheduleNextPacket();
 }
 
@@ -238,14 +278,14 @@ ConsApp::SendInterest()
 void
 ConsApp::OnData(std::shared_ptr<const ndn::Data> data)
 {
-  NS_LOG_INFO("DATA received for name: " << data->getName());
+  // NS_LOG_INFO("DATA received for name: " << data->getName());
 }
 
 // Callback that will be called when NACK arrives
 void
 ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
 {
-  NS_LOG_INFO("NACK received");
+  // NS_LOG_INFO("NACK received");
   if (m_isGood) {
     if (nack->getReason() == lp::NackReason::DDOS_RESET_RATE) {
       m_frequency = m_originFreq;
@@ -254,6 +294,9 @@ ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
     else if (nack->getReason() == lp::NackReason::DDOS_FAKE_INTEREST
              || nack->getReason() == lp::NackReason::DDOS_VALID_INTEREST_OVERLOAD) {
       m_frequency = nack->getHeader().m_tolerance - 1;
+      if (m_frequency >= m_originFreq) {
+        m_frequency = m_originFreq;
+      }
       if (m_frequency <= 0) {
         m_frequency = 0;
       }

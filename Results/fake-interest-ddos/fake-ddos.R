@@ -125,7 +125,7 @@ g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   scale_color_manual(values=c("red","chartreuse3", "deepskyblue")) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
   scale_linetype_manual(values=c("dashed", "dotdash", "solid")) +
-  geom_hline(yintercept = as.numeric(threshold) + validAmount, linetype="longdash", size=1.3) + 
+  #geom_hline(yintercept = as.numeric(threshold) + validAmount, linetype="longdash", size=1.3) + 
   # geom_point(size=1.5) +
   #geom_bar(stat="identity") +
   xlab("Time [second]") +

@@ -53,6 +53,7 @@ protected:
   Ptr<RandomVariableStream> m_random;
   std::string m_randomType;
   EventId m_sendEvent; ///< @brief EventId of pending "send packet" event
+  EventId m_sendGoodEvent; ///< @brief EventId of pending "send packet" event
   std::string m_interestNames; // parameter passed in scenario
   std::vector<std::string> m_interestNameList;
   bool m_validInterest;
@@ -60,9 +61,18 @@ protected:
   int m_initSeq;
   int m_maxSeq;
 
+  int m_goodTrafficAlso;
+  int m_goodTrafficSeq;
+
 private:
   void
   SendInterest();
+
+  void
+  ScheduleNextGoodPacket();
+
+  void
+  SendGoodInterest();
 };
 
 } // namespace ndn

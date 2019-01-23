@@ -1,0 +1,3968 @@
+Waf: Entering directory `/Users/ZhangZhiyi/Develop/simulation-ndn-ddos/ns-3/build'
+[1753/3085] Compiling src/ndnSIM/apps/cons-app.cpp
+In file included from ../src/ndnSIM/apps/cons-app.cpp:16:
+In file included from ./ns3/ndnSIM/helper/ndn-stack-helper.hpp:32:
+In file included from ./ns3/ndnSIM/helper/ndn-strategy-choice-helper.hpp:30:
+In file included from ./ns3/ndnSIM/NFD/daemon/mgmt/strategy-choice-manager.hpp:29:
+In file included from ./ns3/ndnSIM/NFD/daemon/mgmt/nfd-manager-base.hpp:29:
+In file included from ns3/ndnSIM/NFD/core/manager-base.hpp:31:
+In file included from ns3/ndnSIM/ndn-cxx/mgmt/dispatcher.hpp:25:
+ns3/ndnSIM/ndn-cxx/mgmt/nfd/../../face.hpp:465:12: warning: binding dereferenced null pointer to reference has undefined behavior [-Wnull-dereference]
+    return *static_cast<boost::asio::io_service*>(nullptr);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+
+[2930/3085] Linking build/libns3-dev-ndnSIM-debug.dylib
+[3025/3085] Linking build/src/ndnSIM/examples/ns3-dev-two-targets-mixed-debug
+[3025/3085] Linking build/bindings/python/ns/wifi.so
+[3026/3085] Linking build/bindings/python/ns/network.so
+[3027/3085] Linking build/src/ndnSIM/examples/ns3-dev-traffic composition-debug
+[3028/3085] Linking build/bindings/python/ns/point_to_point.so
+[3030/3085] Linking build/bindings/python/ns/csma.so
+[3032/3085] Linking build/bindings/python/ns/antenna.so
+[3033/3085] Linking build/bindings/python/ns/csma_layout.so
+[3034/3085] Linking build/bindings/python/ns/fd_net_device.so
+[3037/3085] Linking build/bindings/python/ns/traffic_control.so
+[3042/3085] Linking build/src/ndnSIM/examples/ns3-dev-mixed-ddos-debug
+[3043/3085] Linking build/bindings/python/ns/olsr.so
+[3044/3085] Linking build/utils/ns3-dev-print-introspected-doxygen-debug
+[3045/3085] Linking build/bindings/python/ns/dsdv.so
+[3046/3085] Linking build/bindings/python/ns/propagation.so
+[3047/3085] Linking build/bindings/python/ns/lr_wpan.so
+[3048/3085] Linking build/bindings/python/ns/lte.so
+[3049/3085] Linking build/scratch/subdir/subdir
+[3050/3085] Linking build/bindings/python/ns/mobility.so
+[3051/3085] Linking build/src/ndnSIM/examples/ns3-dev-valid-interest-ddos-debug
+[3052/3085] Linking build/bindings/python/ns/buildings.so
+[3053/3085] Linking build/bindings/python/ns/config_store.so
+[3055/3085] Linking build/src/ndnSIM/examples/ns3-dev-a-1-debug
+[3055/3085] Linking build/src/ndnSIM/examples/ns3-dev-satisefaction-debug
+[3056/3085] Linking build/bindings/python/ns/ndnSIM.so
+[3057/3085] Linking build/src/ndnSIM/examples/ns3-dev-cache-debug
+[3058/3085] Linking build/src/ndnSIM/examples/ns3-dev-valid-interest-aggregation-debug
+[3059/3085] Linking build/bindings/python/ns/sixlowpan.so
+[3060/3085] Linking build/src/ndnSIM/examples/ns3-dev-valid-fine-granularity-debug
+[3061/3085] Linking build/bindings/python/ns/wave.so
+[3062/3085] Linking build/bindings/python/ns/dsr.so
+[3063/3085] Linking build/bindings/python/ns/aodv.so
+[3064/3085] Linking build/src/ndnSIM/examples/ns3-dev-two-targets-valid-debug
+[3065/3085] Linking build/bindings/python/ns/internet.so
+[3066/3085] Linking build/bindings/python/ns/_core.so
+[3067/3085] Linking build/scratch/scratch-simulator
+[3068/3085] Linking build/bindings/python/ns/wimax.so
+[3069/3085] Linking build/utils/ns3-dev-test-runner-debug
+[3070/3085] Linking build/bindings/python/ns/uan.so
+[3071/3085] Linking build/bindings/python/ns/nix_vector_routing.so
+[3072/3085] Linking build/src/ndnSIM/examples/ns3-dev-fake-interest-ddos-debug
+[3073/3085] Linking build/bindings/python/ns/point_to_point_layout.so
+[3074/3085] Linking build/bindings/python/ns/internet_apps.so
+[3075/3085] Linking build/bindings/python/ns/virtual_net_device.so
+[3076/3085] Linking build/bindings/python/ns/bridge.so
+[3077/3085] Linking build/bindings/python/ns/mesh.so
+[3078/3085] Linking build/bindings/python/ns/topology_read.so
+[3079/3085] Linking build/bindings/python/ns/flow_monitor.so
+[3080/3085] Linking build/bindings/python/ns/applications.so
+[3081/3085] Linking build/bindings/python/ns/stats.so
+[3082/3085] Linking build/src/ndnSIM/examples/ns3-dev-two-targets-fake-debug
+[3083/3085] Linking build/bindings/python/ns/spectrum.so
+[3084/3085] Linking build/bindings/python/ns/energy.so
+[3085/3085] Linking build/bindings/python/ns/mpi.so
+Waf: Leaving directory `/Users/ZhangZhiyi/Develop/simulation-ndn-ddos/ns-3/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (13.192s)
+Fake interests per unit: 0 Valid interests per unit: 0 Good interests per unit: 0
+Fake interests per unit: 0 Valid interests per unit: 0 Good interests per unit: 0
+************** I am a consumer gateway router
+/u2/g843
+node id 5
+face id 259
+************** I am a consumer gateway router
+/u1/g2499
+node id 3
+face id 259
+face id 260
+face id 258
+************** I am a consumer gateway router
+/u1/g6710
+node id 6
+face id 258
+face id 259
+************** I am a consumer gateway router
+/u1/g9093
+node id 9
+face id 258
+face id 259
+************** I am a consumer gateway router
+/u1/g7297
+node id 11
+face id 257
+face id 258
+************** I am a consumer gateway router
+/u1/g8362
+node id 12
+face id 257
+face id 258
+Fake interests per unit: 0 Valid interests per unit: 12 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 12 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+face id 265
+face id 267
+face id 260
+face id 268
+face id 261
+face id 263
+face id 269
+face id 260
+face id 262
+face id 264
+face id 266
+face id 268
+face id 260
+face id 262
+face id 264
+face id 266
+face id 268
+face id 262
+face id 264
+face id 266
+face id 259
+face id 261
+face id 263
+face id 265
+face id 267
+face id 259
+face id 261
+face id 263
+face id 265
+face id 267
+Fake interests per unit: 0 Valid interests per unit: 179 Good interests per unit: 24
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 13
+pitTable size: 198
+node id :13
+receiving tolerance1425
+weight for each face1
+	 face id: 256	 weight1	 weighted tolerance: 1425
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+I recieve a nack!!!! I am node 2
+pitTable size: 282
+node id :2
+receiving tolerance1425
+weight for each face0.5
+	 face id: 256	 weight0.5	 weighted tolerance: 713
+	 face id: 257	 weight0.5	 weighted tolerance: 713
+I recieve a nack!!!! I am node 0
+pitTable size: 274
+node id :0
+receiving tolerance713
+weight for each face0.333333
+	 face id: 256	 weight0.333333	 weighted tolerance: 238
+	 face id: 257	 weight0.333333	 weighted tolerance: 238
+	 face id: 258	 weight0.333333	 weighted tolerance: 238
+I recieve a nack!!!! I am node 3
+pitTable size: 74
+node id :3
+receiving tolerance713
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 119
+	 face id: 261	 weight0.166667	 weighted tolerance: 119
+	 face id: 263	 weight0.166667	 weighted tolerance: 119
+	 face id: 265	 weight0.166667	 weighted tolerance: 119
+	 face id: 267	 weight0.166667	 weighted tolerance: 119
+	 face id: 269	 weight0.166667	 weighted tolerance: 119
+I recieve a nack!!!! I am node 24
+pitTable size: 14
+node id :24
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 16
+pitTable size: 11
+node id :16
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 18
+pitTable size: 14
+node id :18
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 20
+pitTable size: 14
+node id :20
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 22
+pitTable size: 14
+node id :22
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 26
+pitTable size: 14
+node id :26
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+Consumer: I change my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 1
+pitTable size: 71
+node id :1
+receiving tolerance238
+weight for each face1
+	 face id: 257	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 4
+pitTable size: 161
+node id :4
+receiving tolerance238
+weight for each face0.5
+	 face id: 258	 weight0.5	 weighted tolerance: 119
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 10
+pitTable size: 161
+node id :10
+receiving tolerance238
+weight for each face0.5
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+	 face id: 260	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 5
+pitTable size: 93
+node id :5
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 6
+pitTable size: 93
+node id :6
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 11
+pitTable size: 93
+node id :11
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 12
+pitTable size: 93
+node id :12
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 7
+pitTable size: 95
+node id :7
+receiving tolerance238
+weight for each face1
+	 face id: 259	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 28
+pitTable size: 13
+node id :28
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 30
+pitTable size: 17
+node id :30
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 32
+pitTable size: 17
+node id :32
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 34
+pitTable size: 17
+node id :34
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 36
+pitTable size: 17
+node id :36
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 38
+pitTable size: 17
+node id :38
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 40
+pitTable size: 13
+node id :40
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 42
+pitTable size: 17
+node id :42
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 44
+pitTable size: 17
+node id :44
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 46
+pitTable size: 17
+node id :46
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 48
+pitTable size: 17
+node id :48
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 50
+pitTable size: 17
+node id :50
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 64
+pitTable size: 13
+node id :64
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 66
+pitTable size: 17
+node id :66
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 68
+pitTable size: 17
+node id :68
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 70
+pitTable size: 17
+node id :70
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 72
+pitTable size: 17
+node id :72
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 74
+pitTable size: 17
+node id :74
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 76
+pitTable size: 13
+node id :76
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 78
+pitTable size: 17
+node id :78
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 80
+pitTable size: 17
+node id :80
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 82
+pitTable size: 17
+node id :82
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 84
+pitTable size: 17
+node id :84
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 86
+pitTable size: 17
+node id :86
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+I recieve a nack!!!! I am node 9
+pitTable size: 107
+node id :9
+receiving tolerance238
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 40
+	 face id: 260	 weight0.166667	 weighted tolerance: 40
+	 face id: 262	 weight0.166667	 weighted tolerance: 40
+	 face id: 264	 weight0.166667	 weighted tolerance: 40
+	 face id: 266	 weight0.166667	 weighted tolerance: 40
+	 face id: 268	 weight0.166667	 weighted tolerance: 40
+I recieve a nack!!!! I am node 54
+pitTable size: 19
+node id :54
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 62
+pitTable size: 19
+node id :62
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 52
+pitTable size: 15
+node id :52
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 56
+pitTable size: 19
+node id :56
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 58
+pitTable size: 19
+node id :58
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 60
+pitTable size: 19
+node id :60
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+Consumer: I change my frequency!!!!!! the new value 39
+Fake interests per unit: 0 Valid interests per unit: 259 Good interests per unit: 22
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 13
+pitTable size: 433
+node id :13
+receiving tolerance1425
+weight for each face1
+	 face id: 256	 weight1	 weighted tolerance: 1425
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+I recieve a nack!!!! I am node 2
+pitTable size: 487
+node id :2
+receiving tolerance1425
+weight for each face0.5
+	 face id: 256	 weight0.5	 weighted tolerance: 713
+	 face id: 257	 weight0.5	 weighted tolerance: 713
+I recieve a nack!!!! I am node 0
+pitTable size: 433
+node id :0
+receiving tolerance713
+weight for each face0.333333
+	 face id: 256	 weight0.333333	 weighted tolerance: 238
+	 face id: 257	 weight0.333333	 weighted tolerance: 238
+	 face id: 258	 weight0.333333	 weighted tolerance: 238
+I recieve a nack!!!! I am node 3
+pitTable size: 124
+node id :3
+receiving tolerance713
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 119
+	 face id: 261	 weight0.166667	 weighted tolerance: 119
+	 face id: 263	 weight0.166667	 weighted tolerance: 119
+	 face id: 265	 weight0.166667	 weighted tolerance: 119
+	 face id: 267	 weight0.166667	 weighted tolerance: 119
+	 face id: 269	 weight0.166667	 weighted tolerance: 119
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+I recieve a nack!!!! I am node 24
+pitTable size: 24
+node id :24
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 16
+pitTable size: 11
+node id :16
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 18
+pitTable size: 24
+node id :18
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 20
+pitTable size: 24
+node id :20
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 22
+pitTable size: 24
+node id :22
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 26
+pitTable size: 24
+node id :26
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+Consumer: I change my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 1
+pitTable size: 100
+node id :1
+receiving tolerance238
+weight for each face1
+	 face id: 257	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 4
+pitTable size: 175
+node id :4
+receiving tolerance238
+weight for each face0.5
+	 face id: 258	 weight0.5	 weighted tolerance: 119
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 10
+pitTable size: 175
+node id :10
+receiving tolerance238
+weight for each face0.5
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+	 face id: 260	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 5
+pitTable size: 142
+node id :5
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 6
+pitTable size: 142
+node id :6
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 11
+pitTable size: 142
+node id :11
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 12
+pitTable size: 142
+node id :12
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+I recieve a nack!!!! I am node 7
+pitTable size: 102
+node id :7
+receiving tolerance238
+weight for each face1
+	 face id: 259	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 28
+pitTable size: 11
+node id :28
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 30
+pitTable size: 27
+node id :30
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 32
+pitTable size: 27
+node id :32
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 34
+pitTable size: 27
+node id :34
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 36
+pitTable size: 27
+node id :36
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 38
+pitTable size: 27
+node id :38
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 40
+pitTable size: 11
+node id :40
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 42
+pitTable size: 27
+node id :42
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 44
+pitTable size: 27
+node id :44
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 46
+pitTable size: 27
+node id :46
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 48
+pitTable size: 27
+node id :48
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 50
+pitTable size: 27
+node id :50
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 64
+pitTable size: 11
+node id :64
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 66
+pitTable size: 27
+node id :66
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 68
+pitTable size: 27
+node id :68
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 70
+pitTable size: 27
+node id :70
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 72
+pitTable size: 27
+node id :72
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 74
+pitTable size: 27
+node id :74
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 76
+pitTable size: 11
+node id :76
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 78
+pitTable size: 27
+node id :78
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 80
+pitTable size: 27
+node id :80
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 82
+pitTable size: 27
+node id :82
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 84
+pitTable size: 27
+node id :84
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 86
+pitTable size: 27
+node id :86
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+I recieve a nack!!!! I am node 9
+pitTable size: 157
+node id :9
+receiving tolerance238
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 40
+	 face id: 260	 weight0.166667	 weighted tolerance: 40
+	 face id: 262	 weight0.166667	 weighted tolerance: 40
+	 face id: 264	 weight0.166667	 weighted tolerance: 40
+	 face id: 266	 weight0.166667	 weighted tolerance: 40
+	 face id: 268	 weight0.166667	 weighted tolerance: 40
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+I recieve a nack!!!! I am node 54
+pitTable size: 29
+node id :54
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 62
+pitTable size: 29
+node id :62
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 52
+pitTable size: 14
+node id :52
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 56
+pitTable size: 29
+node id :56
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 58
+pitTable size: 29
+node id :58
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 60
+pitTable size: 29
+node id :60
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+Consumer: I change my frequency!!!!!! the new value 39
+Fake interests per unit: 0 Valid interests per unit: 117 Good interests per unit: 14
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 3 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 121 Good interests per unit: 11
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 15
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 124 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 11 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 122 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 11 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 124 Good interests per unit: 15
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 11 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 11 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 11 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 11 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 11 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 24 Good interests per unit: 24
+face id 261
+face id 267
+face id 262
+face id 264
+face id 266
+face id 268
+face id 270
+face id 263
+face id 265
+face id 267
+face id 269
+face id 261
+face id 263
+face id 265
+face id 267
+face id 269
+face id 261
+face id 263
+face id 265
+face id 269
+face id 260
+face id 262
+face id 264
+face id 266
+face id 268
+face id 260
+face id 262
+face id 264
+face id 266
+face id 268
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 1 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Fake interests per unit: 0 Valid interests per unit: 123 Good interests per unit: 15
+Fake interests per unit: 0 Valid interests per unit: 179 Good interests per unit: 24
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 14
+pitTable size: 198
+node id :14
+receiving tolerance1425
+weight for each face1
+	 face id: 256	 weight1	 weighted tolerance: 1425
+I recieve a nack!!!! I am node 2
+pitTable size: 483
+node id :2
+receiving tolerance1425
+weight for each face0.5
+	 face id: 256	 weight0.5	 weighted tolerance: 713
+	 face id: 257	 weight0.5	 weighted tolerance: 713
+I recieve a nack!!!! I am node 0
+pitTable size: 375
+node id :0
+receiving tolerance713
+weight for each face0.333333
+	 face id: 256	 weight0.333333	 weighted tolerance: 238
+	 face id: 257	 weight0.333333	 weighted tolerance: 238
+	 face id: 258	 weight0.333333	 weighted tolerance: 238
+I recieve a nack!!!! I am node 3
+pitTable size: 227
+node id :3
+receiving tolerance713
+weight for each face0.166667
+	 face id: 260	 weight0.166667	 weighted tolerance: 119
+	 face id: 262	 weight0.166667	 weighted tolerance: 119
+	 face id: 264	 weight0.166667	 weighted tolerance: 119
+	 face id: 266	 weight0.166667	 weighted tolerance: 119
+	 face id: 268	 weight0.166667	 weighted tolerance: 119
+	 face id: 270	 weight0.166667	 weighted tolerance: 119
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 11 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+I recieve a nack!!!! I am node 17
+pitTable size: 11
+node id :17
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 19
+pitTable size: 14
+node id :19
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 21
+pitTable size: 14
+node id :21
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 23
+pitTable size: 14
+node id :23
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 25
+pitTable size: 14
+node id :25
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 27
+pitTable size: 14
+node id :27
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+Consumer: I change my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 1
+pitTable size: 132
+node id :1
+receiving tolerance238
+weight for each face1
+	 face id: 257	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 4
+pitTable size: 187
+node id :4
+receiving tolerance238
+weight for each face0.5
+	 face id: 258	 weight0.5	 weighted tolerance: 119
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 10
+pitTable size: 189
+node id :10
+receiving tolerance238
+weight for each face0.5
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+	 face id: 260	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 5
+pitTable size: 831
+node id :5
+receiving tolerance119
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+	 face id: 269	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 6
+pitTable size: 920
+node id :6
+receiving tolerance119
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+	 face id: 269	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 11
+pitTable size: 919
+node id :11
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 12
+pitTable size: 864
+node id :12
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+I recieve a nack!!!! I am node 7
+pitTable size: 154
+node id :7
+receiving tolerance238
+weight for each face1
+	 face id: 259	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 31
+pitTable size: 17
+node id :31
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 29
+pitTable size: 13
+node id :29
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 33
+pitTable size: 17
+node id :33
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 35
+pitTable size: 17
+node id :35
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 37
+pitTable size: 17
+node id :37
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 39
+pitTable size: 17
+node id :39
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+I recieve a nack!!!! I am node 41
+pitTable size: 13
+node id :41
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 43
+pitTable size: 17
+node id :43
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 45
+pitTable size: 17
+node id :45
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 47
+pitTable size: 17
+node id :47
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 49
+pitTable size: 17
+node id :49
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 51
+pitTable size: 17
+node id :51
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 65
+pitTable size: 13
+node id :65
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 67
+pitTable size: 17
+node id :67
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 69
+pitTable size: 17
+node id :69
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 71
+pitTable size: 17
+node id :71
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 73
+pitTable size: 17
+node id :73
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 75
+pitTable size: 17
+node id :75
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 77
+pitTable size: 13
+node id :77
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 79
+pitTable size: 17
+node id :79
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 81
+pitTable size: 17
+node id :81
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 83
+pitTable size: 17
+node id :83
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 85
+pitTable size: 17
+node id :85
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 87
+pitTable size: 17
+node id :87
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+I recieve a nack!!!! I am node 9
+pitTable size: 720
+node id :9
+receiving tolerance238
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 40
+	 face id: 261	 weight0.166667	 weighted tolerance: 40
+	 face id: 263	 weight0.166667	 weighted tolerance: 40
+	 face id: 265	 weight0.166667	 weighted tolerance: 40
+	 face id: 267	 weight0.166667	 weighted tolerance: 40
+	 face id: 269	 weight0.166667	 weighted tolerance: 40
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+I recieve a nack!!!! I am node 61
+pitTable size: 19
+node id :61
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 53
+pitTable size: 15
+node id :53
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 55
+pitTable size: 19
+node id :55
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 57
+pitTable size: 19
+node id :57
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 59
+pitTable size: 19
+node id :59
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 63
+pitTable size: 19
+node id :63
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+Consumer: I change my frequency!!!!!! the new value 39
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 265 Good interests per unit: 22
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 14
+pitTable size: 434
+node id :14
+receiving tolerance1425
+weight for each face1
+	 face id: 256	 weight1	 weighted tolerance: 1425
+I recieve a nack!!!! I am node 2
+pitTable size: 687
+node id :2
+receiving tolerance1425
+weight for each face0.5
+	 face id: 256	 weight0.5	 weighted tolerance: 713
+	 face id: 257	 weight0.5	 weighted tolerance: 713
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 11 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+I recieve a nack!!!! I am node 0
+pitTable size: 531
+node id :0
+receiving tolerance713
+weight for each face0.333333
+	 face id: 256	 weight0.333333	 weighted tolerance: 238
+	 face id: 257	 weight0.333333	 weighted tolerance: 238
+	 face id: 258	 weight0.333333	 weighted tolerance: 238
+I recieve a nack!!!! I am node 3
+pitTable size: 277
+node id :3
+receiving tolerance713
+weight for each face0.166667
+	 face id: 260	 weight0.166667	 weighted tolerance: 119
+	 face id: 262	 weight0.166667	 weighted tolerance: 119
+	 face id: 264	 weight0.166667	 weighted tolerance: 119
+	 face id: 266	 weight0.166667	 weighted tolerance: 119
+	 face id: 268	 weight0.166667	 weighted tolerance: 119
+	 face id: 270	 weight0.166667	 weighted tolerance: 119
+I recieve a nack!!!! I am node 17
+pitTable size: 11
+node id :17
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 19
+pitTable size: 24
+node id :19
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 21
+pitTable size: 24
+node id :21
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 23
+pitTable size: 24
+node id :23
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 25
+pitTable size: 24
+node id :25
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 27
+pitTable size: 24
+node id :27
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+Consumer: I change my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 1
+pitTable size: 161
+node id :1
+receiving tolerance238
+weight for each face1
+	 face id: 257	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 4
+pitTable size: 200
+node id :4
+receiving tolerance238
+weight for each face0.5
+	 face id: 258	 weight0.5	 weighted tolerance: 119
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 10
+pitTable size: 201
+node id :10
+receiving tolerance238
+weight for each face0.5
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+	 face id: 260	 weight0.5	 weighted tolerance: 119
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+I recieve a nack!!!! I am node 5
+pitTable size: 904
+node id :5
+receiving tolerance119
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+	 face id: 269	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 6
+pitTable size: 1009
+node id :6
+receiving tolerance119
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+	 face id: 269	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 11
+pitTable size: 998
+node id :11
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 12
+pitTable size: 945
+node id :12
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 7
+pitTable size: 161
+node id :7
+receiving tolerance238
+weight for each face1
+	 face id: 259	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 31
+pitTable size: 27
+node id :31
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 29
+pitTable size: 11
+node id :29
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 33
+pitTable size: 27
+node id :33
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 35
+pitTable size: 27
+node id :35
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 37
+pitTable size: 27
+node id :37
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 39
+pitTable size: 27
+node id :39
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 41
+pitTable size: 11
+node id :41
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 43
+pitTable size: 27
+node id :43
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 45
+pitTable size: 27
+node id :45
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 47
+pitTable size: 27
+node id :47
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 49
+pitTable size: 27
+node id :49
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 51
+pitTable size: 27
+node id :51
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 65
+pitTable size: 11
+node id :65
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 67
+pitTable size: 27
+node id :67
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 69
+I recieve a nack!!!! I am node 71
+pitTable size: 27
+node id :71
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 73
+pitTable size: 27
+node id :73
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 75
+pitTable size: 27
+node id :75
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 77
+pitTable size: 11
+node id :77
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 79
+pitTable size: 27
+node id :79
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 81
+pitTable size: 27
+node id :81
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 83
+pitTable size: 27
+node id :83
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 85
+pitTable size: 27
+node id :85
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 87
+pitTable size: 27
+node id :87
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+I recieve a nack!!!! I am node 9
+pitTable size: 794
+node id :9
+receiving tolerance238
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 40
+	 face id: 261	 weight0.166667	 weighted tolerance: 40
+	 face id: 263	 weight0.166667	 weighted tolerance: 40
+	 face id: 265	 weight0.166667	 weighted tolerance: 40
+	 face id: 267	 weight0.166667	 weighted tolerance: 40
+	 face id: 269	 weight0.166667	 weighted tolerance: 40
+I recieve a nack!!!! I am node 61
+pitTable size: 29
+node id :61
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 53
+pitTable size: 14
+node id :53
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 55
+pitTable size: 29
+node id :55
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 57
+pitTable size: 29
+node id :57
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 59
+pitTable size: 29
+node id :59
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 63
+pitTable size: 29
+node id :63
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+Consumer: I change my frequency!!!!!! the new value 39
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 116 Good interests per unit: 14
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 124 Good interests per unit: 16
+Finally use limit 11 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 3 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 3 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 122 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 121 Good interests per unit: 12
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 11 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 15
+Fake interests per unit: 0 Valid interests per unit: 122 Good interests per unit: 14
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 124 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 11 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 11 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 123 Good interests per unit: 16
+Finally use limit 11 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 3 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 11 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 11 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 1 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 124 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+I recieve a nack!!!! I am node 16
+I recieve a nack!!!! I am node 18
+I recieve a nack!!!! I am node 20
+I recieve a nack!!!! I am node 22
+I recieve a nack!!!! I am node 24
+I recieve a nack!!!! I am node 26
+Consumer: I reset my frequency!!!!!! the new value 40
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+I recieve a nack!!!! I am node 28
+I recieve a nack!!!! I am node 40
+I recieve a nack!!!! I am node 64
+I recieve a nack!!!! I am node 76
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Consumer: I reset my frequency!!!!!! the new value 40
+Finally use limit 3 on the face 258
+Finally use limit 4 on the face 260
+Finally use limit 4 on the face 262
+Finally use limit 4 on the face 264
+Finally use limit 4 on the face 266
+Finally use limit 4 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+I recieve a nack!!!! I am node 52
+Consumer: I reset my frequency!!!!!! the new value 40
+Fake interests per unit: 0 Valid interests per unit: 163 Good interests per unit: 18
+Violate VALID INTERST threshold!!!
+I recieve a nack!!!! I am node 13
+pitTable size: 290
+node id :13
+receiving tolerance1425
+weight for each face1
+	 face id: 256	 weight1	 weighted tolerance: 1425
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+I recieve a nack!!!! I am node 2
+pitTable size: 545
+node id :2
+receiving tolerance1425
+weight for each face0.5
+	 face id: 256	 weight0.5	 weighted tolerance: 713
+	 face id: 257	 weight0.5	 weighted tolerance: 713
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+I recieve a nack!!!! I am node 0
+pitTable size: 290
+node id :0
+receiving tolerance713
+weight for each face0.333333
+	 face id: 256	 weight0.333333	 weighted tolerance: 238
+	 face id: 257	 weight0.333333	 weighted tolerance: 238
+	 face id: 258	 weight0.333333	 weighted tolerance: 238
+I recieve a nack!!!! I am node 3
+pitTable size: 325
+node id :3
+receiving tolerance713
+weight for each face0.166667
+	 face id: 259	 weight0.166667	 weighted tolerance: 119
+	 face id: 261	 weight0.166667	 weighted tolerance: 119
+	 face id: 263	 weight0.166667	 weighted tolerance: 119
+	 face id: 265	 weight0.166667	 weighted tolerance: 119
+	 face id: 267	 weight0.166667	 weighted tolerance: 119
+	 face id: 269	 weight0.166667	 weighted tolerance: 119
+I recieve a nack!!!! I am node 16
+pitTable size: 14
+node id :16
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 18
+pitTable size: 33
+node id :18
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 20
+pitTable size: 33
+node id :20
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 22
+pitTable size: 33
+node id :22
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 24
+pitTable size: 33
+node id :24
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+I recieve a nack!!!! I am node 26
+pitTable size: 33
+node id :26
+receiving tolerance119
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 119
+Consumer: I change my frequency!!!!!! the new value 40
+I recieve a nack!!!! I am node 1
+pitTable size: 145
+node id :1
+receiving tolerance238
+weight for each face1
+	 face id: 257	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 4
+pitTable size: 101
+node id :4
+receiving tolerance238
+weight for each face0.5
+	 face id: 258	 weight0.5	 weighted tolerance: 119
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+I recieve a nack!!!! I am node 10
+pitTable size: 100
+node id :10
+receiving tolerance238
+weight for each face0.5
+	 face id: 259	 weight0.5	 weighted tolerance: 119
+	 face id: 260	 weight0.5	 weighted tolerance: 119
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+I recieve a nack!!!! I am node 5
+pitTable size: 1494
+node id :5
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 6
+pitTable size: 1760
+node id :6
+receiving tolerance119
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 20
+	 face id: 260	 weight0.166667	 weighted tolerance: 20
+	 face id: 262	 weight0.166667	 weighted tolerance: 20
+	 face id: 264	 weight0.166667	 weighted tolerance: 20
+	 face id: 266	 weight0.166667	 weighted tolerance: 20
+	 face id: 268	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 11
+pitTable size: 1652
+node id :11
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 12
+pitTable size: 1609
+node id :12
+receiving tolerance119
+weight for each face0.166667
+	 face id: 257	 weight0.166667	 weighted tolerance: 20
+	 face id: 259	 weight0.166667	 weighted tolerance: 20
+	 face id: 261	 weight0.166667	 weighted tolerance: 20
+	 face id: 263	 weight0.166667	 weighted tolerance: 20
+	 face id: 265	 weight0.166667	 weighted tolerance: 20
+	 face id: 267	 weight0.166667	 weighted tolerance: 20
+I recieve a nack!!!! I am node 7
+pitTable size: 147
+node id :7
+receiving tolerance238
+weight for each face1
+	 face id: 259	 weight1	 weighted tolerance: 238
+I recieve a nack!!!! I am node 28
+pitTable size: 11
+node id :28
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 30
+I recieve a nack!!!! I am node 32
+I recieve a nack!!!! I am node 34
+pitTable size: 257
+node id :34
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 36
+pitTable size: 229
+node id :36
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 38
+pitTable size: 233
+node id :38
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 40
+pitTable size: 10
+node id :40
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 42
+pitTable size: 257
+node id :42
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 44
+pitTable size: 257
+node id :44
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 46
+pitTable size: 258
+node id :46
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 48
+pitTable size: 258
+node id :48
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 50
+pitTable size: 258
+node id :50
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 64
+pitTable size: 10
+node id :64
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 66
+pitTable size: 257
+node id :66
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 68
+pitTable size: 257
+node id :68
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 70
+pitTable size: 258
+node id :70
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 72
+pitTable size: 257
+node id :72
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 74
+pitTable size: 259
+node id :74
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 76
+pitTable size: 10
+node id :76
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 78
+pitTable size: 257
+node id :78
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 80
+pitTable size: 259
+node id :80
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 82
+pitTable size: 257
+node id :82
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 84
+pitTable size: 257
+node id :84
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+I recieve a nack!!!! I am node 86
+pitTable size: 227
+node id :86
+receiving tolerance20
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 20
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Consumer: I change my frequency!!!!!! the new value 19
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 3 on the face 267
+Finally use limit 4 on the face 269
+I recieve a nack!!!! I am node 9
+pitTable size: 1319
+node id :9
+receiving tolerance238
+weight for each face0.166667
+	 face id: 258	 weight0.166667	 weighted tolerance: 40
+	 face id: 260	 weight0.166667	 weighted tolerance: 40
+	 face id: 262	 weight0.166667	 weighted tolerance: 40
+	 face id: 264	 weight0.166667	 weighted tolerance: 40
+	 face id: 266	 weight0.166667	 weighted tolerance: 40
+	 face id: 268	 weight0.166667	 weighted tolerance: 40
+I recieve a nack!!!! I am node 54
+pitTable size: 205
+node id :54
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 62
+pitTable size: 205
+node id :62
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 52
+pitTable size: 19
+node id :52
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 56
+pitTable size: 205
+node id :56
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 58
+pitTable size: 206
+node id :58
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+I recieve a nack!!!! I am node 60
+pitTable size: 205
+node id :60
+receiving tolerance40
+weight for each face1
+	 face id: 258	 weight1	 weighted tolerance: 40
+Consumer: I change my frequency!!!!!! the new value 39
+Fake interests per unit: 0 Valid interests per unit: 74 Good interests per unit: 19
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 11 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 257
+Finally use limit 1 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 100 Good interests per unit: 11
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 257
+Finally use limit 1 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 257
+Finally use limit 1 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 103 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 122 Good interests per unit: 12
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 11 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 3 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 105 Good interests per unit: 11
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 15
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 11 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 11 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 257
+Finally use limit 1 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 107 Good interests per unit: 13
+Fake interests per unit: 0 Valid interests per unit: 125 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 12 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 11 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 1 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 1 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 107 Good interests per unit: 11
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 11 on the face 261
+Finally use limit 12 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 11 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 12 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 1 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 1 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269
+Fake interests per unit: 0 Valid interests per unit: 107 Good interests per unit: 12
+Fake interests per unit: 0 Valid interests per unit: 126 Good interests per unit: 16
+Finally use limit 12 on the face 259
+Finally use limit 12 on the face 261
+Finally use limit 11 on the face 263
+Finally use limit 11 on the face 265
+Finally use limit 12 on the face 267
+Finally use limit 12 on the face 269
+Finally use limit 12 on the face 260
+Finally use limit 12 on the face 262
+Finally use limit 12 on the face 264
+Finally use limit 12 on the face 266
+Finally use limit 11 on the face 268
+Finally use limit 12 on the face 270
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 1 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 1 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 1 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 269
+Finally use limit 1 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 1 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 1 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 2 on the face 257
+Finally use limit 2 on the face 259
+Finally use limit 2 on the face 261
+Finally use limit 2 on the face 263
+Finally use limit 2 on the face 265
+Finally use limit 2 on the face 267
+Finally use limit 2 on the face 258
+Finally use limit 2 on the face 260
+Finally use limit 2 on the face 262
+Finally use limit 2 on the face 264
+Finally use limit 2 on the face 266
+Finally use limit 2 on the face 268
+Finally use limit 3 on the face 258
+Finally use limit 3 on the face 260
+Finally use limit 3 on the face 262
+Finally use limit 3 on the face 264
+Finally use limit 3 on the face 266
+Finally use limit 3 on the face 268
+Finally use limit 4 on the face 259
+Finally use limit 4 on the face 261
+Finally use limit 4 on the face 263
+Finally use limit 4 on the face 265
+Finally use limit 4 on the face 267
+Finally use limit 4 on the face 269

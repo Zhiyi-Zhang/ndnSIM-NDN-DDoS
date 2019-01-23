@@ -5,7 +5,7 @@ library(ggplot2)
 args = commandArgs(trailingOnly=TRUE)
 #target = args[1]
 
-target = "two-fake-f100-t500"
+target = "two-valid-f100-c750"
 rawData <- readLines(target)
 options(scipen=999)
 
@@ -22,11 +22,16 @@ is.even <- function(x) x %% 2 == 0
 is.odd <- function(x) x %% 2 != 0
 
 for (i in 1:length(result)) {
-  if (is.even(i))
-    df$node[i] = "A"
-  if (is.odd(i))
-    df$node[i] = "B"
   df$time[i] <- i/10
+  df$time[i] <- df$time[i]/2
+  if (is.even(i)) {
+    df$node[i] = "A"
+  }
+  if (is.odd(i)) {
+    df$node[i] = "B"
+    df$time[i] = df$time[i] + 0.05
+  }
+  
   numberA <- as.numeric(sub(pattern, "\\1", result[i]))
   numberB <- as.numeric(sub(pattern, "\\2", result[i]))
   numberC <- as.numeric(sub(pattern, "\\3", result[i]))
