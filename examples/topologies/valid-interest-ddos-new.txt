@@ -1,0 +1,228 @@
+# meshed-ases.txt
+
+router
+#name   city    y   x
+
+# infrastructure
+as1-1   NA  200 150
+as1-2   NA  200 250
+as1-cs  NA  150    100
+as1-math    NA  150    200
+as2-1       NA  250   100
+as2-math    NA  300  50
+as2-cs      NA  350 150
+as3-1       NA  200 300
+as3-math    NA  200 400
+as3-cs    NA  150    350
+as4-1           NA  250   200
+as4-hw          NA  350 200
+as4-sm          NA  300  250
+
+# targets
+as1-cs-server NA  150    0
+
+# attackers and good consumers
+as1-math-g0     NA  100    260
+as1-math-g1     NA  100    261
+
+as1-math-a0     NA  100    250
+as1-math-a1     NA  100    251
+as1-math-a2     NA  100    252
+as1-math-a3     NA  100    253
+as1-math-a4     NA  100    254
+as1-math-a5     NA  100    255
+as1-math-a6     NA  100    256
+as1-math-a7     NA  100    257
+as1-math-a8     NA  100    258
+as1-math-a9     NA  100    259
+
+as2-math-g0     NA  350    10
+as2-math-g1     NA  350    11
+
+as2-math-a0     NA  350    0
+as2-math-a1     NA  350    1
+as2-math-a2     NA  350    2
+as2-math-a3     NA  350    3
+as2-math-a4     NA  350    4
+as2-math-a5     NA  350    5
+as2-math-a6     NA  350    6
+as2-math-a7     NA  350    7
+as2-math-a8     NA  350    8
+as2-math-a9     NA  350    9
+
+as2-cs-g0       NA  400   160
+as2-cs-g1       NA  400   161
+
+as2-cs-a0       NA  400   150
+as2-cs-a1       NA  400   151
+as2-cs-a2       NA  400   152
+as2-cs-a3       NA  400   153
+as2-cs-a4       NA  400   154
+as2-cs-a5       NA  400   155
+as2-cs-a6       NA  400   156
+as2-cs-a7       NA  400   157
+as2-cs-a8       NA  400   158
+as2-cs-a9       NA  400   159
+
+as3-cs-g0       NA  250   460
+as3-cs-g1       NA  250   461
+
+as3-cs-a0       NA  250   450
+as3-cs-a1       NA  250   451
+as3-cs-a2       NA  250   452
+as3-cs-a3       NA  250   453
+as3-cs-a4       NA  250   454
+as3-cs-a5       NA  250   455
+as3-cs-a6       NA  250   456
+as3-cs-a7       NA  250   457
+as3-cs-a8       NA  250   458
+as3-cs-a9       NA  250   459
+
+as4-hw-g0       NA  400    260
+as4-hw-g1       NA  400    261
+
+as4-hw-a0       NA  400    250
+as4-hw-a1       NA  400    251
+as4-hw-a2       NA  400    252
+as4-hw-a3       NA  400    253
+as4-hw-a4       NA  400    254
+as4-hw-a5       NA  400    255
+as4-hw-a6       NA  400    256
+as4-hw-a7       NA  400    257
+as4-hw-a8       NA  400    258
+as4-hw-a9       NA  400    259
+
+as4-sm-g0       NA  350    310
+as4-sm-g1       NA  350    311
+
+as4-sm-a0       NA  350    300
+as4-sm-a1       NA  350    301
+as4-sm-a2       NA  350    302
+as4-sm-a3       NA  350    303
+as4-sm-a4       NA  350    304
+as4-sm-a5       NA  350    305
+as4-sm-a6       NA  350    306
+as4-sm-a7       NA  350    307
+as4-sm-a8       NA  350    308
+as4-sm-a9       NA  350    309
+
+
+link
+#from   to  capacity    metric  delay   queue
+
+# eBGP
+as1-1   as1-2   200Mbps  1   20ms    1000
+as1-1   as2-1   200Mbps  1   20ms    1000
+as1-1   as4-1   200Mbps  1   20ms    1000
+as1-2   as3-1   200Mbps  1   20ms    1000
+as2-1   as4-1   200Mbps  1   20ms    1000
+as3-1   as4-1   200Mbps  1   20ms    1000
+
+# iBGP
+as1-1    as1-cs         100Mbps   1   12ms    1000
+as1-1    as1-math     100Mbps   1   15ms    1000
+as1-2    as1-math     100Mbps   1   9ms    1000
+as1-cs   as1-math   100Mbps  1   8ms    1000
+
+as2-1    as2-math     100Mbps  1   11ms    1000
+as2-1    as2-cs          100Mbps  1   9ms    1000
+as2-math  as2-cs   100Mbps  1   10ms    1000
+
+as3-1    as3-math     100Mbps  1   12ms    1000
+as3-1    as3-cs          100Mbps  1   8ms    1000
+as3-cs    as3-math     100Mbps  1   10ms    1000
+
+as4-1    as4-hw         100Mbps  1   11ms    1000
+as4-1    as4-sm         100Mbps  1   9ms    1000
+
+# Edge targets
+as1-cs   as1-cs-server    100Mbps  1   5ms    1000
+
+
+# Edge attackers
+as1-math   as1-math-g0  50Mbps  1   10ms    1000
+as1-math   as1-math-g1  50Mbps  1   10ms    1000
+
+as1-math   as1-math-a0  50Mbps  1   19ms    1000
+as1-math   as1-math-a1  50Mbps  1   19ms    1000
+as1-math   as1-math-a2  50Mbps  1   19ms    1000
+as1-math   as1-math-a3  50Mbps  1   19ms    1000
+as1-math   as1-math-a4  50Mbps  1   19ms    1000
+as1-math   as1-math-a5  50Mbps  1   19ms    1000
+as1-math   as1-math-a6  50Mbps  1   19ms    1000
+as1-math   as1-math-a7  50Mbps  1   19ms    1000
+as1-math   as1-math-a8  50Mbps  1   19ms    1000
+as1-math   as1-math-a9  50Mbps  1   19ms    1000
+
+
+as2-cs   as2-cs-g0  50Mbps  1   10ms    1000
+as2-cs   as2-cs-g1  50Mbps  1   10ms    1000
+
+as2-cs   as2-cs-a0  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a1  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a2  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a3  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a4  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a5  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a6  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a7  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a8  50Mbps  1   9ms    1000
+as2-cs   as2-cs-a9  50Mbps  1   9ms    1000
+
+as2-math as2-math-g0    50Mbps  1   10ms    1000
+as2-math as2-math-g1    50Mbps  1   10ms    1000
+
+as2-math as2-math-a0    50Mbps  1   15ms    1000
+as2-math as2-math-a1    50Mbps  1   15ms    1000
+as2-math as2-math-a2    50Mbps  1   15ms    1000
+as2-math as2-math-a3    50Mbps  1   15ms    1000
+as2-math as2-math-a4    50Mbps  1   15ms    1000
+as2-math as2-math-a5    50Mbps  1   15ms    1000
+as2-math as2-math-a6    50Mbps  1   15ms    1000
+as2-math as2-math-a7    50Mbps  1   15ms    1000
+as2-math as2-math-a8    50Mbps  1   15ms    1000
+as2-math as2-math-a9    50Mbps  1   15ms    1000
+
+
+as3-cs  as3-cs-g0    50Mbps  1   10ms    1000
+as3-cs  as3-cs-g1    50Mbps  1   10ms    1000
+
+as3-cs  as3-cs-a0    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a1    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a2    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a3    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a4    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a5    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a6    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a7    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a8    50Mbps  1   8ms    1000
+as3-cs  as3-cs-a9    50Mbps  1   8ms    1000
+
+
+as4-hw as4-hw-g0    50Mbps  1   10ms    1000
+as4-hw as4-hw-g1    50Mbps  1   10ms    1000
+
+as4-hw as4-hw-a0    50Mbps  1   15ms    1000
+as4-hw as4-hw-a1    50Mbps  1   15ms    1000
+as4-hw as4-hw-a2    50Mbps  1   15ms    1000
+as4-hw as4-hw-a3    50Mbps  1   15ms    1000
+as4-hw as4-hw-a4    50Mbps  1   15ms    1000
+as4-hw as4-hw-a5    50Mbps  1   15ms    1000
+as4-hw as4-hw-a6    50Mbps  1   15ms    1000
+as4-hw as4-hw-a7    50Mbps  1   15ms    1000
+as4-hw as4-hw-a8    50Mbps  1   15ms    1000
+as4-hw as4-hw-a9    50Mbps  1   15ms    1000
+
+as4-sm as4-sm-g0    50Mbps  1   10ms    1000
+as4-sm as4-sm-g1    50Mbps  1   10ms    1000
+
+as4-sm as4-sm-a0    50Mbps  1   13ms    1000
+as4-sm as4-sm-a1    50Mbps  1   13ms    1000
+as4-sm as4-sm-a2    50Mbps  1   13ms    1000
+as4-sm as4-sm-a3    50Mbps  1   13ms    1000
+as4-sm as4-sm-a4    50Mbps  1   13ms    1000
+as4-sm as4-sm-a5    50Mbps  1   13ms    1000
+as4-sm as4-sm-a6    50Mbps  1   13ms    1000
+as4-sm as4-sm-a7    50Mbps  1   13ms    1000
+as4-sm as4-sm-a8    50Mbps  1   13ms    1000
+as4-sm as4-sm-a9    50Mbps  1   13ms    1000

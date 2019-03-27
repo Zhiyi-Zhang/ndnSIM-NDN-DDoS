@@ -64,6 +64,8 @@ protected:
   int m_goodTrafficAlso;
   int m_goodTrafficSeq;
 
+  bool m_play_by_rule;
+
 private:
   void
   SendInterest();

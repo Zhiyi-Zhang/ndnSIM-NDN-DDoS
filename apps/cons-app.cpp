@@ -70,7 +70,12 @@ ConsApp::GetTypeId()
     .AddAttribute("GoodTrafficAlso",
                   "GoodTrafficAlso",
                   IntegerValue(-1),
-                  MakeIntegerAccessor(&ConsApp::m_goodTrafficAlso), MakeIntegerChecker<int32_t>());
+                  MakeIntegerAccessor(&ConsApp::m_goodTrafficAlso), MakeIntegerChecker<int32_t>())
+
+    .AddAttribute("PlayByRule",
+                  "PlayByRule",
+                  BooleanValue(false),
+                  MakeBooleanAccessor(&ConsApp::m_play_by_rule), MakeBooleanChecker());
 
   return tid;
 }
@@ -286,7 +291,7 @@ void
 ConsApp::OnNack(std::shared_ptr<const ndn::lp::Nack> nack)
 {
   // NS_LOG_INFO("NACK received");
-  if (m_isGood) {
+  if (m_isGood || m_play_by_rule) {
     if (nack->getReason() == lp::NackReason::DDOS_RESET_RATE) {
       m_frequency = m_originFreq;
       std::cout << "Consumer: I reset my frequency!!!!!! the new value " << m_frequency << std::endl;
