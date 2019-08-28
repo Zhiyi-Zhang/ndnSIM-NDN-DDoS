@@ -143,7 +143,7 @@ as1-cs   as1-cs-backend    100Mbps  1   5ms    1000
 as3-math    as3-math-server   100Mbps  1   5ms    1000
 
 
-# Edge attackers
+# Edge attackers 6*12 = 72
 as1-math   as1-math-g0  50Mbps  1   10ms    1000
 as1-math   as1-math-g1  50Mbps  1   10ms    1000
 
