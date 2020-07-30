@@ -5,7 +5,7 @@ library(ggplot2)
 args = commandArgs(trailingOnly=TRUE)
 #target = args[1]
 
-target = "fake-f100-t0"
+target = "mixed-f100-c1500-t0"
 rawData <- readLines(target)
 options(scipen=999)
 
@@ -23,15 +23,6 @@ is.odd <- function(x) x %% 2 != 0
 
 for (i in 1:length(result)) {
   df$time[i] <- i/10
-  df$time[i] <- df$time[i]/2
-  if (is.even(i)) {
-    df$node[i] = "A"
-  }
-  if (is.odd(i)) {
-    df$node[i] = "B"
-    df$time[i] = df$time[i] + 0.05
-  }
-  
   numberA <- as.numeric(sub(pattern, "\\1", result[i]))
   numberB <- as.numeric(sub(pattern, "\\2", result[i]))
   numberC <- as.numeric(sub(pattern, "\\3", result[i]))
@@ -42,7 +33,7 @@ for (i in 1:length(result)) {
 #title("Fake Interest Attack")
 
 # graph rates on selected nodes in number of incoming interest packets
-g.nodes <- ggplot(df, aes (x=time, y=percent, group=node)) +
+g.nodes <- ggplot(df, aes (x=time, y=percent)) +
   geom_line(size=1) +
   xlab("Time [second]") +
   ylab("Legit Traffic Ratio") +
