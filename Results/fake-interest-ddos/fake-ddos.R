@@ -106,28 +106,26 @@ data.gateway = subset(data, Node %in% c("as1-cs"))
 
 # combine stats from all faces
 data = summaryBy(. ~ Time + Node + Type, data=data, FUN=sum)
+data.consumer = summaryBy(. ~ Time + Type, data=data.consumer, FUN=sum)
 data.attacker = summaryBy(. ~ Time + Type, data=data.attacker, FUN=sum)
 data.victim = summaryBy(. ~ Time + Type, data=data.victim, FUN=sum)
 data.gateway = summaryBy(. ~ Time + Type, data=data.gateway, FUN=sum)
-data.consumer = summaryBy(. ~ Time + Type, data=data.consumer, FUN=sum)
+data.consumer$Node = "consumer"
 data.attacker$Node = "attacker"
 data.victim$Node = "victim"
 data.gateway$Node = "gateway"
-data.consumer$Node = "consumer"
 
-result = rbind(data.victim, data.attacker, data.consumer)
+result = rbind(data.consumer, data.victim, data.attacker)
 
 # graph rates on selected nodes in number of incoming interest packets
 
 labelstr = paste(c("Fake Tolerance (", threshold, ") + Good Interests (", validAmount, ")"), collapse = "")
 g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   scale_shape_manual(values=c(8, 16, 15)) +
-  scale_color_manual(values=c("red","chartreuse3", "deepskyblue")) +
-  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
+  scale_color_manual(values=c("red","darkgreen", "deepskyblue")) +
+  scale_alpha_manual(values = c(1, 1, 0.5)) +
+  geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node, alpha=Node), size=1.5) +
   scale_linetype_manual(values=c("dashed", "dotdash", "solid")) +
-  #geom_hline(yintercept = as.numeric(threshold) + validAmount, linetype="longdash", size=1.3) + 
-  # geom_point(size=1.5) +
-  #geom_bar(stat="identity") +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
   theme_linedraw() +

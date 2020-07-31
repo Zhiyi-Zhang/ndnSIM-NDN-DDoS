@@ -119,10 +119,11 @@ result = rbind(data.victim, data.attacker, data.consumer)
 labelstr = paste(c("Valid Capacity (", threshold, ")"), collapse = "")
 g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   scale_shape_manual(values=c(8, 16, 15)) +
-  scale_color_manual(values=c("red","chartreuse3", "deepskyblue")) +
+  scale_color_manual(values=c("red","darkgreen", "deepskyblue")) +
   geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
   scale_linetype_manual(values=c("dashed", "dotdash", "solid")) +
   geom_hline(yintercept = as.numeric(threshold), linetype="longdash", size=1.3) + 
+  annotate("text", x = 15, y = 350 + as.numeric(threshold), label = "RSP=1500", size = 11) +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
   theme_linedraw() +

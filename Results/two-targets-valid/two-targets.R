@@ -118,10 +118,11 @@ result = rbind(data.victim, data.attacker, data.consumer, data.victim2)
 
 g.nodes <- ggplot(result, aes (x=Time, y=Packets.sum)) +
   scale_shape_manual(values=c(8, 16, 15, 15)) +
-  scale_color_manual(values=c("red", "chartreuse3", "deepskyblue", "deepskyblue")) +
+  scale_color_manual(values=c("red", "darkgreen", "deepskyblue", "deepskyblue")) +
+  geom_hline(yintercept = as.numeric(valid_threshold), linetype="longdash", size=1.3, alpha=1) + 
   geom_line(aes (x=Time, y=Packets.sum, color=Node, linetype=Node), size=1.5) +
   scale_linetype_manual(values=c("dashed", "dotdash", "solid", "solid")) +
-  geom_hline(yintercept = as.numeric(valid_threshold), linetype="longdash", size=1.3) + 
+  annotate("text", x = 15, y = 350 + as.numeric(valid_threshold), label = "RPS=750", size = 11) +
   xlab("Time [second]") +
   ylab("Rate [Interest / second]") +
   theme_linedraw() +
